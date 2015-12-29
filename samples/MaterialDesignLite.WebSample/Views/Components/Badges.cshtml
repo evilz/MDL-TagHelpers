@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section LeftSide
+{
+    <h3>
+        <i class="material-icons">notifications</i> Badges
+    </h3>
+
+    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
+
+    <div style="margin-top: 30px">
+        <ul class="list-bordered">
+            <li>
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
+                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
+                    Badges
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
+<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Badges on icon</h2>
+    </div>
+    <div style="padding: 30px;">
+        <mdl-badge class="material-icons mdl-color-text--grey-600 mdl-color-badge--green" style="font-size: 32px; right: -10px;" data="1">account_box</mdl-badge>
+
+        <mdl-badge class="material-icons" data="♥">account_box</mdl-badge>
+
+
+        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+
+        <div class="snippet-code">
+
+            <pre class="language-markup codepen-button-enabled">
+<code id="badge/badge-on-icon-text.html"><!-- number badge on icon -->
+&lt;mdl-badge class=&quot;material-icons mdl-color-text--grey-600 mdl-color-badge--greens&quot; style=&quot;font-size: 32px;right: -10px;&quot; data=&quot;1&quot;&gt;account_box&lt;/mdl-badge&gt;               
+</code>
+<code id="badge/badge-on-icon-icon.html"><!-- Icon badge on icon -->
+&lt;mdl-badge class=&quot;material-icons&quot; data=&quot;♥&quot;&gt;account_box&lt;/mdl-badge&gt; 
+</code>
+</pre>
+        </div>
+
+    </div>
+
+
+
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Badges on label</h2>
+    </div>
+    <div style="padding: 30px; margin: 0;" class="mdl-grid">
+
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+            <mdl-badge data="4">Inbox</mdl-badge>
+        </div>
+
+
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+
+            <a href="#">Inbox</a><span class="mdl-badge" data-badge="4"></span>
+        </div>
+
+
+        <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
+
+            <button class="mdl-button mdl-js-button mdl-button--raised">Inbox<span style="right: 10px;" class="mdl-badge" data-badge="4"></span></button>
+
+            @*element.style {
+                /* right: 10px; */
+                /* position: absolute; */
+                margin-top: -8px;
+                margin-right: 0;
+                position: initial;
+                }*@
+
+        </div>
+    </div>
+
+</div>

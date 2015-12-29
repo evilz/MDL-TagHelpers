@@ -1,0 +1,173 @@
+﻿
+<style>
+    .brand-logo {
+        min-height: 64px;
+        color: #FFF;
+        line-height: 64px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 0px;
+    }
+
+    .logo {
+        background-image: url(/images/logo.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+    .demo-avatar-dropdown {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        padding: 7px 10px 7px 20px;
+        font-size: 12px;
+        color: rgba(255,255,255,.5);
+    }
+
+    .clear:after {
+        display: table;
+        content: " ";
+    }
+
+    .clear, .clear:after, .dl-horizontal dd:after {
+        clear: both;
+    }
+
+    .mdl-layout__drawer .mdl-navigation, .mdl-menu {
+        padding: 0;
+    }
+
+        .mdl-layout__drawer .mdl-navigation li {
+            position: relative;
+            line-height: 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+        }
+
+        .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+            background-color: rgba(255,255,255,.2);
+            color: #fff;
+        }
+
+    .demo-navigation .mdl-navigation__link .material-icons {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #bababa !important;
+    }
+
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        line-height: 20px;
+        padding: 13px 20px;
+    }
+
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        margin: 0;
+        color: #757575;
+    }
+
+    .mdl-navigation__link {
+        color: #424242;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .mdl-layout__drawer .mdl-navigation li li a.mdl-navigation__link {
+        padding: 8px 20px 8px 48px;
+    }
+
+    .collapse {
+        height: 0;
+        display: none;
+    }
+</style>
+
+<div style="border-right: 0" class="mdl-layout__drawer mdl-color-text--blue-grey-50 mdl-color--grey-900" data-simplebar-direction="vertical" >
+
+    <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+
+        <div class="brand-logo">
+            <div class="logo">
+                ASPNET MDL
+            </div>
+        </div>
+    </header>
+
+ 
+        <ul style="margin-top: 0;" close-others="false" class="demo-navigation mdl-navigation" >
+            <li class="active">
+                <a class="mdl-navigation__link " asp-action="Index" asp-controller="Home"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>About</a>
+            </li>
+            <li>
+                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">power_settings_new</i>Getting Started</a>
+            </li>
+
+
+            <li>
+                <a class="mdl-navigation__link" href="">
+                    <div style="position: absolute; right: 7px;">
+                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_down</span></i>
+                    </div>
+
+                    <i class="mdl-color-text--blue-grey-400 material-icons ">extension</i><span class="">
+                        Components
+                    </span>
+                </a>
+                <ul class="mdl-navigation in" style="height: auto;">
+                    <ml-menu-group-heading class=""></ml-menu-group-heading>
+
+                    <li><a class="mdl-navigation__link"   asp-action="Badges"   asp-controller="Components"><i class="material-icons">info</i>Badges</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Buttons"  asp-controller="Components"><i class="material-icons">touch_app</i>Buttons</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Cards"    asp-controller="Components"><i class="material-icons">credit_card</i>Cards</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Grid"  asp-controller="Components"><i class="material-icons">view_module</i>Grid</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Tabs"     asp-controller="Components"><i class="material-icons">tab</i>Tabs</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Footer"   asp-controller="Components"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Loading"  asp-controller="Components"><i class="material-icons">autorenew</i>Loading</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Menus"    asp-controller="Components"><i class="material-icons">menu</i>Menus</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Sliders"  asp-controller="Components"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Toggles"  asp-controller="Components"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Tables"   asp-controller="Components"><i class="material-icons">view_column</i>Tables</a></li>
+                    <li><a class="mdl-navigation__link " asp-controller="Components"  asp-action="TextFields" ><i class="material-icons">input</i>Text Fields</a></li>
+                    <li><a class="mdl-navigation__link "  asp-action="Tooltips" asp-controller="Components"><i class="material-icons">mode_comment</i>Tooltips</a></li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a class="mdl-navigation__link" href="">
+                    <div class="absolute" style="position: absolute; right: 7px;">
+                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_up</span></i>
+                    </div>
+
+                    <i class="mdl-color-text--blue-grey-400 material-icons ">format_align_left</i><span class="">Style</span>
+                </a>
+                <ul class="mdl-navigation in">
+                    <ml-menu-group-heading class=""></ml-menu-group-heading>
+                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Typography"><i class="material-icons">text_format</i>Typography</a></li>
+                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Colors"><i class="material-icons">invert_colors</i>Color</a></li>
+                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Icons"><i class="material-icons">insert_emoticon</i>Icons</a></li>
+                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Shadows"><i class="material-icons">layers</i>Shadow</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">link</i>GitHub</a>
+            </li>
+
+        </ul>
+   
+</div>

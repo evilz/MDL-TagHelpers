@@ -1,0 +1,121 @@
+﻿@using System.Collections
+@using System.Linq
+@model PageViewConfig
+@{
+    Layout = "_Layout2";
+    ViewBag.PageHeaderColor = ViewBag.PageHeaderColor ??  MDLColors.Orange;
+
+    ViewBag.Page = new[] {"About"};
+
+    var marginTopContent = Model.RightOnHeader ? "-81px" : "0px" ;
+}
+
+@section script{
+    <script>
+
+       
+
+        $('.mdl-layout__content').scroll(function () {
+
+            var offset = $('.simplebar-scroll-content').scrollTop();
+
+            if (offset > 180) {
+                $('.mdl-layout__header').removeClass("mdl-color--white");
+                $('.mdl-layout__header').addClass("mdl-color--cyan");
+
+            }
+            else {
+                $('.mdl-layout__header').removeClass("mdl-color--cyan");
+                $('.mdl-layout__header').addClass("mdl-color--white");
+            }
+         
+            console.log($('.simplebar-scroll-content').scrollTop());
+          
+
+        });
+
+
+        //$('.mdl-layout__content').simplebar().on('scroll', function () {
+
+        
+
+        //    var offset = $('.mdl-layout__content').scrollTop()
+
+        //    console.log(offset);
+        //});
+
+</script>
+}
+
+
+<style>
+    h3 i.material-icons {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .mdl-badge.material-icons:after {
+        right: -10px;
+    }
+
+    .mdl-badge[data-badge].mdl-color-badge--green:after {
+        background-color: rgb(76, 175, 80);
+    }
+
+    .amdl-Section {
+    }
+
+    .amdl-Section-Header {
+        min-height: 140px;
+        padding: 20px;
+    }
+
+    .amdl-Section-Title {
+        margin-top: 20px;
+        margin-bottom: 5px; /*mdl-color-text--white*/
+    }
+
+    .amdl-Section-SubTitle {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        font-weight: 100; /*mdl-color-text--indigo-100*/
+    }
+
+    .amdl-Section-FlatContent {
+        padding-right: 20px;
+        padding: 40px;
+    }
+
+</style>
+
+
+
+
+<section class="amdl-Section">
+
+    <div class="amdl-Section-Header" mdl-bgcolor="@Model.Header.BgColor">
+        <h3 class="amdl-Section-Title mdl-color-text--white">@Model.Header.Title</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--@Model.Header.BgColor.WithBritghness100">@Model.Header.SubTitle</h4>
+    </div>
+
+    <mdl-grid no-spacing="true">
+        
+        <mdl-cell size="3" tablet="8" phone="4" class="mdl-color--grey-100">
+            <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
+                @RenderSection("LeftSide", false)
+            </div>
+        </mdl-cell>
+
+
+        <mdl-cell size="9" tablet="8" phone="4" style="margin-top:@marginTopContent;">
+            <div style="padding: 20px;">
+
+                @RenderBody()
+
+            </div>
+        </mdl-cell>
+    </mdl-grid>
+</section>
+
+
+

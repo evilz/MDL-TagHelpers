@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Material Design Lite</title>
+
+    <!-- Add to homescreen -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fallback to homescreen for Chrome <39 on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Material Design Lite">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon" href="images/ios-desktop.png">
+
+    <!-- TODO: Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
+    <!-- <meta name="msapplication-TileColor" content="#3372DF"> -->
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="~/lib/simplebar/simplebar.css" />
+
+    <environment names="Development">
+
+        <link href="~/fonts/Roboto/roboto.css" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/icon.css">
+
+        <link rel="stylesheet" href="~/lib/mdl/material.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/main.css" />
+
+
+    </environment>
+    <environment names="Staging,Production">
+
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"
+              asp-fallback-href="~/lib/mdl/material.min.css"
+              asp-fallback-test-class="mdl-layout" asp-fallback-test-property="display" asp-fallback-test-value="flex" />
+
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
+
+    <style>
+
+              /*   .page {
+                   bottom: 0;
+            position: absolute;
+            top: 0;
+            width: calc(100% - 240px);
+            margin-left: 240px;
+            /*margin-top: 0px;
+                }*/
+
+                .ml-header {
+            min-height: 180px;
+        }
+                .mdl-layout__header{
+                    transition: all .5s;
+                }
+
+                .list-inline, .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+                .list-bordered {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+                .list-bordered li {
+            border-bottom: 1px rgba(0,0,0,.1) solid;
+            transition: all .1s;
+        }
+
+                .list-bordered li a {
+            display: block;
+            padding: 5px;
+        }
+                .list-bordered li a:hover {
+            padding-left: 10px;
+        }
+
+                .ml-card-holder {
+            position: relative;
+        }
+                .ml-card-holder.ml-card-holder-first {
+            margin-top: -81px;
+        }
+
+                .mdl-layout-title {
+            font-size: 16px;
+        }
+
+                /*general*/
+                .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            font-family: inherit;
+            font-weight: 400;
+            line-height: 1.1;
+            color: #444;
+        }
+                .h1, .h2, .h3, h1, h2, h3 {
+            margin-top: 23px;
+            margin-bottom: 11.5px;
+        }
+                .h1,h1{font-size:33px}.h2,h2{font-size:27px}.h3,h3{font-size:23px}.h4,h4{font-size:17px}.h5,h5{font-size:13px}.h6,h6{font-size:12px}
+                a {
+            transition: all .2s;
+            text-decoration: none;
+            color: #058494;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout has-drawer ">
+        @Html.Partial("_Header2")
+
+        @Html.Partial("_Drawer")
+
+        <main class="mdl-layout__content mdl-color--grey-100" data-simplebar-direction="vertical">
+            @RenderBody()
+        </main>
+
+        <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+
+
+    <!-- IE Compatibility shims -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js""></script>
+    <![endif]-->
+    <!--[if IE]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
+      <link href="../assets/ie.css" rel="stylesheet">
+    <![endif]-->
+    <!-- end shims -->
+    <!-- Enable Prism syntax highlighting -->
+    <script src="/lib/prism/prism.js"></script>
+    <script src="/lib/prism/prism-markup.min.js"></script>
+
+    <!-- Built with love using Material Design Lite -->
+
+    <script src="~/lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="~/lib/simplebar/simplebar.min.js"></script>
+    @*<script src="~/lib/iScroll5/iscroll-probe.js"></script>*@
+
+    <script>
+
+    </script>
+
+    <environment names="Development">
+        <script src="~/lib/mdl/material.min.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/mdl/material.min.js"></script>
+    </environment>
+
+    @RenderSection("script", false)
+</body>
+</html>

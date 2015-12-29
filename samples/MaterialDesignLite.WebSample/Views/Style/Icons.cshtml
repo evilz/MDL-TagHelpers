@@ -1,0 +1,62 @@
+﻿@section LeftSide
+{
+
+    <p>
+        Material Design Icons are the official open-source icons featured in the Google Material Design specification.
+        <div style="margin-top: 30px">
+            <ul class="list-bordered">
+                <li>
+                    <a target="_blank" href="http://google.github.io/material-design-icons/">
+                        <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
+                        Material icons guide
+                    </a>
+                </li>
+            </ul>
+        </div>
+}
+
+
+        <div style="width: auto; " class="mdl-card mdl-shadow--2dp">
+
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Specific  icon</h2>
+            </div>
+
+            <div style="padding: 30px;">
+                <div>
+                    <mdl-icon value="MDLIcons.accessibility"></mdl-icon>
+                </div>
+
+                <div class="mdl-card__title">
+                    <h4>All icons</h4>
+                </div>
+                <div class="mdl-grid">
+
+
+                    @foreach (var icon in MDLIcons.All)
+                    {
+                        <div class="mdl-cell mdl-cell--1-col mdl-color-text--grey">
+                            <mdl-icon value="@icon"></mdl-icon>
+                        </div>
+
+
+                    }
+
+
+                    <div class="snippet-code">
+
+                        <pre class="language-markup codepen-button-enabled">
+<code id="badge/badge-on-icon-text.html"><!-- number badge on icon -->
+&lt;mdl-badge class=&quot;material-icons mdl-color-text--grey-600 mdl-color-badge--greens&quot; style=&quot;font-size: 32px;right: -10px;&quot; data=&quot;1&quot;&gt;account_box&lt;/mdl-badge&gt;               
+</code>
+<code id="badge/badge-on-icon-icon.html"><!-- Icon badge on icon -->
+&lt;mdl-badge class=&quot;material-icons&quot; data=&quot;♥&quot;&gt;account_box&lt;/mdl-badge&gt; 
+</code>
+</pre>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>

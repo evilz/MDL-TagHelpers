@@ -1,0 +1,17 @@
+﻿{
+    "version": "1.0.0.1",
+    "title": "MaterialDesignLite.TagHelpers",
+    "description": "Tag Helper for Material Design Lite components",
+    "authors": [ "Vincent Bourdon" ],
+    "tags": [ "MVC6", "ASPNET5", "Tag Helper", "MDL", "Material Design Lite" ],
+    "projectUrl": "https://github.com/dpaquette/TagHelperSamples",
+    "licenseUrl": "https://github.com/dpaquette/TagHelperSamples/blob/master/LICENSE.txt",
+  "dependencies": {
+    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final"
+  },
+    "frameworks": {
+        "dnx451": { },
+        "dnxcore50": { }
+    }
+}

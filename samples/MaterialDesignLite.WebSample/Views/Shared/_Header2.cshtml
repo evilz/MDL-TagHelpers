@@ -1,0 +1,29 @@
+﻿
+<header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
+    <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title "><a href="#/dashboard">@ViewBag.Page[0] </a>  / @ViewBag.Page[0]</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search">
+                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+            <span class="mdl-button__ripple-container"></span>
+        </button>
+        <div class="mdl-menu__container ">
+            <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-js-ripple-effect--ignore-events" for="hdrbtn">
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">About<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Contact<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Legal information<span class="mdl-menu__item-ripple-container"></span></li>
+            </ul>
+        </div>
+    </div>
+</header>
