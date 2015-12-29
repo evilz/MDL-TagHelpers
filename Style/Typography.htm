@@ -46,14 +46,14 @@
 
     <style>
 
-                .page {
-             /*       bottom: 0;
+              /*   .page {
+                   bottom: 0;
             position: absolute;
-            top: 0;*/
+            top: 0;
             width: calc(100% - 240px);
             margin-left: 240px;
-            /*margin-top: 0px;*/
-                }
+            /*margin-top: 0px;
+                }*/
 
                 .ml-header {
             min-height: 180px;
@@ -125,7 +125,7 @@
     <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout has-drawer ">
         
 <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
-    <div class="mdl-layout__drawer-button"><i class="material-icons">menu</i></div>
+    <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
     <div class="mdl-layout__header-row">
         <span class="mdl-layout-title "><a href="#/dashboard">About </a>  / About</span>
         <div class="mdl-layout-spacer"></div>
@@ -166,7 +166,7 @@
     }
 
     .logo {
-        background-image: url(/images/logo.png);
+        background-image: url(../images/logo.png);
         background-position: 50% 50%;
         background-repeat: no-repeat;
     }
@@ -289,7 +289,7 @@
                     <li><a class="mdl-navigation__link" href="..\Components\Badges.htm"><i class="material-icons">info</i>Badges</a></li>
                     <li><a class="mdl-navigation__link " href="..\Components\Buttons.htm"><i class="material-icons">touch_app</i>Buttons</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Cards"><i class="material-icons">credit_card</i>Cards</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Layouts"><i class="material-icons">view_module</i>Layout</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Components\Grid.htm"><i class="material-icons">view_module</i>Grid</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Tabs"><i class="material-icons">tab</i>Tabs</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Footer"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Loading"><i class="material-icons">autorenew</i>Loading</a></li>
@@ -297,8 +297,8 @@
                     <li><a class="mdl-navigation__link " href="/Components/Sliders"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Toggles"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Tables"><i class="material-icons">view_column</i>Tables</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/TextFields"><i class="material-icons">input</i>Text Fields</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Tooltips"><i class="material-icons">mode_comment</i>Tooltips</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Components\TextFields.htm"><i class="material-icons">input</i>Text Fields</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Components\Tooltips.htm"><i class="material-icons">mode_comment</i>Tooltips</a></li>
 
                 </ul>
             </li>
@@ -328,7 +328,7 @@
    
 </div>
 
-        <main class="mdl-layout__content mdl-color--grey-100 page" data-simplebar-direction="vertical">
+        <main class="mdl-layout__content mdl-color--grey-100" data-simplebar-direction="vertical">
             
 
 
@@ -365,9 +365,6 @@
         font-weight: 100; /*mdl-color-text--indigo-100*/
     }
 
-    .amdl-Section-Content { /*mdl-grid mdl-grid--no-spacing*/
-    }
-
     .amdl-Section-FlatContent {
         padding-right: 20px;
         padding: 40px;
@@ -385,10 +382,10 @@
         <h4 class="amdl-Section-SubTitle mdl-color-text--purple-100">Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto. Noto is also the standard typeface for all languages on Chrome OS.</h4>
     </div>
 
-    <div class="amdl-Section-Content mdl-grid mdl-grid--no-spacing">
-
-        <div class="amdl-Section-FlatContent mdl-cell mdl-cell--3-col mdl-cell--12-col-tablet mdl-cell--12-col-phone mdl-color--grey-100">
-            <div class="mdl-color-text--blue-grey-400">
+    <div class="mdl-grid mdl-grid--no-spacing">
+        
+        <div class="mdl-color--grey-100 mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
                 
     <h3>Typeface</h3>
 
@@ -406,15 +403,15 @@
                 </li>
             </ul>
         </div>
- 
-            </div>
 
+            </div>
         </div>
 
-        <div style="margin-top:-81px;" class="mdl-cell mdl-cell--9-col mdl-cell--12-col-tablet mdl-cell--12-col-phone">
+
+        <div style="margin-top:-81px;" class=" mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
             <div style="padding: 20px;">
+
                 
-                    
 
 
         <div style="width: auto; " class="mdl-card mdl-shadow--2dp">
@@ -469,7 +466,6 @@
                 <span class="typo-styles__weight">font weight 500</span>
             </div>
         </div>
-        
     </div>
 
     <div style="width: auto; " class="mdl-card mdl-shadow--2dp">
@@ -518,7 +514,6 @@
 
             </div>
         </div>
-
     </div>
 </section>
 
@@ -547,10 +542,7 @@
     <!-- Enable Prism syntax highlighting -->
     <script src="..\lib\prism\prism.js"></script>
     <script src="..\lib\prism\prism-markup.min.js"></script>
-    <script src="../assets/prism-javascript.min.js"></script>
-    <script src="/lib/prism/prism-css.min.js"></script>
-    <script src="../assets/prism-bash.min.js"></script>
-    <script src="..\js\main.js"></script>
+
     <!-- Built with love using Material Design Lite -->
 
     <script src="..\lib\jquery\jquery-2.1.4.min.js"></script>
@@ -600,14 +592,6 @@
         //});
 
 </script>
-
-
-<!-- Visual Studio Browser Link -->
-<script type="application/json" id="__browserLink_initializationData">
-    {"requestId":"3dfa205669764307b8d3cfc962cef373","requestMappingFromServer":false}
-</script>
-<script type="text/javascript" src="http://localhost:53643/5817b45e1e694d46837c46dd7166c137/browserLink" async="async"></script>
-<!-- End Browser Link -->
 
 </body>
 </html>

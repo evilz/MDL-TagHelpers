@@ -973,7 +973,7 @@ _:-ms-input-placeholder,:root .snippet-group .snippet-demos .snippet-demo-paddin
     font-size: 100%;
     width: 100%;
     box-sizing: border-box;
-    word-break: break-word
+    word-break: break-word;
 }
 
 .docs-layout pre[class*=language-]>code[data-language] {
