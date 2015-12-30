@@ -30,7 +30,19 @@ namespace MaterialDesignLite.WebSample.Controllers
             });
         }
 
-        public IActionResult Cards() { return View(); }
+        public IActionResult Cards()
+        {
+            return View(new PageViewConfig
+            {
+                Header = new Header
+                {
+                    BgColor = MDLColors.Orange,
+                    Title = "Cards",
+                    SubTitle = "Self-contained pieces of paper with data."
+                },
+                RightOnHeader = false
+            });
+        }
         public IActionResult Grid() {
             return View(new PageViewConfig
             {

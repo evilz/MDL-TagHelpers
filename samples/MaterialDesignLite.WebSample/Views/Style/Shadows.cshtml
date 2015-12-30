@@ -22,14 +22,12 @@
 }
 
 <div style="padding: 30px;">
-    
+
     <mdl-grid>
-        <mdl-cell size="3" class="mdl-card  mdl-shadow--2dp">.mdl-shadow--2dp</mdl-cell>
-        <mdl-cell size="3" class="mdl-card  mdl-shadow--3dp">.mdl-shadow--3dp</mdl-cell>
-        <mdl-cell size="3" class="mdl-card  mdl-shadow--4dp">.mdl-shadow--4dp</mdl-cell>
-        <mdl-cell size="3" class="mdl-card  mdl-shadow--6dp">.mdl-shadow--6dp</mdl-cell>
-        <mdl-cell size="3" class="mdl-card  mdl-shadow--8dp">.mdl-shadow--8dp</mdl-cell>
-        <mdl-cell size="3" class="mdl-card  mdl-shadow--16dp">.mdl-shadow--16dp</mdl-cell>
+        @foreach (var mdlShadow in MdlShadows.All)
+        {
+            <mdl-cell size="3" class="mdl-card" mdl-shadow="@mdlShadow">@mdlShadow.Deep</mdl-cell>
+        }
     </mdl-grid>
 
 </div>

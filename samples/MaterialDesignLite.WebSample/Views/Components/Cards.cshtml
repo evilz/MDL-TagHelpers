@@ -1,0 +1,232 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section LeftSide
+{
+    
+    <p>The Material Design Lite (MDL) card component is a user interface element representing a virtual piece of paper that contains related data — such as a photo, some text, and a link — that are all about a single subject.</p>
+
+    <div style="margin-top: 30px">
+        <ul class="list-bordered">
+            <li>
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
+                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
+                    Badges
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
+
+<mdl-card mdl-shadow="MDLShadow._2dp">
+    <mdl-card-title title-size="h2" expand="true">Auckland Sky Tower<br>Auckland, New Zealand</mdl-card-title>
+    <mdl-card-media src="/images/github_white_24.svg" width="173" height="157"></mdl-card-media>
+    <mdl-card-supporting-text>The Sky Tower is an observation and telecommunications tower located in Auckland,
+        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+        in the Southern Hemisphere.</mdl-card-supporting-text>
+
+    <mdl-card-actions border="true">
+        <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
+    </mdl-card-actions>
+
+    <mdl-card-menu>
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">share</i>
+        </button>
+    </mdl-card-menu>
+</mdl-card>
+
+
+<div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Auckland Sky Tower<br>Auckland, New Zealand</h2>
+    </div>
+    <div class="mdl-card__media">
+        <img src="/images/github_white_24.svg" width="173" height="157" border="0" alt=""
+             style="padding:10px;">
+    </div>
+    <div class="mdl-card__supporting-text">
+        The Sky Tower is an observation and telecommunications tower located in Auckland,
+        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+        in the Southern Hemisphere.
+    </div>
+    <div class="mdl-card__actions">
+        <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<div class="mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__media">
+        <img src="/images/github_white_24.svg" width="173" height="157" border="0"
+             alt="" style="padding:10px;">
+    </div>
+    <div class="mdl-card__supporting-text">
+        Auckland Sky Tower, taken March 24th, 2014
+    </div>
+    <div class="mdl-card__supporting-text">
+        The Sky Tower is an observation and telecommunications tower located in Auckland,
+        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+        in the Southern Hemisphere.
+    </div>
+</div>
+
+<br />
+<br />
+<!-- Wide card with share menu button -->
+<style>
+    .demo-card-wide.mdl-card {
+        width: 512px;
+    }
+
+    .demo-card-wide > .mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: url('/images/welcome_card.jpg') center / cover;
+    }
+
+    .demo-card-wide > .mdl-card__menu {
+        color: #fff;
+    }
+</style>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Welcome</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris sagittis pellentesque lacus eleifend lacinia...
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Get Started
+        </a>
+    </div>
+    <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">share</i>
+        </button>
+    </div>
+</div>
+
+<br/>
+<br/>
+
+<!-- Square card -->
+<style>
+    .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+    }
+
+    .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background: url('/images//dog.png') bottom right 15% no-repeat #46B6AC;
+    }
+</style>
+
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Update</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            View Updates
+        </a>
+    </div>
+</div>
+
+<br />
+<br />
+
+<!-- Image card -->
+<style>
+    .demo-card-image.mdl-card {
+        width: 256px;
+        height: 256px;
+        background: url('/images/image_card.jpg') center / cover;
+    }
+
+    .demo-card-image > .mdl-card__actions {
+        height: 52px;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .demo-card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+</style>
+
+<div class="demo-card-image mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand"></div>
+    <div class="mdl-card__actions">
+        <span class="demo-card-image__filename">Image.jpg</span>
+    </div>
+</div>
+
+<br />
+<br />
+<!-- Event card -->
+<style>
+    .demo-card-event.mdl-card {
+        width: 256px;
+        height: 256px;
+        background: #3E4EB8;
+    }
+
+    .demo-card-event > .mdl-card__actions {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .demo-card-event > .mdl-card__title {
+        align-items: flex-start;
+    }
+
+        .demo-card-event > .mdl-card__title > h4 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 24px;
+    line-height: 32px;
+        }
+
+    .demo-card-event > .mdl-card__actions {
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+        .demo-card-event > .mdl-card__title,
+        .demo-card-event > .mdl-card__actions,
+        .demo-card-event > .mdl-card__actions > .mdl-button {
+            color: #fff;
+        }
+</style>
+
+<div class="demo-card-event mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+        <h4>
+            Featured event:<br>
+            May 24, 2016<br>
+            7-11pm
+        </h4>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Add to Calendar
+        </a>
+        <div class="mdl-layout-spacer"></div>
+        <i class="material-icons">event</i>
+    </div>
+</div>

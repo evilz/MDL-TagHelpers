@@ -1,31 +1,29 @@
 ﻿
-
-<header class="docs-layout-header mdl-layout__header">
+<header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
+    <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
     <div class="mdl-layout__header-row">
-        <span class="docs-layout-title mdl-layout-title"><a href="../">Material<br>Design<br>Lite</a></span>
+        <span class="mdl-layout-title "><a href="#/dashboard">@ViewBag.Page[0] </a>  / @ViewBag.Page[0]</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search">
+                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+            <span class="mdl-button__ripple-container"></span>
+        </button>
+        <div class="mdl-menu__container ">
+            <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-js-ripple-effect--ignore-events" for="hdrbtn">
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">About<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Contact<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Legal information<span class="mdl-menu__item-ripple-container"></span></li>
+            </ul>
+        </div>
     </div>
-    <div class="docs-navigation__container">
-        <nav class="docs-navigation mdl-navigation">
-            <a href="/" class="mdl-navigation__link about">About</a>
-            <a href="#" class="mdl-navigation__link started">Getting Started</a>
-            <a href="#" class="mdl-navigation__link templates">Templates</a>
-            <a href="#" class="mdl-navigation__link components">Components</a>
-            <a href="#" class="mdl-navigation__link styles">Styles</a>
-            <a href="#" class="mdl-navigation__link customize">Customize</a>
-            <a href="#" class="mdl-navigation__link faq">FAQ</a>
-
-            <div class="spacer"></div>
-
-            <a href="https://github.com/google/material-design-lite" class="mdl-navigation__link mdl-navigation__link--icon github"><i class="material-icons">link</i><span>GitHub</span></a>
-            <a href="../started/index.html#download" class="mdl-navigation__link mdl-navigation__link--icon download">
-                <i class="material-icons">&#xE2C4;</i><span>Download</span>
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab mdl-color--lime-A200">
-                    <i class="material-icons">&#xE2C4;</i>
-                </button>
-            </a>
-        </nav>
-    </div>
-    <i class="material-icons scrollindicator scrollindicator--right">&#xE315;</i>
-    <i class="material-icons scrollindicator scrollindicator--left">&#xE314;</i>
 </header>
-
