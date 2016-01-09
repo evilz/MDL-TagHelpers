@@ -4,15 +4,15 @@
 
 @section LeftSide
 {
-    
-    <p>The Material Design Lite (MDL) card component is a user interface element representing a virtual piece of paper that contains related data — such as a photo, some text, and a link — that are all about a single subject.</p>
+
+    <p>A card is a sheet of material that serves as an entry point to more detailed information. A card could contain a photo, text, and a link about a single subject.</p>
 
     <div style="margin-top: 30px">
         <ul class="list-bordered">
             <li>
                 <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
                     <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
+                    Card title
                 </a>
             </li>
         </ul>
@@ -20,24 +20,361 @@
 }
 
 
-<mdl-card mdl-shadow="MDLShadow._2dp">
-    <mdl-card-title title-size="h2" expand="true">Auckland Sky Tower<br>Auckland, New Zealand</mdl-card-title>
-    <mdl-card-media src="/images/github_white_24.svg" width="173" height="157"></mdl-card-media>
-    <mdl-card-supporting-text>The Sky Tower is an observation and telecommunications tower located in Auckland,
-        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
-        in the Southern Hemisphere.</mdl-card-supporting-text>
+<mdl-grid>
 
-    <mdl-card-actions border="true">
-        <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
-    </mdl-card-actions>
+    <!-- Card title -->
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Card title"></mdl-card-title>
 
-    <mdl-card-menu>
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">share</i>
-        </button>
-    </mdl-card-menu>
-</mdl-card>
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
 
+            <mdl-card-title subtitle="sub-title"></mdl-card-title>
+
+
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Styled title"
+                            style="color: #fff; height: 170px; background: url('/images/11874722676_6450fcb8ba_b.jpg') center/cover;">
+            </mdl-card-title>
+
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris sagittis pellentesque lacus eleifend lacinia...
+            </mdl-card-supporting-text>
+
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="12">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2" mdl-bgcolor="@MDLColors.Grey.WithBritghness100">
+            <pre><code class="language-markup">
+&lt;!-- Simple card --&gt;
+&lt;mdl-card mdl-shadow=&quot;&#64;MdlShadows.Dp2&quot;&gt;
+    &lt;mdl-card-title title-size=&quot;&#64;MdlCardTitleSize.H2&quot; expand=&quot;true&quot; title=&quot;Card title&quot; &gt;&lt;/mdl-card-title&gt;
+    &lt;mdl-card-supporting-text&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/mdl-card-supporting-text&gt;
+    &lt;mdl-card-title subtitle=&quot;sub-title&quot; &gt;&lt;/mdl-card-title&gt;
+&lt;/mdl-card&gt;
+                
+                
+&lt;!-- Title styled card --&gt;        
+&lt;mdl-card mdl-shadow=&quot;&#64;MdlShadows.Dp2&quot;&gt;
+    &lt;mdl-card-title title-size=&quot;&#64;MdlCardTitleSize.H2&quot; expand=&quot;true&quot; 
+        title=&quot;Styled title&quot; 
+        style=&quot;color: #fff; height: 170px; background: url('/images/11874722676_6450fcb8ba_b.jpg') center/cover;&quot;&gt; 
+    &lt;/mdl-card-title&gt; 
+    &lt;mdl-card-supporting-text&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia... 
+    &lt;/mdl-card-supporting-text&gt; 
+&lt;/mdl-card&gt;
+    </code>
+</pre>
+        </mdl-card>
+    </mdl-cell>
+
+
+    <!-- full card image -->
+
+    <mdl-cell size="12">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-media src="/images/Supercars.jpg" width="100%"></mdl-card-media>
+        </mdl-card>
+    </mdl-cell>
+
+
+    <mdl-cell size="12">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2" mdl-bgcolor="@MDLColors.Grey.WithBritghness100">
+            <pre><code class="language-markup">
+&lt;!-- full card image --&gt; 
+&lt;mdl-card mdl-shadow=&quot;@MdlShadows.Dp2&quot;&gt; 
+    &lt;mdl-card-media src=&quot;/images/Supercars.jpg&quot; width=&quot;100%&quot;&gt;
+    &lt;/mdl-card-media&gt; 
+&lt;/mdl-card&gt; 
+                </code></pre>
+        </mdl-card>
+    </mdl-cell>
+
+    <!-- Image and Text -->
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-media src="/images/13818125963_5a67445be7_b.jpg" width="100%"></mdl-card-media>
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" subtitle="Image Card"></mdl-card-title>
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Asia"></mdl-card-title>
+            <mdl-card-media src="/images/13328697884_d57586dfe4_b.jpg" width="100%"></mdl-card-media>
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="12">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2" mdl-bgcolor="@MDLColors.Grey.WithBritghness100">
+            <pre><code class="language-markup">
+&lt;!-- image and subtitle --&gt; 
+&lt;mdl-card mdl-shadow=&quot;&#64;MdlShadows.Dp2&quot;&gt; 
+    &lt;mdl-card-media src=&quot;/images/13818125963_5a67445be7_b.jpg&quot; width=&quot;100%&quot;&gt;
+    &lt;/mdl-card-media&gt; 
+    &lt;mdl-card-title title-size=&quot;&#64;MdlCardTitleSize.H2&quot; expand=&quot;true&quot; subtitle=&quot;Image Card&quot;&gt;
+    &lt;/mdl-card-title&gt; 
+&lt;/mdl-card&gt;
+                
+&lt;!-- Title, image and text --&gt;         
+&lt;mdl-card mdl-shadow="&#64;MdlShadows.Dp2"&gt;
+    &lt;mdl-card-title title-size="&#64;MdlCardTitleSize.H2" expand="true" title="Asia"&gt;&lt;/mdl-card-title&gt;
+    &lt;mdl-card-media src="/images/13328697884_d57586dfe4_b.jpg" width="100%"&gt;&lt;/mdl-card-media&gt;
+    &lt;mdl-card-supporting-text&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/mdl-card-supporting-text&gt;
+&lt;/mdl-card&gt;
+                </code></pre>
+        </mdl-card>
+    </mdl-cell>
+
+
+    <!-- Image in background -->
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="GitHub"></mdl-card-title>
+            <mdl-card-media mdl-bgcolor="@MDLColors.Grey.WithBritghness800" src="/images/github_white_24.svg" border="0" alt="" width="40%" style="padding:5%; position: relative;left:25%"></mdl-card-media>
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="facebook"></mdl-card-title>
+            <mdl-card-media mdl-bgcolor="@MDLColors.Blue.WithBritghness900" src="/images/facebook-512px.svg" border="0" alt="" width="20%" style="padding:5%; position: relative;left:35%"></mdl-card-media>
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Windows id"></mdl-card-title>
+            <mdl-card-media mdl-bgcolor="@MDLColors.LightBlue" src="/images/win8-512px.svg" border="0" alt="" width="40%" style="padding: 5%; position: relative; left: 25%"></mdl-card-media>
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Amazon"></mdl-card-title>
+            <mdl-card-media mdl-bgcolor="@MDLColors.Orange" src="/images/fi-social-amazon-512px.svg" border="0" alt="" width="40%" style="padding:6%; position: relative;left:25%"></mdl-card-media>
+        </mdl-card>
+    </mdl-cell>
+
+
+    <mdl-cell size="12">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2" mdl-bgcolor="@MDLColors.Grey.WithBritghness100">
+            <pre><code class="language-markup">
+&lt;!-- image in colored background --&gt; 
+&lt;mdl-card mdl-shadow="&#64;MdlShadows.Dp2"&gt;
+    &lt;mdl-card-title title-size="&#64;MdlCardTitleSize.H2" expand="true" title="GitHub"&gt;&lt;/mdl-card-title&gt;
+    &lt;mdl-card-media mdl-bgcolor="&#64;MDLColors.Grey.WithBritghness800" src="/images/github_white_24.svg" 
+                border="0" alt="" width="40%" style="padding:5%; position: relative;left:25%"&gt;
+    &lt;/mdl-card-media&gt;
+&lt;/mdl-card&gt;
+    </code>
+</pre>
+        </mdl-card>
+    </mdl-cell>
+
+    <!-- Action buttons -->
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Card with actions"></mdl-card-title>
+
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
+
+            <mdl-card-actions border="true">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button One
+                </a>
+
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button Two
+                </a>
+
+                <div class="mdl-layout-spacer"></div>
+
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">mood</i>
+                </button>
+            </mdl-card-actions>
+
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Card with stacked actions"></mdl-card-title>
+
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
+
+            <mdl-card-actions border="true">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button One
+                </a>
+            </mdl-card-actions>
+
+            <mdl-card-actions border="true">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button Two
+                </a>
+            </mdl-card-actions>
+
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Card with actions on right"></mdl-card-title>
+
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
+
+            <mdl-card-actions border="true" style="flex-direction: row-reverse">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button One
+                </a>
+            </mdl-card-actions>
+
+        </mdl-card>
+    </mdl-cell>
+
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Card with icon actions"></mdl-card-title>
+
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
+
+            <mdl-card-actions border="true" mdl-bgcolor="@MDLColors.Grey.WithBritghness100">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="@MDLIcons.star"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="@MDLIcons.star"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="@MDLIcons.star"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="@MDLIcons.star_half"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="@MDLIcons.star_border"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(17px, 16px);"></span></span>
+                </button>
+            </mdl-card-actions>
+
+        </mdl-card>
+    </mdl-cell>
+   
+    <!-- Action buttons -->
+    <mdl-cell size="6">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="false" title="Card with actions"></mdl-card-title>
+
+            <mdl-card-supporting-text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </mdl-card-supporting-text>
+
+            <div class="mdl-card__menu">
+                <!-- Right aligned menu below button -->
+                <button id="demo-menu-lower-right"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+
+                <button id="demo-menu-lower-right2"
+                        class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+
+            @*<mdl-card-menu>
+                <button id="demo-menu-lower-left" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </mdl-card-menu>*@
+
+        </mdl-card>
+       
+    </mdl-cell>
+</mdl-grid>
+
+<mdl-grid>
+    <mdl-cell size="5">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+            <mdl-card-media src="/images/github_white_24.svg" width="173" height="157" border="0" alt=""
+                            style="padding:10px;"></mdl-card-media>
+            <mdl-card-supporting-text>
+                The Sky Tower is an observation and telecommunications tower located in Auckland,
+                New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+                in the Southern Hemisphere.
+            </mdl-card-supporting-text>
+
+            <mdl-card-actions border="true">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                </a>
+                <div class="mdl-layout-spacer"></div>
+
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">mood</i>
+                </button>
+            </mdl-card-actions>
+
+            <mdl-card-menu>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+            </mdl-card-menu>
+        </mdl-card>
+    </mdl-cell>
+    <mdl-cell size="7">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2"></mdl-card>
+    </mdl-cell>
+</mdl-grid>
+
+
+<br />
+<br />
 
 <div class="mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title">
@@ -57,8 +394,8 @@
     </div>
 </div>
 
-<br/>
-<br/>
+<br />
+<br />
 
 <div class="mdl-card mdl-shadow--4dp">
     <div class="mdl-card__media">
@@ -114,8 +451,8 @@
     </div>
 </div>
 
-<br/>
-<br/>
+<br />
+<br />
 
 <!-- Square card -->
 <style>
@@ -198,7 +535,7 @@
             margin-top: 0;
             color: #fff;
             font-size: 24px;
-    line-height: 32px;
+            line-height: 32px;
         }
 
     .demo-card-event > .mdl-card__actions {
