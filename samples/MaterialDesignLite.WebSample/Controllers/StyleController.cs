@@ -14,7 +14,7 @@ namespace MaterialDesignLite.WebSample.Controllers
                 {
                     BgColor = MDLColors.LightBlue,
                     Title = "Icons",
-                    SubTitle = "blablabla"
+                    SubTitle = "UI icon, symbolizes a command, file, device, or directory. System icons are also used to represent common actions like trash, print, and save."
                 },
             });
         }

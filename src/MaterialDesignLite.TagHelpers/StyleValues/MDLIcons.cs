@@ -354,8 +354,8 @@ namespace MaterialDesignLite.TagHelpers.StyleValues
 { "speaker phone", new MDLIcon("speaker phone","speaker_phone","E0D2")},
 { "stay current landscape", new MDLIcon("stay current landscape","stay_current_landscape","E0D3")},
 { "stay current portrait", new MDLIcon("stay current portrait","stay_current_portrait","E0D4")},
-{ "stay primary landscape", new MDLIcon("stay primary landscape","stay_primary_landscape","E0D5")},
-{ "stay primary portrait", new MDLIcon("stay primary portrait","stay_primary_portrait","E0D6")},
+{ "stay Primary landscape", new MDLIcon("stay Primary landscape","stay_primary_landscape","E0D5")},
+{ "stay Primary portrait", new MDLIcon("stay Primary portrait","stay_primary_portrait","E0D6")},
 { "stop screen share", new MDLIcon("stop screen share","stop_screen_share","E0E3")},
 { "swap calls", new MDLIcon("swap calls","swap_calls","E0D7")},
 { "textsms", new MDLIcon("textsms","textsms","E0D8")},
@@ -1246,8 +1246,8 @@ namespace MaterialDesignLite.TagHelpers.StyleValues
         public static MDLIcon speaker_phone { get { return _allIcons["speaker phone"]; } }
         public static MDLIcon stay_current_landscape { get { return _allIcons["stay current landscape"]; } }
         public static MDLIcon stay_current_portrait { get { return _allIcons["stay current portrait"]; } }
-        public static MDLIcon stay_primary_landscape { get { return _allIcons["stay primary landscape"]; } }
-        public static MDLIcon stay_primary_portrait { get { return _allIcons["stay primary portrait"]; } }
+        public static MDLIcon stay_primary_landscape { get { return _allIcons["stay Primary landscape"]; } }
+        public static MDLIcon stay_primary_portrait { get { return _allIcons["stay Primary portrait"]; } }
         public static MDLIcon stop_screen_share { get { return _allIcons["stop screen share"]; } }
         public static MDLIcon swap_calls { get { return _allIcons["swap calls"]; } }
         public static MDLIcon textsms { get { return _allIcons["textsms"]; } }

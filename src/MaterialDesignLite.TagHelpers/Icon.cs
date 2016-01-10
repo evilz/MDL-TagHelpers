@@ -4,22 +4,23 @@ using Microsoft.AspNet.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement("mdl-icon")]
+    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
     public class Icon : TagHelper
     {
-        [HtmlAttributeName("value")]
-        public StyleValues.MDLIcon Value { get; set; }
+        public const string Name = "icon";
+
+        [HtmlAttributeName("icon")]
+        public StyleValues.MDLIcon MdlIcon { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            output.Attributes.RemoveAll("value");
+            output.CleanAttributes(Name);
 
-            if (Value == null) { return; }
+            if (MdlIcon == null) { return; }
               
-
             output.TagName = "i";
-            output.Attributes["class"] = "material-icons";
-            output.Content.SetContent(Value.Ligature); // TODO : MANAGE IE using codepoint ...
+            output.AppendCssClass("material-icons");
+            output.Content.SetContent(MdlIcon.Ligature); // TODO : MANAGE IE using codepoint ...
 
             await base.ProcessAsync(context, output);
         }

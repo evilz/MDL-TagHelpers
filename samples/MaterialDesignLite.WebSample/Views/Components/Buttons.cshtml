@@ -1,150 +1,139 @@
 ﻿@section LeftSide
 {
     <h3>
-        <i class="material-icons">notifications</i> Badges
+        Buttons & Floating Action Button
     </h3>
 
-    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
+    <p>
+        A button clearly communicates what action will occur when the user touches it. It consists of text, an image, or both, designed in accordance with your app’s color theme.
+    </p>
 
     <div style="margin-top: 30px">
         <ul class="list-bordered">
             <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
                     <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
+                    Button
                 </a>
             </li>
         </ul>
     </div>
 }
 
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">FAB button</h2>
-    </div>
-    <div style="padding: 30px;">
+    <mdl-card-title title="Flat button"></mdl-card-title>
+    <mdl-grid>
+        <mdl-cell> <mdl-button>Button</mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button ripple="false">Button</mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button disabled>Button</mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button color="@ButtonColors.Primary">Button</mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button color="@ButtonColors.Accent">Button</mdl-button> </mdl-cell>
 
+    </mdl-grid>
+
+    <pre><code class="language-markup">
+&lt;!-- Flat button with ripple effect --&gt;
+&lt;mdl-button&gt;Button&lt;/mdl-button&gt; 
+          
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button ripple="false"&gt;Button&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button disabled&gt;Button&lt;/mdl-button&gt;          
+                   
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button color="@@ButtonColors.Primary"&gt;Button&lt;/mdl-button&gt;
+        
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button color="@@ButtonColors.Accent"&gt;Button&lt;/mdl-button&gt; 
+    </code>
+</pre>
+
+    <mdl-card-title title="Raised button"></mdl-card-title>
+    <mdl-grid>
+        <mdl-cell> <mdl-button raised="true">Button</mdl-button>                               </mdl-cell>
+        <mdl-cell> <mdl-button raised="true" ripple="false">Button</mdl-button>                </mdl-cell>
+        <mdl-cell> <mdl-button raised="true" disabled>Button</mdl-button>                      </mdl-cell>
+        <mdl-cell> <mdl-button raised="true" color="@ButtonColors.Primary">Button</mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button raised="true" color="@ButtonColors.Accent">Button</mdl-button>  </mdl-cell>
+
+    </mdl-grid>
+
+    <pre><code class="language-markup">
+&lt;!-- Raised button with ripple effect --&gt;
+&lt;mdl-button raised="true"&gt;Button&lt;/mdl-button&gt; 
+          
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button raised="true" ripple="false"&gt;Button&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button raised="true" disabled&gt;Button&lt;/mdl-button&gt;          
+                   
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button raised="true" color="@@ButtonColors.Primary"&gt;Button&lt;/mdl-button&gt;
+        
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button raised="true" color="@@ButtonColors.Accent"&gt;Button&lt;/mdl-button&gt; 
+    </code>
+</pre>
+
+    <mdl-card-title title="Icon buttons"></mdl-card-title>
+    <mdl-grid>
+        <mdl-cell> <mdl-button icon="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button></mdl-cell>
+        <mdl-cell> <mdl-button icon="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button icon="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button icon="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button icon="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button> </mdl-cell>
+
+    </mdl-grid>
+
+    <pre><code class="language-markup">
+&lt;!-- Icon button with ripple effect --&gt;
+&lt;mdl-button icon="true"&gt;&lt;mdl-icon icon="@@MDLIcons.add"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+         
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button icon="true" ripple="false"&gt;&lt;mdl-icon icon="@@MDLIcons.image"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button icon="true" disabled&gt;&lt;mdl-icon icon="@@MDLIcons.smartphone"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+                    
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button icon="true" color="@@ButtonColors.Primary"&gt;&lt;mdl-icon icon="@@MDLIcons.mood"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
       
-
-        <!-- Colored FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- Colored FAB button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-            <i class="material-icons">add</i>
-        </button>
-
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- FAB button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- Disabled FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab" disabled>
-            <i class="material-icons">add</i>
-        </button>
-
-        <!-- Mini FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- Colored mini FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-            <i class="material-icons">add</i>
-        </button>
-
-    </div>
-</div>
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button icon="true" color="@@ButtonColors.Accent"&gt;&lt;mdl-icon icon="@@MDLIcons.mood_bad"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+ 
+    </code>
+</pre>
 
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Standard button</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
+    <mdl-card-title title="FAB button"></mdl-card-title>
+    <mdl-grid>
+        <mdl-cell> <mdl-button fab="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button></mdl-cell>
+        <mdl-cell> <mdl-button fab="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button fab="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button fab="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button fab="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button> </mdl-cell>
+        <mdl-cell> <mdl-button fab="true" mini="true"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button> </mdl-cell>
 
-        <!-- Raised button -->
-        <button class="mdl-button mdl-js-button mdl-button--raised">
-            Button
-        </button>
-        <!-- Raised button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-            Button
-        </button>
-        <!-- Raised disabled button-->
-        <button class="mdl-button mdl-js-button mdl-button--raised" disabled>
-            Button
-        </button>
+    </mdl-grid>
 
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            Button
-        </button>
-        <!-- Accent-colored raised button -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-            Button
-        </button>
-        <!-- Accent-colored raised button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Button
-        </button>
+    <pre><code class="language-markup">
+&lt;!-- FAB button with ripple effect --&gt;
+&lt;mdl-button fab="true"&gt;&lt;mdl-icon icon="@@MDLIcons.add"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+         
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button fab="true" ripple="false"&gt;&lt;mdl-icon icon="@@MDLIcons.image"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button fab="true" disabled&gt;&lt;mdl-icon icon="@@MDLIcons.smartphone"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+                    
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button fab="true" color="@@ButtonColors.Primary"&gt;&lt;mdl-icon icon="@@MDLIcons.mood"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+      
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button fab="true" color="@@ButtonColors.Accent"&gt;&lt;mdl-icon icon="@@MDLIcons.mood_bad"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+ 
+&lt;!-- Mini FAB Button--&gt; 
+&lt;mdl-button fab="true" color="@@ButtonColors.Accent"&gt;&lt;mdl-icon icon="@@MDLIcons.mood_bad"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+    </code>
+</pre>
 
-    </div>
-</div>
-
-
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Flat button</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
-
-        <!-- Flat button -->
-        <mdl-button>
-            Button
-        </mdl-button>
-
-        <button class="mdl-button mdl-js-button">
-            Button
-        </button>
-        <!-- Flat button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-            Button
-        </button>
-        <!-- Disabled flat button -->
-        <button class="mdl-button mdl-js-button" disabled>
-            Button
-        </button>
-
-        <!-- Primary-colored flat button -->
-        <button class="mdl-button mdl-js-button mdl-button--primary">
-            Button
-        </button>
-        <!-- Accent-colored flat button -->
-        <button class="mdl-button mdl-js-button mdl-button--accent">
-            Button
-        </button>
-
-    </div>
-</div>
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Icon buttons</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
-
-        <!-- Icon button -->
-        <button class="mdl-button mdl-js-button mdl-button--icon">
-            <i class="material-icons">mood</i>
-        </button>
-        <!-- Colored icon button -->
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-            <i class="material-icons">mood</i>
-        </button>
-
-    </div>
-</div>
+</mdl-card>

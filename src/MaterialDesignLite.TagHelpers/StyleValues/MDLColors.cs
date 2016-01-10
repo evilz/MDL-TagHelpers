@@ -128,11 +128,11 @@ namespace MaterialDesignLite.TagHelpers.StyleValues
 
             { "white",new MDLColor("white") },
             { "black",new MDLColor("black") },
-            { "primary",new MDLColor("primary") },
-            { "primary-contrast",new MDLColor("primary-contrast") },
-            { "primary-dark",new MDLColor("primary-dark") },
-            { "accent",new MDLColor("accent") },
-            { "accent-contrast",new MDLColor("accent-contrast") },
+            { "Primary",new MDLColor("Primary") },
+            { "Primary-contrast",new MDLColor("Primary-contrast") },
+            { "Primary-dark",new MDLColor("Primary-dark") },
+            { "Accent",new MDLColor("Accent") },
+            { "Accent-contrast",new MDLColor("Accent-contrast") },
         };
 
         public static IEnumerable<MDLColor> All { get { return _allColors.Values; } }
@@ -159,10 +159,10 @@ namespace MaterialDesignLite.TagHelpers.StyleValues
                
         public static MDLColor White { get { return _allColors["white"]; } }
         public static MDLColor Black { get { return _allColors["black"]; } }
-        public static MDLColor Primary { get { return _allColors["primary"]; } }
-        public static MDLColor PrimaryContrast { get { return _allColors["primary-contrast"]; } }
-        public static MDLColor PrimaryDark { get { return _allColors["primary-dark"]; } }
-        public static MDLColor Accent { get { return _allColors["accent"]; } }
-        public static MDLColor AccentContrast { get { return _allColors["accent-contrast"]; } }
+        public static MDLColor Primary { get { return _allColors["Primary"]; } }
+        public static MDLColor PrimaryContrast { get { return _allColors["Primary-contrast"]; } }
+        public static MDLColor PrimaryDark { get { return _allColors["Primary-dark"]; } }
+        public static MDLColor Accent { get { return _allColors["Accent"]; } }
+        public static MDLColor AccentContrast { get { return _allColors["Accent-contrast"]; } }
     }
 }
