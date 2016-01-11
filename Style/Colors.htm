@@ -7,7 +7,7 @@
     <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Material Design Lite</title>
+    <title>MDL Tag Helpers for asp.net 5</title>
 
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
@@ -30,91 +30,108 @@
     <link rel="shortcut icon" href="images/favicon.png">
 
     <link rel="stylesheet" href="..\lib\simplebar\simplebar.css">
-
+    <link rel="stylesheet" href="..\css\prism-default.css">
+    
     
 
-        <link href="..\fonts\Roboto\roboto.css" rel="stylesheet">
-        <link rel="stylesheet" href="..\css\icon.css">
 
-        <link rel="stylesheet" href="..\lib\mdl\material.min.css">
-        <link rel="stylesheet" href="..\css\site.css">
-        <link rel="stylesheet" href="..\css\main.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<meta name="x-stylesheet-fallback-test" class="mdl-layout"><script>!function(a,b,c){var d,e=document,f=e.getElementsByTagName("SCRIPT"),g=f[f.length-1].previousElementSibling,h=e.defaultView&&e.defaultView.getComputedStyle?e.defaultView.getComputedStyle(g):g.currentStyle;if(h&&h[a]!==b)for(d=0;d<c.length;d++)e.write('<link rel="stylesheet" href="'+c[d]+'"/>')}("display","flex",["\/lib\/mdl\/material.min.css"]);</script>
 
-    
+        <link rel="stylesheet" href="..\css\site.css?v=Axuyfp01xOJn_uckNUbk2ETVz_trrVRnkPdrQB49k78">
     
 
     <style>
+         .ml-header {
+             min-height: 180px;
+         }
 
-              /*   .page {
-                   bottom: 0;
-            position: absolute;
-            top: 0;
-            width: calc(100% - 240px);
-            margin-left: 240px;
-            /*margin-top: 0px;
-                }*/
-
-                .ml-header {
-            min-height: 180px;
+        .mdl-layout__header {
+            transition: all .5s;
         }
-                .mdl-layout__header{
-                    transition: all .5s;
-                }
 
-                .list-inline, .list-unstyled {
+        .list-inline, .list-unstyled {
             padding-left: 0;
             list-style: none;
         }
-                .list-bordered {
+
+        .list-bordered {
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-                .list-bordered li {
+        .list-bordered li {
             border-bottom: 1px rgba(0,0,0,.1) solid;
             transition: all .1s;
         }
 
-                .list-bordered li a {
+        .list-bordered li a {
             display: block;
             padding: 5px;
         }
-                .list-bordered li a:hover {
+
+        .list-bordered li a:hover {
             padding-left: 10px;
         }
 
-                .ml-card-holder {
+        .ml-card-holder {
             position: relative;
         }
-                .ml-card-holder.ml-card-holder-first {
+
+        .ml-card-holder.ml-card-holder-first {
             margin-top: -81px;
         }
 
-                .mdl-layout-title {
+        .mdl-layout-title {
             font-size: 16px;
         }
 
-                /*general*/
-                .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        /*general*/
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
             font-family: inherit;
             font-weight: 400;
             line-height: 1.1;
             color: #444;
         }
-                .h1, .h2, .h3, h1, h2, h3 {
+
+        .h1, .h2, .h3, h1, h2, h3 {
             margin-top: 23px;
             margin-bottom: 11.5px;
         }
-                .h1,h1{font-size:33px}.h2,h2{font-size:27px}.h3,h3{font-size:23px}.h4,h4{font-size:17px}.h5,h5{font-size:13px}.h6,h6{font-size:12px}
-                a {
+
+        .h1, h1 {
+            font-size: 33px;
+        }
+
+        .h2, h2 {
+            font-size: 27px;
+        }
+
+        .h3, h3 {
+            font-size: 23px;
+        }
+
+        .h4, h4 {
+            font-size: 17px;
+        }
+
+        .h5, h5 {
+            font-size: 13px;
+        }
+
+        .h6, h6 {
+            font-size: 12px;
+        }
+
+        a {
             transition: all .2s;
             text-decoration: none;
             color: #058494;
         }
-
-
     </style>
 
 </head>
@@ -162,11 +179,11 @@
         line-height: 64px;
         text-align: center;
         font-weight: 300;
-        font-size: 0px;
+        font-size: 0.1px;
     }
 
     .logo {
-        background-image: url(../images/logo.png);
+        background-image: url(/images/logo.png);
         background-position: 50% 50%;
         background-repeat: no-repeat;
     }
@@ -288,9 +305,9 @@
 
                     <li><a class="mdl-navigation__link" href="..\Components\Badges.htm"><i class="material-icons">info</i>Badges</a></li>
                     <li><a class="mdl-navigation__link " href="..\Components\Buttons.htm"><i class="material-icons">touch_app</i>Buttons</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Cards"><i class="material-icons">credit_card</i>Cards</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Components\Cards.htm"><i class="material-icons">credit_card</i>Cards</a></li>
                     <li><a class="mdl-navigation__link " href="..\Components\Grid.htm"><i class="material-icons">view_module</i>Grid</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Tabs"><i class="material-icons">tab</i>Tabs</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Components\Tabs.htm"><i class="material-icons">tab</i>Tabs</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Footer"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Loading"><i class="material-icons">autorenew</i>Loading</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Menus"><i class="material-icons">menu</i>Menus</a></li>
@@ -391,8 +408,8 @@
 
 
     <p>
-        This color palette comprises primary and accent colors that can be used for illustration or to develop your brand colors. They’ve been designed to work harmoniously with each other.
-        The color palette starts with primary colors and fills in the spectrum to create a complete and usable palette for Android, Web, and iOS. Google suggests using the 500 colors as the primary colors in your app and the other colors as accents colors.
+        This color palette comprises Primary and Accent colors that can be used for illustration or to develop your brand colors. They’ve been designed to work harmoniously with each other.
+        The color palette starts with Primary colors and fills in the spectrum to create a complete and usable palette for Android, Web, and iOS. Google suggests using the 500 colors as the Primary colors in your app and the other colors as Accents colors.
         <div style="margin-top: 30px">
             <ul class="list-bordered">
                 <li>
@@ -1642,8 +1659,8 @@
                         </table>
                         <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
                             <thead>
-                                <tr class=" mdl-color--primary">
-                                        <th class="mdl-data-table__cell--non-numeric">primary</th>
+                                <tr class=" mdl-color--Primary">
+                                        <th class="mdl-data-table__cell--non-numeric">Primary</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1651,8 +1668,8 @@
                         </table>
                         <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
                             <thead>
-                                <tr class=" mdl-color--primary-contrast">
-                                        <th class="mdl-data-table__cell--non-numeric">primary-contrast</th>
+                                <tr class=" mdl-color--Primary-contrast">
+                                        <th class="mdl-data-table__cell--non-numeric">Primary-contrast</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1660,8 +1677,8 @@
                         </table>
                         <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
                             <thead>
-                                <tr class=" mdl-color--primary-dark">
-                                        <th class="mdl-data-table__cell--non-numeric">primary-dark</th>
+                                <tr class=" mdl-color--Primary-dark">
+                                        <th class="mdl-data-table__cell--non-numeric">Primary-dark</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1669,8 +1686,8 @@
                         </table>
                         <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
                             <thead>
-                                <tr class=" mdl-color--accent">
-                                        <th class="mdl-data-table__cell--non-numeric">accent</th>
+                                <tr class=" mdl-color--Accent">
+                                        <th class="mdl-data-table__cell--non-numeric">Accent</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1678,8 +1695,8 @@
                         </table>
                         <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
                             <thead>
-                                <tr class=" mdl-color--accent-contrast">
-                                        <th class="mdl-data-table__cell--non-numeric">accent-contrast</th>
+                                <tr class=" mdl-color--Accent-contrast">
+                                        <th class="mdl-data-table__cell--non-numeric">Accent-contrast</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -1725,7 +1742,6 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
-      <link href="../assets/ie.css" rel="stylesheet">
     <![endif]-->
     <!-- end shims -->
     <!-- Enable Prism syntax highlighting -->
@@ -1737,13 +1753,10 @@
     <script src="..\lib\jquery\jquery-2.1.4.min.js"></script>
     <script src="..\lib\simplebar\simplebar.min.js"></script>
 
-    <script>
 
-    </script>
-
+    
     
         <script src="..\lib\mdl\material.min.js"></script>
-    
     
 
     

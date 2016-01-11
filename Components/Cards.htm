@@ -1,0 +1,1039 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MDL Tag Helpers for asp.net 5</title>
+
+    <!-- Add to homescreen -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fallback to homescreen for Chrome <39 on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Material Design Lite">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon" href="images/ios-desktop.png">
+
+    <!-- TODO: Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
+    <!-- <meta name="msapplication-TileColor" content="#3372DF"> -->
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="..\lib\simplebar\simplebar.css">
+    <link rel="stylesheet" href="..\css\prism-default.css">
+    
+    
+
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<meta name="x-stylesheet-fallback-test" class="mdl-layout"><script>!function(a,b,c){var d,e=document,f=e.getElementsByTagName("SCRIPT"),g=f[f.length-1].previousElementSibling,h=e.defaultView&&e.defaultView.getComputedStyle?e.defaultView.getComputedStyle(g):g.currentStyle;if(h&&h[a]!==b)for(d=0;d<c.length;d++)e.write('<link rel="stylesheet" href="'+c[d]+'"/>')}("display","flex",["\/lib\/mdl\/material.min.css"]);</script>
+
+        <link rel="stylesheet" href="..\css\site.css?v=Axuyfp01xOJn_uckNUbk2ETVz_trrVRnkPdrQB49k78">
+    
+
+    <style>
+         .ml-header {
+             min-height: 180px;
+         }
+
+        .mdl-layout__header {
+            transition: all .5s;
+        }
+
+        .list-inline, .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .list-bordered {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .list-bordered li {
+            border-bottom: 1px rgba(0,0,0,.1) solid;
+            transition: all .1s;
+        }
+
+        .list-bordered li a {
+            display: block;
+            padding: 5px;
+        }
+
+        .list-bordered li a:hover {
+            padding-left: 10px;
+        }
+
+        .ml-card-holder {
+            position: relative;
+        }
+
+        .ml-card-holder.ml-card-holder-first {
+            margin-top: -81px;
+        }
+
+        .mdl-layout-title {
+            font-size: 16px;
+        }
+
+        /*general*/
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            font-family: inherit;
+            font-weight: 400;
+            line-height: 1.1;
+            color: #444;
+        }
+
+        .h1, .h2, .h3, h1, h2, h3 {
+            margin-top: 23px;
+            margin-bottom: 11.5px;
+        }
+
+        .h1, h1 {
+            font-size: 33px;
+        }
+
+        .h2, h2 {
+            font-size: 27px;
+        }
+
+        .h3, h3 {
+            font-size: 23px;
+        }
+
+        .h4, h4 {
+            font-size: 17px;
+        }
+
+        .h5, h5 {
+            font-size: 13px;
+        }
+
+        .h6, h6 {
+            font-size: 12px;
+        }
+
+        a {
+            transition: all .2s;
+            text-decoration: none;
+            color: #058494;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout has-drawer ">
+        
+<header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
+    <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title "><a href="#/dashboard">About </a>  / About</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search">
+                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+            <span class="mdl-button__ripple-container"></span>
+        </button>
+        <div class="mdl-menu__container ">
+            <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-js-ripple-effect--ignore-events" for="hdrbtn">
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">About<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Contact<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Legal information<span class="mdl-menu__item-ripple-container"></span></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+        
+<style>
+    .brand-logo {
+        min-height: 64px;
+        color: #FFF;
+        line-height: 64px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 0.1px;
+    }
+
+    .logo {
+        background-image: url(/images/logo.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+    .demo-avatar-dropdown {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        padding: 7px 10px 7px 20px;
+        font-size: 12px;
+        color: rgba(255,255,255,.5);
+    }
+
+    .clear:after {
+        display: table;
+        content: " ";
+    }
+
+    .clear, .clear:after, .dl-horizontal dd:after {
+        clear: both;
+    }
+
+    .mdl-layout__drawer .mdl-navigation, .mdl-menu {
+        padding: 0;
+    }
+
+        .mdl-layout__drawer .mdl-navigation li {
+            position: relative;
+            line-height: 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+        }
+
+        .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+            background-color: rgba(255,255,255,.2);
+            color: #fff;
+        }
+
+    .demo-navigation .mdl-navigation__link .material-icons {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #bababa !important;
+    }
+
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        line-height: 20px;
+        padding: 13px 20px;
+    }
+
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        margin: 0;
+        color: #757575;
+    }
+
+    .mdl-navigation__link {
+        color: #424242;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .mdl-layout__drawer .mdl-navigation li li a.mdl-navigation__link {
+        padding: 8px 20px 8px 48px;
+    }
+
+    .collapse {
+        height: 0;
+        display: none;
+    }
+</style>
+
+<div style="border-right: 0" class="mdl-layout__drawer mdl-color-text--blue-grey-50 mdl-color--grey-900" data-simplebar-direction="vertical">
+
+    <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+
+        <div class="brand-logo">
+            <div class="logo">
+                ASPNET MDL
+            </div>
+        </div>
+    </header>
+
+ 
+        <ul style="margin-top: 0;" close-others="false" class="demo-navigation mdl-navigation">
+            <li class="active">
+                <a class="mdl-navigation__link " href="..\index.htm"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>About</a>
+            </li>
+            <li>
+                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">power_settings_new</i>Getting Started</a>
+            </li>
+
+
+            <li>
+                <a class="mdl-navigation__link" href="">
+                    <div style="position: absolute; right: 7px;">
+                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_down</span></i>
+                    </div>
+
+                    <i class="mdl-color-text--blue-grey-400 material-icons ">extension</i><span class="">
+                        Components
+                    </span>
+                </a>
+                <ul class="mdl-navigation in" style="height: auto;">
+                    <ml-menu-group-heading class=""></ml-menu-group-heading>
+
+                    <li><a class="mdl-navigation__link" href="Badges.htm"><i class="material-icons">info</i>Badges</a></li>
+                    <li><a class="mdl-navigation__link " href="Buttons.htm"><i class="material-icons">touch_app</i>Buttons</a></li>
+                    <li><a class="mdl-navigation__link " href="Cards.htm"><i class="material-icons">credit_card</i>Cards</a></li>
+                    <li><a class="mdl-navigation__link " href="Grid.htm"><i class="material-icons">view_module</i>Grid</a></li>
+                    <li><a class="mdl-navigation__link " href="Tabs.htm"><i class="material-icons">tab</i>Tabs</a></li>
+                    <li><a class="mdl-navigation__link " href="/Components/Footer"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
+                    <li><a class="mdl-navigation__link " href="/Components/Loading"><i class="material-icons">autorenew</i>Loading</a></li>
+                    <li><a class="mdl-navigation__link " href="/Components/Menus"><i class="material-icons">menu</i>Menus</a></li>
+                    <li><a class="mdl-navigation__link " href="/Components/Sliders"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
+                    <li><a class="mdl-navigation__link " href="/Components/Toggles"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
+                    <li><a class="mdl-navigation__link " href="/Components/Tables"><i class="material-icons">view_column</i>Tables</a></li>
+                    <li><a class="mdl-navigation__link " href="TextFields.htm"><i class="material-icons">input</i>Text Fields</a></li>
+                    <li><a class="mdl-navigation__link " href="Tooltips.htm"><i class="material-icons">mode_comment</i>Tooltips</a></li>
+
+                </ul>
+            </li>
+
+            <li>
+                <a class="mdl-navigation__link" href="">
+                    <div class="absolute" style="position: absolute; right: 7px;">
+                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_up</span></i>
+                    </div>
+
+                    <i class="mdl-color-text--blue-grey-400 material-icons ">format_align_left</i><span class="">Style</span>
+                </a>
+                <ul class="mdl-navigation in">
+                    <ml-menu-group-heading class=""></ml-menu-group-heading>
+                    <li><a class="mdl-navigation__link " href="..\Style\Typography.htm"><i class="material-icons">text_format</i>Typography</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Style\Colors.htm"><i class="material-icons">invert_colors</i>Color</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Style\Icons.htm"><i class="material-icons">insert_emoticon</i>Icons</a></li>
+                    <li><a class="mdl-navigation__link " href="..\Style\Shadows.htm"><i class="material-icons">layers</i>Shadow</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">link</i>GitHub</a>
+            </li>
+
+        </ul>
+   
+</div>
+
+        <main class="mdl-layout__content mdl-color--grey-100" data-simplebar-direction="vertical">
+            
+
+
+<style>
+    h3 i.material-icons {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .mdl-badge.material-icons:after {
+        right: -10px;
+    }
+
+    .mdl-badge[data-badge].mdl-color-badge--green:after {
+        background-color: rgb(76, 175, 80);
+    }
+
+    .amdl-Section {
+    }
+
+    .amdl-Section-Header {
+        min-height: 140px;
+        padding: 20px;
+    }
+
+    .amdl-Section-Title {
+        margin-top: 20px;
+        margin-bottom: 5px; /*mdl-color-text--white*/
+    }
+
+    .amdl-Section-SubTitle {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        font-weight: 100; /*mdl-color-text--indigo-100*/
+    }
+
+    .amdl-Section-FlatContent {
+        padding-right: 20px;
+        padding: 40px;
+    }
+
+</style>
+
+
+
+
+<section class="amdl-Section">
+
+    <div class="amdl-Section-Header mdl-color--orange">
+        <h3 class="amdl-Section-Title mdl-color-text--white">Cards</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--orange-100">Self-contained pieces of paper with data.</h4>
+    </div>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+        
+        <div class="mdl-color--grey-100 mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
+                
+
+    <p>A card is a sheet of material that serves as an entry point to more detailed information. A card could contain a photo, text, and a link about a single subject.</p>
+
+    <div style="margin-top: 30px">
+        <ul class="list-bordered">
+            <li>
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
+                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
+                    Card title
+                </a>
+            </li>
+        </ul>
+    </div>
+
+            </div>
+        </div>
+
+
+        <div style="margin-top:0px;" class=" mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div style="padding: 20px;">
+
+                
+
+
+<div class="mdl-grid">
+
+    <!-- Card title -->
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Card title</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div class=" mdl-card__title"><div class="mdl-card__subtitle-text">sub-title</div></div>
+
+
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div style="color: #fff; height: 170px; background: url('../images/11874722676_6450fcb8ba_b.jpg') center/cover;" class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Styled title</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris sagittis pellentesque lacus eleifend lacinia...
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--12-col">
+        <div class=" mdl-card mdl-color--grey-100 mdl-shadow--2dp">
+            <pre><code class="language-markup">
+&lt;!-- Simple card --&gt;
+&lt;mdl-card mdl-shadow=&quot;&#64;MdlShadows.Dp2&quot;&gt;
+    &lt;mdl-card-title title-size=&quot;&#64;MdlCardTitleSize.H2&quot; expand=&quot;true&quot; title=&quot;Card title&quot; &gt;&lt;/mdl-card-title&gt;
+    &lt;mdl-card-supporting-text&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/mdl-card-supporting-text&gt;
+    &lt;mdl-card-title subtitle=&quot;sub-title&quot; &gt;&lt;/mdl-card-title&gt;
+&lt;/mdl-card&gt;
+                
+                
+&lt;!-- Title styled card --&gt;        
+&lt;mdl-card mdl-shadow=&quot;&#64;MdlShadows.Dp2&quot;&gt;
+    &lt;mdl-card-title title-size=&quot;&#64;MdlCardTitleSize.H2&quot; expand=&quot;true&quot; 
+        title=&quot;Styled title&quot; 
+        style=&quot;color: #fff; height: 170px; background: url('/images/11874722676_6450fcb8ba_b.jpg') center/cover;&quot;&gt; 
+    &lt;/mdl-card-title&gt; 
+    &lt;mdl-card-supporting-text&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia... 
+    &lt;/mdl-card-supporting-text&gt; 
+&lt;/mdl-card&gt;
+    </code>
+</pre>
+        </div>
+    </div>
+
+
+    <!-- full card image -->
+
+    <div class=" mdl-cell mdl-cell--12-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__media"><img src="..\images\Supercars.jpg" width="100%"></div>
+        </div>
+    </div>
+
+
+    <div class=" mdl-cell mdl-cell--12-col">
+        <div class=" mdl-card mdl-color--grey-100 mdl-shadow--2dp">
+            <pre><code class="language-markup">
+&lt;!-- full card image --&gt; 
+&lt;mdl-card mdl-shadow=&quot;mdl-shadow--2dp&quot;&gt; 
+    &lt;mdl-card-media src=&quot;/images/Supercars.jpg&quot; width=&quot;100%&quot;&gt;
+    &lt;/mdl-card-media&gt; 
+&lt;/mdl-card&gt; 
+                </code></pre>
+        </div>
+    </div>
+
+    <!-- Image and Text -->
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__media"><img src="..\images\13818125963_5a67445be7_b.jpg" width="100%"></div>
+            <div class=" mdl-card__title mdl-card--expand"><div class="mdl-card__subtitle-text">Image Card</div></div>
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Asia</h2></div>
+            <div class=" mdl-card__media"><img src="..\images\13328697884_d57586dfe4_b.jpg" width="100%"></div>
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--12-col">
+        <div class=" mdl-card mdl-color--grey-100 mdl-shadow--2dp">
+            <pre><code class="language-markup">
+&lt;!-- image and subtitle --&gt; 
+&lt;mdl-card mdl-shadow=&quot;&#64;MdlShadows.Dp2&quot;&gt; 
+    &lt;mdl-card-media src=&quot;/images/13818125963_5a67445be7_b.jpg&quot; width=&quot;100%&quot;&gt;
+    &lt;/mdl-card-media&gt; 
+    &lt;mdl-card-title title-size=&quot;&#64;MdlCardTitleSize.H2&quot; expand=&quot;true&quot; subtitle=&quot;Image Card&quot;&gt;
+    &lt;/mdl-card-title&gt; 
+&lt;/mdl-card&gt;
+                
+&lt;!-- Title, image and text --&gt;         
+&lt;mdl-card mdl-shadow="&#64;MdlShadows.Dp2"&gt;
+    &lt;mdl-card-title title-size="&#64;MdlCardTitleSize.H2" expand="true" title="Asia"&gt;&lt;/mdl-card-title&gt;
+    &lt;mdl-card-media src="/images/13328697884_d57586dfe4_b.jpg" width="100%"&gt;&lt;/mdl-card-media&gt;
+    &lt;mdl-card-supporting-text&gt;
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    &lt;/mdl-card-supporting-text&gt;
+&lt;/mdl-card&gt;
+                </code></pre>
+        </div>
+    </div>
+
+
+    <!-- Image in background -->
+
+    <div class=" mdl-cell mdl-cell--3-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">GitHub</h2></div>
+            <div class=" mdl-card__media mdl-color--grey-800"><img src="..\images\github_white_24.svg" border="0" alt="" width="40%" style="padding:5%; position: relative;left:25%"></div>
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--3-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">facebook</h2></div>
+            <div class=" mdl-card__media mdl-color--blue-900"><img src="..\images\facebook-512px.svg" border="0" alt="" width="20%" style="padding:5%; position: relative;left:35%"></div>
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--3-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Windows id</h2></div>
+            <div class=" mdl-card__media mdl-color--light-blue"><img src="..\images\win8-512px.svg" border="0" alt="" width="40%" style="padding: 5%; position: relative; left: 25%"></div>
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--3-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Amazon</h2></div>
+            <div class=" mdl-card__media mdl-color--orange"><img src="..\images\fi-social-amazon-512px.svg" border="0" alt="" width="40%" style="padding:6%; position: relative;left:25%"></div>
+        </div>
+    </div>
+
+
+    <div class=" mdl-cell mdl-cell--12-col">
+        <div class=" mdl-card mdl-color--grey-100 mdl-shadow--2dp">
+            <pre><code class="language-markup">
+&lt;!-- image in colored background --&gt; 
+&lt;mdl-card mdl-shadow="&#64;MdlShadows.Dp2"&gt;
+    &lt;mdl-card-title title-size="&#64;MdlCardTitleSize.H2" expand="true" title="GitHub"&gt;&lt;/mdl-card-title&gt;
+    &lt;mdl-card-media mdl-bgcolor="&#64;MDLColors.Grey.WithBritghness800" src="/images/github_white_24.svg" 
+                border="0" alt="" width="40%" style="padding:5%; position: relative;left:25%"&gt;
+    &lt;/mdl-card-media&gt;
+&lt;/mdl-card&gt;
+    </code>
+</pre>
+        </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Card with actions</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div class=" mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button One
+                </a>
+
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button Two
+                </a>
+
+                <div class="mdl-layout-spacer"></div>
+
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">mood</i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Card with stacked actions</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div class=" mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button One
+                </a>
+            </div>
+
+            <div class=" mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button Two
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Card with actions on right</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div style="flex-direction: row-reverse" class=" mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Button One
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title mdl-card--expand"><h2 class="mdl-card__title-text">Card with icon actions</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div class=" mdl-card__actions mdl-card--border mdl-color--grey-100">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="MaterialDesignLite.TagHelpers.StyleValues.MDLIcon"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="MaterialDesignLite.TagHelpers.StyleValues.MDLIcon"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="MaterialDesignLite.TagHelpers.StyleValues.MDLIcon"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="MaterialDesignLite.TagHelpers.StyleValues.MDLIcon"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span>
+                </button>
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
+                    <mdl-icon value="MaterialDesignLite.TagHelpers.StyleValues.MDLIcon"></mdl-icon>
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple is-animating" style="width: 92.5097px; height: 92.5097px; transform: translate(-50%, -50%) translate(17px, 16px);"></span></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+   
+    <!-- Action buttons -->
+    <div class=" mdl-cell mdl-cell--6-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+            <div class=" mdl-card__title"><h2 class="mdl-card__title-text">Card with actions</h2></div>
+
+            <div class=" mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </div>
+
+            <div class="mdl-card__menu">
+                <!-- Right aligned menu below button -->
+                <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled="" class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+
+                <button id="demo-menu-lower-right2" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+
+
+        </div>
+       
+    </div>
+</div>
+
+<div class="mdl-grid">
+    <div class=" mdl-cell mdl-cell--5-col">
+        <div class=" mdl-card mdl-shadow--2dp">
+
+            <div class=" mdl-card__media"><img src="..\images\github_white_24.svg" width="173" height="157" border="0" alt="" style="padding:10px;"></div>
+            <div class=" mdl-card__supporting-text">
+                The Sky Tower is an observation and telecommunications tower located in Auckland,
+                New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+                in the Southern Hemisphere.
+            </div>
+
+            <div class=" mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get Started
+                </a>
+                <div class="mdl-layout-spacer"></div>
+
+                <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">mood</i>
+                </button>
+            </div>
+
+            <div class=" mdl-card__menu">
+                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                    <i class="material-icons">share</i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class=" mdl-cell mdl-cell--7-col">
+        <div class=" mdl-card mdl-shadow--2dp"></div>
+    </div>
+</div>
+
+
+<br>
+<br>
+
+<div class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Auckland Sky Tower<br>Auckland, New Zealand</h2>
+    </div>
+    <div class="mdl-card__media">
+        <img src="..\images\github_white_24.svg" width="173" height="157" border="0" alt="" style="padding:10px;">
+    </div>
+    <div class="mdl-card__supporting-text">
+        The Sky Tower is an observation and telecommunications tower located in Auckland,
+        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+        in the Southern Hemisphere.
+    </div>
+    <div class="mdl-card__actions">
+        <a href="http://en.wikipedia.org/wiki/Sky_Tower_%28Auckland%29">Wikipedia entry</a>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__media">
+        <img src="..\images\github_white_24.svg" width="173" height="157" border="0" alt="" style="padding:10px;">
+    </div>
+    <div class="mdl-card__supporting-text">
+        Auckland Sky Tower, taken March 24th, 2014
+    </div>
+    <div class="mdl-card__supporting-text">
+        The Sky Tower is an observation and telecommunications tower located in Auckland,
+        New Zealand. It is 328 metres (1,076 ft) tall, making it the tallest man-made structure
+        in the Southern Hemisphere.
+    </div>
+</div>
+
+<br>
+<br>
+<!-- Wide card with share menu button -->
+<style>
+    .demo-card-wide.mdl-card {
+        width: 512px;
+    }
+
+    .demo-card-wide > .mdl-card__title {
+        color: #fff;
+        height: 176px;
+        background: url('/images/welcome_card.jpg') center / cover;
+    }
+
+    .demo-card-wide > .mdl-card__menu {
+        color: #fff;
+    }
+</style>
+
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Welcome</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris sagittis pellentesque lacus eleifend lacinia...
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Get Started
+        </a>
+    </div>
+    <div class="mdl-card__menu">
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">share</i>
+        </button>
+    </div>
+</div>
+
+<br>
+<br>
+
+<!-- Square card -->
+<style>
+    .demo-card-square.mdl-card {
+        width: 320px;
+        height: 320px;
+    }
+
+    .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background: url('/images//dog.png') bottom right 15% no-repeat #46B6AC;
+    }
+</style>
+
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Update</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Aenan convallis.
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            View Updates
+        </a>
+    </div>
+</div>
+
+<br>
+<br>
+
+<!-- Image card -->
+<style>
+    .demo-card-image.mdl-card {
+        width: 256px;
+        height: 256px;
+        background: url('/images/image_card.jpg') center / cover;
+    }
+
+    .demo-card-image > .mdl-card__actions {
+        height: 52px;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .demo-card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+    }
+</style>
+
+<div class="demo-card-image mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand"></div>
+    <div class="mdl-card__actions">
+        <span class="demo-card-image__filename">Image.jpg</span>
+    </div>
+</div>
+
+<br>
+<br>
+<!-- Event card -->
+<style>
+    .demo-card-event.mdl-card {
+        width: 256px;
+        height: 256px;
+        background: #3E4EB8;
+    }
+
+    .demo-card-event > .mdl-card__actions {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .demo-card-event > .mdl-card__title {
+        align-items: flex-start;
+    }
+
+        .demo-card-event > .mdl-card__title > h4 {
+            margin-top: 0;
+            color: #fff;
+            font-size: 24px;
+            line-height: 32px;
+        }
+
+    .demo-card-event > .mdl-card__actions {
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+        .demo-card-event > .mdl-card__title,
+        .demo-card-event > .mdl-card__actions,
+        .demo-card-event > .mdl-card__actions > .mdl-button {
+            color: #fff;
+        }
+</style>
+
+<div class="demo-card-event mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title mdl-card--expand">
+        <h4>
+            Featured event:<br>
+            May 24, 2016<br>
+            7-11pm
+        </h4>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Add to Calendar
+        </a>
+        <div class="mdl-layout-spacer"></div>
+        <i class="material-icons">event</i>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+        </main>
+
+        <div class="mdl-layout__obfuscator"></div>
+    </div>
+
+
+
+    <!-- IE Compatibility shims -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js""></script>
+    <![endif]-->
+    <!--[if IE]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
+    <![endif]-->
+    <!-- end shims -->
+    <!-- Enable Prism syntax highlighting -->
+    <script src="..\lib\prism\prism.js"></script>
+    <script src="..\lib\prism\prism-markup.min.js"></script>
+
+    <!-- Built with love using Material Design Lite -->
+
+    <script src="..\lib\jquery\jquery-2.1.4.min.js"></script>
+    <script src="..\lib\simplebar\simplebar.min.js"></script>
+
+
+    
+    
+        <script src="..\lib\mdl\material.min.js"></script>
+    
+
+    
+    <script>
+
+       
+
+        $('.mdl-layout__content').scroll(function () {
+
+            var offset = $('.simplebar-scroll-content').scrollTop();
+
+            if (offset > 180) {
+                $('.mdl-layout__header').removeClass("mdl-color--white");
+                $('.mdl-layout__header').addClass("mdl-color--cyan");
+
+            }
+            else {
+                $('.mdl-layout__header').removeClass("mdl-color--cyan");
+                $('.mdl-layout__header').addClass("mdl-color--white");
+            }
+         
+            console.log($('.simplebar-scroll-content').scrollTop());
+          
+
+        });
+
+
+        //$('.mdl-layout__content').simplebar().on('scroll', function () {
+
+        
+
+        //    var offset = $('.mdl-layout__content').scrollTop()
+
+        //    console.log(offset);
+        //});
+
+</script>
+
+</body>
+</html>

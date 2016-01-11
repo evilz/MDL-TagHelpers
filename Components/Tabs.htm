@@ -395,8 +395,8 @@
 <section class="amdl-Section">
 
     <div class="amdl-Section-Header mdl-color--deep-purple">
-        <h3 class="amdl-Section-Title mdl-color-text--white">TextFields</h3>
-        <h4 class="amdl-Section-SubTitle mdl-color-text--deep-purple-100">blblblblb</h4>
+        <h3 class="amdl-Section-Title mdl-color-text--white">Tabs</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--deep-purple-100">The Material Design Lite (MDL) tab component is a user interface element that allows different content blocks to share the same screen space in a mutually exclusive manner</h4>
     </div>
 
     <div class="mdl-grid mdl-grid--no-spacing">
@@ -405,17 +405,18 @@
             <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
                 
     <h3>
-        <i class="material-icons">notifications</i> Badges
+        Tabs
     </h3>
 
-    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
+    <p>
+      To be added  </p>
 
     <div style="margin-top: 30px">
         <ul class="list-bordered">
             <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
                     <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
+                    Tabs
                 </a>
             </li>
         </ul>
@@ -429,20 +430,68 @@
             <div style="padding: 20px;">
 
                 
+<div class=" mdl-card mdl-shadow--2dp">
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Badges on icon</h2>
-    </div>
-    <div style="padding: 30px;">
+    <div class=" mdl-card__title"><h2 class="mdl-card__title-text">Flat button</h2></div>
 
-        <form>
-            <div class=" mdl-textfield mdl-js-textfield"><input class="mdl-textfield__input" type="text" id="{id}"><label class="mdl-textfield__label" for="{id}">Number...</label><span class="mdl-textfield__error">Input is not a number!</span></div>
-        </form>
+    <div class=" mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class=" mdl-tabs__panel">
+            <ul>
+                <li>Eddard</li>
+                <li>Catelyn</li>
+                <li>Robb</li>
+                <li>Sansa</li>
+                <li>Brandon</li>
+                <li>Arya</li>
+                <li>Rickon</li>
+            </ul>
+        </div>
     </div>
+
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+            <a href="#starks-panel" class="mdl-tabs__tab is-active">Starks</a>
+            <a href="#lannisters-panel" class="mdl-tabs__tab">Lannisters</a>
+            <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
+        </div>
+
+
+        <div class="mdl-tabs__panel is-active" id="starks-panel">
+            <ul>
+                <li>Eddard</li>
+                <li>Catelyn</li>
+                <li>Robb</li>
+                <li>Sansa</li>
+                <li>Brandon</li>
+                <li>Arya</li>
+                <li>Rickon</li>
+            </ul>
+        </div>
+        <div class="mdl-tabs__panel" id="lannisters-panel">
+            <ul>
+                <li>Tywin</li>
+                <li>Cersei</li>
+                <li>Jamie</li>
+                <li>Tyrion</li>
+            </ul>
+        </div>
+        <div class="mdl-tabs__panel" id="targaryens-panel">
+            <ul>
+                <li>Viserys</li>
+                <li>Daenerys</li>
+            </ul>
+        </div>
+    </div>
+
+    <pre><code class="language-markup">
+&lt;!-- TODO --&gt;
+
+    </code>
+</pre>
+
+  
 
 </div>
-
 
             </div>
         </div>

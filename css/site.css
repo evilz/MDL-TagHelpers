@@ -1,1 +1,11 @@
-﻿
+﻿body {
+    overflow: hidden;
+}
+
+.mdl-card {
+    width: auto;
+}
+
+.mdl-card__actions {
+     display: flex; 
+}

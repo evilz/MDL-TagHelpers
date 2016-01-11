@@ -7,7 +7,7 @@
     <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Material Design Lite</title>
+    <title>MDL Tag Helpers for asp.net 5</title>
 
     <!-- Add to homescreen -->
     <link rel="manifest" href="manifest.json">
@@ -30,91 +30,108 @@
     <link rel="shortcut icon" href="images/favicon.png">
 
     <link rel="stylesheet" href="..\lib\simplebar\simplebar.css">
-
+    <link rel="stylesheet" href="..\css\prism-default.css">
+    
     
 
-        <link href="..\fonts\Roboto\roboto.css" rel="stylesheet">
-        <link rel="stylesheet" href="..\css\icon.css">
 
-        <link rel="stylesheet" href="..\lib\mdl\material.min.css">
-        <link rel="stylesheet" href="..\css\site.css">
-        <link rel="stylesheet" href="..\css\main.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<meta name="x-stylesheet-fallback-test" class="mdl-layout"><script>!function(a,b,c){var d,e=document,f=e.getElementsByTagName("SCRIPT"),g=f[f.length-1].previousElementSibling,h=e.defaultView&&e.defaultView.getComputedStyle?e.defaultView.getComputedStyle(g):g.currentStyle;if(h&&h[a]!==b)for(d=0;d<c.length;d++)e.write('<link rel="stylesheet" href="'+c[d]+'"/>')}("display","flex",["\/lib\/mdl\/material.min.css"]);</script>
 
-    
+        <link rel="stylesheet" href="..\css\site.css?v=Axuyfp01xOJn_uckNUbk2ETVz_trrVRnkPdrQB49k78">
     
 
     <style>
+         .ml-header {
+             min-height: 180px;
+         }
 
-              /*   .page {
-                   bottom: 0;
-            position: absolute;
-            top: 0;
-            width: calc(100% - 240px);
-            margin-left: 240px;
-            /*margin-top: 0px;
-                }*/
-
-                .ml-header {
-            min-height: 180px;
+        .mdl-layout__header {
+            transition: all .5s;
         }
-                .mdl-layout__header{
-                    transition: all .5s;
-                }
 
-                .list-inline, .list-unstyled {
+        .list-inline, .list-unstyled {
             padding-left: 0;
             list-style: none;
         }
-                .list-bordered {
+
+        .list-bordered {
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-                .list-bordered li {
+        .list-bordered li {
             border-bottom: 1px rgba(0,0,0,.1) solid;
             transition: all .1s;
         }
 
-                .list-bordered li a {
+        .list-bordered li a {
             display: block;
             padding: 5px;
         }
-                .list-bordered li a:hover {
+
+        .list-bordered li a:hover {
             padding-left: 10px;
         }
 
-                .ml-card-holder {
+        .ml-card-holder {
             position: relative;
         }
-                .ml-card-holder.ml-card-holder-first {
+
+        .ml-card-holder.ml-card-holder-first {
             margin-top: -81px;
         }
 
-                .mdl-layout-title {
+        .mdl-layout-title {
             font-size: 16px;
         }
 
-                /*general*/
-                .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+        /*general*/
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
             font-family: inherit;
             font-weight: 400;
             line-height: 1.1;
             color: #444;
         }
-                .h1, .h2, .h3, h1, h2, h3 {
+
+        .h1, .h2, .h3, h1, h2, h3 {
             margin-top: 23px;
             margin-bottom: 11.5px;
         }
-                .h1,h1{font-size:33px}.h2,h2{font-size:27px}.h3,h3{font-size:23px}.h4,h4{font-size:17px}.h5,h5{font-size:13px}.h6,h6{font-size:12px}
-                a {
+
+        .h1, h1 {
+            font-size: 33px;
+        }
+
+        .h2, h2 {
+            font-size: 27px;
+        }
+
+        .h3, h3 {
+            font-size: 23px;
+        }
+
+        .h4, h4 {
+            font-size: 17px;
+        }
+
+        .h5, h5 {
+            font-size: 13px;
+        }
+
+        .h6, h6 {
+            font-size: 12px;
+        }
+
+        a {
             transition: all .2s;
             text-decoration: none;
             color: #058494;
         }
-
-
     </style>
 
 </head>
@@ -162,11 +179,11 @@
         line-height: 64px;
         text-align: center;
         font-weight: 300;
-        font-size: 0px;
+        font-size: 0.1px;
     }
 
     .logo {
-        background-image: url(../images/logo.png);
+        background-image: url(/images/logo.png);
         background-position: 50% 50%;
         background-repeat: no-repeat;
     }
@@ -288,9 +305,9 @@
 
                     <li><a class="mdl-navigation__link" href="Badges.htm"><i class="material-icons">info</i>Badges</a></li>
                     <li><a class="mdl-navigation__link " href="Buttons.htm"><i class="material-icons">touch_app</i>Buttons</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Cards"><i class="material-icons">credit_card</i>Cards</a></li>
+                    <li><a class="mdl-navigation__link " href="Cards.htm"><i class="material-icons">credit_card</i>Cards</a></li>
                     <li><a class="mdl-navigation__link " href="Grid.htm"><i class="material-icons">view_module</i>Grid</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Tabs"><i class="material-icons">tab</i>Tabs</a></li>
+                    <li><a class="mdl-navigation__link " href="Tabs.htm"><i class="material-icons">tab</i>Tabs</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Footer"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Loading"><i class="material-icons">autorenew</i>Loading</a></li>
                     <li><a class="mdl-navigation__link " href="/Components/Menus"><i class="material-icons">menu</i>Menus</a></li>
@@ -388,17 +405,19 @@
             <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
                 
     <h3>
-        <i class="material-icons">notifications</i> Badges
+        Buttons & Floating Action Button
     </h3>
 
-    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
+    <p>
+        A button clearly communicates what action will occur when the user touches it. It consists of text, an image, or both, designed in accordance with your app’s color theme.
+    </p>
 
     <div style="margin-top: 30px">
         <ul class="list-bordered">
             <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
                     <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
+                    Button
                 </a>
             </li>
         </ul>
@@ -412,135 +431,122 @@
             <div style="padding: 20px;">
 
                 
+<div class=" mdl-card mdl-shadow--2dp">
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">FAB button</h2>
+    <div class=" mdl-card__title"><h2 class="mdl-card__title-text">Flat button</h2></div>
+    <div class="mdl-grid">
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect">Button</button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button">Button</button> </div>
+        <div class=" mdl-cell"> <button disabled="" class=" mdl-button mdl-js-button mdl-js-ripple-effect">Button</button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary">Button</button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent">Button</button> </div>
+
     </div>
-    <div style="padding: 30px;">
 
+    <pre><code class="language-markup">
+&lt;!-- Flat button with ripple effect --&gt;
+&lt;mdl-button&gt;Button&lt;/mdl-button&gt; 
+          
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button ripple="false"&gt;Button&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button disabled&gt;Button&lt;/mdl-button&gt;          
+                   
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button color="@ButtonColors.Primary"&gt;Button&lt;/mdl-button&gt;
+        
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button color="@ButtonColors.Accent"&gt;Button&lt;/mdl-button&gt; 
+    </code>
+</pre>
+
+    <div class=" mdl-card__title"><h2 class="mdl-card__title-text">Raised button</h2></div>
+    <div class="mdl-grid">
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised">Button</button>                               </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-button--raised">Button</button>                </div>
+        <div class=" mdl-cell"> <button disabled="" class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised">Button</button>                      </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--raised">Button</button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--raised">Button</button>  </div>
+
+    </div>
+
+    <pre><code class="language-markup">
+&lt;!-- Raised button with ripple effect --&gt;
+&lt;mdl-button raised="true"&gt;Button&lt;/mdl-button&gt; 
+          
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button raised="true" ripple="false"&gt;Button&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button raised="true" disabled&gt;Button&lt;/mdl-button&gt;          
+                   
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button raised="true" color="@ButtonColors.Primary"&gt;Button&lt;/mdl-button&gt;
+        
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button raised="true" color="@ButtonColors.Accent"&gt;Button&lt;/mdl-button&gt; 
+    </code>
+</pre>
+
+    <div class=" mdl-card__title"><h2 class="mdl-card__title-text">Icon buttons</h2></div>
+    <div class="mdl-grid">
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class=" material-icons">add</i></button></div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-button--icon"><i class=" material-icons">image</i></button> </div>
+        <div class=" mdl-cell"> <button disabled="" class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class=" material-icons">smartphone</i></button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--icon"><i class=" material-icons">mood</i></button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--icon"><i class=" material-icons">mood_bad</i></button> </div>
+
+    </div>
+
+    <pre><code class="language-markup">
+&lt;!-- Icon button with ripple effect --&gt;
+&lt;mdl-button icon="true"&gt;&lt;mdl-icon icon="@MDLIcons.add"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+         
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button icon="true" ripple="false"&gt;&lt;mdl-icon icon="@MDLIcons.image"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button icon="true" disabled&gt;&lt;mdl-icon icon="@MDLIcons.smartphone"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+                    
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button icon="true" color="@ButtonColors.Primary"&gt;&lt;mdl-icon icon="@MDLIcons.mood"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
       
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button icon="true" color="@ButtonColors.Accent"&gt;&lt;mdl-icon icon="@MDLIcons.mood_bad"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+ 
+    </code>
+</pre>
 
-        <!-- Colored FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- Colored FAB button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-            <i class="material-icons">add</i>
-        </button>
 
-        <button class="mdl-button mdl-js-button mdl-button--fab">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- FAB button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- Disabled FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab" disabled="">
-            <i class="material-icons">add</i>
-        </button>
-
-        <!-- Mini FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-            <i class="material-icons">add</i>
-        </button>
-        <!-- Colored mini FAB button -->
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored">
-            <i class="material-icons">add</i>
-        </button>
+    <div class=" mdl-card__title"><h2 class="mdl-card__title-text">FAB button</h2></div>
+    <div class="mdl-grid">
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab"><i class=" material-icons">add</i></button></div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-button--fab"><i class=" material-icons">image</i></button> </div>
+        <div class=" mdl-cell"> <button disabled="" class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab"><i class=" material-icons">smartphone</i></button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary mdl-button--fab"><i class=" material-icons">mood</i></button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent mdl-button--fab"><i class=" material-icons">mood_bad</i></button> </div>
+        <div class=" mdl-cell"> <button class=" mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab"><i class=" material-icons">mood_bad</i></button> </div>
 
     </div>
-</div>
 
+    <pre><code class="language-markup">
+&lt;!-- FAB button with ripple effect --&gt;
+&lt;mdl-button fab="true"&gt;&lt;mdl-icon icon="@MDLIcons.add"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+         
+&lt;!-- Ripple effect disable--&gt;                         
+&lt;mdl-button fab="true" ripple="false"&gt;&lt;mdl-icon icon="@MDLIcons.image"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+&lt;!-- Button disable--&gt;              
+&lt;mdl-button fab="true" disabled&gt;&lt;mdl-icon icon="@MDLIcons.smartphone"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+                    
+&lt;!-- Button with primary color--&gt;    
+&lt;mdl-button fab="true" color="@ButtonColors.Primary"&gt;&lt;mdl-icon icon="@MDLIcons.mood"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+      
+&lt;!-- Button with primary color--&gt; 
+&lt;mdl-button fab="true" color="@ButtonColors.Accent"&gt;&lt;mdl-icon icon="@MDLIcons.mood_bad"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+ 
+&lt;!-- Mini FAB Button--&gt; 
+&lt;mdl-button fab="true" color="@ButtonColors.Accent"&gt;&lt;mdl-icon icon="@MDLIcons.mood_bad"&gt;&lt;/mdl-icon&gt;&lt;/mdl-button&gt;
+    </code>
+</pre>
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Standard button</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
-
-        <!-- Raised button -->
-        <button class="mdl-button mdl-js-button mdl-button--raised">
-            Button
-        </button>
-        <!-- Raised button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-            Button
-        </button>
-        <!-- Raised disabled button-->
-        <button class="mdl-button mdl-js-button mdl-button--raised" disabled="">
-            Button
-        </button>
-
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-            Button
-        </button>
-        <!-- Accent-colored raised button -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-            Button
-        </button>
-        <!-- Accent-colored raised button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Button
-        </button>
-
-    </div>
-</div>
-
-
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Flat button</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
-
-        <!-- Flat button -->
-        <button class=" mdl-button mdl-js-button mdl-js-ripple-effect">
-            Button
-        </button>
-
-        <button class="mdl-button mdl-js-button">
-            Button
-        </button>
-        <!-- Flat button with ripple -->
-        <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
-            Button
-        </button>
-        <!-- Disabled flat button -->
-        <button class="mdl-button mdl-js-button" disabled="">
-            Button
-        </button>
-
-        <!-- Primary-colored flat button -->
-        <button class="mdl-button mdl-js-button mdl-button--primary">
-            Button
-        </button>
-        <!-- Accent-colored flat button -->
-        <button class="mdl-button mdl-js-button mdl-button--accent">
-            Button
-        </button>
-
-    </div>
-</div>
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Icon buttons</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
-
-        <!-- Icon button -->
-        <button class="mdl-button mdl-js-button mdl-button--icon">
-            <i class="material-icons">mood</i>
-        </button>
-        <!-- Colored icon button -->
-        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-            <i class="material-icons">mood</i>
-        </button>
-
-    </div>
 </div>
 
             </div>
@@ -567,7 +573,6 @@
       <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
-      <link href="../assets/ie.css" rel="stylesheet">
     <![endif]-->
     <!-- end shims -->
     <!-- Enable Prism syntax highlighting -->
@@ -579,13 +584,10 @@
     <script src="..\lib\jquery\jquery-2.1.4.min.js"></script>
     <script src="..\lib\simplebar\simplebar.min.js"></script>
 
-    <script>
 
-    </script>
-
+    
     
         <script src="..\lib\mdl\material.min.js"></script>
-    
     
 
     
