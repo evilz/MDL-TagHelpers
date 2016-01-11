@@ -54,7 +54,19 @@ namespace MaterialDesignLite.WebSample.Controllers
                 },
             });
         }
-        public IActionResult Tabs() { return View(); }
+
+        public IActionResult Tabs()
+        {
+            return View(new PageViewConfig
+            {
+                Header = new Header
+                {
+                    BgColor = MDLColors.DeepPurple,
+                    Title = "Tabs",
+                    SubTitle = "The Material Design Lite (MDL) tab component is a user interface element that allows different content blocks to share the same screen space in a mutually exclusive manner"
+                },
+            });
+        }
         public IActionResult Footer() { return View(); }
         public IActionResult Loading() { return View(); }
         public IActionResult Menus() { return View(); }
