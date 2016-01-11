@@ -1,0 +1,35 @@
+END USER LICENCE FOR DOWNLOADABLE SOFTWARE
+
+PLEASE READ THIS DOCUMENT CAREFULLY BEFORE USING THIS SOFTWARE. THIS LICENCE PROVIDES IMPORTANT INFORMATION CONCERNING THE SOFTWARE, PROVIDES YOU WITH A LICENCE TO USE THE SOFTWARE AND CONTAINS WARRANTY AND LIABILITY INFORMATION. BY USING THE SOFTWARE, YOU ARE ACCEPTING THE SOFTWARE “AS IS” AND AGREEING TO BE BOUND BY THE TERMS OF THIS LICENCE AGREEMENT. IF YOU DO NOT WISH TO DO SO, DO NOT USE THE SOFTWARE.
+
+1. Terms of Licence
+This Licence allows you to:
+(a) use the Software on any number of computers; and
+(b) make copies of the Software for back up purposes.
+
+2. Restrictions on Use
+Unless Cyotek Ltd (the "Owner") has authorised you to distribute the Software, you shall not make or distribute copies of the Software. You shall not decompile, reverse engineer, disassemble, include in other software, or translate the Software. You shall not modify, alter, change or otherwise make any modification to the Software or create derivative works based upon the Software. You shall not rent, lease, resell, sublicense, assign, distribute or otherwise transfer the Software or this Licence. Any attempt to do so shall be void and of no effect.
+
+3. Ownership
+This Licence provides you with limited rights to use the Software. The Owner retains all ownership, right, title and interest in, to and of the Software and all copies of it. All rights not specifically granted in this Licence, including domestic and international copyrights, are reserved by the Owner.
+
+4. Proprietary Markings
+The Owner's logos, product names, manuals, documentation, and other support materials are either patented, copyrighted, trademarked, constitute valuable trade secrets (whether or not any portion of them may be copyrighted or patented) or are otherwise proprietary to the Owner. You shall not remove or obscure the Owner's copyright, trade mark or other proprietary notices from any of the materials contained in this package or downloaded together with the Software.
+
+5. Disclaimer of Warranties and Technical Support
+The Software is provided to you free of charge and on an “AS IS” basis, without any technical support or warranty of any kind including, without limitation, any warranty or condition of merchantability, fitness for a particular purpose and non infringement. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSION MAY NOT APPLY TO YOU. YOU MAY ALSO HAVE OTHER LEGAL RIGHTS WHICH VARY FROM JURISDICTION TO JURISDICTION.
+
+6. Limitation of Liability
+THE OWNER SHALL NOT BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES OR LOSS, INCLUDING DAMAGES FOR LOSS OF BUSINESS, LOSS OF PROFITS, OR THE LIKE, WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), PRODUCT LIABILITY OR OTHERWISE, EVEN IF THE OWNER OR ITS REPRESENTATIVES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OR EXCLUSION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION OR EXCLUSION MAY NOT APPLY TO YOU. The limited warranty, exclusive remedies and limited liability set forth above are fundamental elements of the basis of the agreement between the Owner and you. You agree that would not be able to provide the limitations.
+
+7. Term and Termination
+This Licence Agreement is effective until terminated. You may terminate this Licence Agreement at any other time by destroying all complete and partial copies of the Software in your possession. This Licence and your rights hereunder shall automatically terminate if you fail to comply with any provision of this Licence. Upon such termination, you shall cease all use of the Software and delete the Software and destroy all copies of the Software and other materials related to the Software in your possession or under your control.
+
+8. General Provisions
+(a) This Agreement shall be governed by and construed in accordance with the laws of England and the parties hereby attorn to the jurisdiction of the courts of England.
+(b) This Agreement contains the complete agreement between the parties with respect to the subject matter hereof, and supersedes all prior or contemporaneous agreements or understandings, whether oral or written.
+(c) All questions, comments or concerns with respect to this Agreement shall be directed to: 
+http://www.cyotek.com/
+
+9. Updates
+The Owner may from time to time release new versions of the Software. If you wish to be notified when a new version of the Software is released, you can subscribe to Cyotek update feeds at http://www.cyotek.com/ or use the built in update check if available. All new versions or releases which are provided to you shall be considered part of the Software and shall be governed by the terms of this Licence Agreement.
