@@ -1,0 +1,89 @@
+﻿@section LeftSide
+{
+    <h3>
+        Tabs
+    </h3>
+
+    <p>
+      To be added  </p>
+
+    <div style="margin-top: 30px">
+        <ul class="list-bordered">
+            <li>
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
+                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
+                    Tabs
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+    <mdl-card-title title="Simple Tabs"></mdl-card-title>
+    <mdl-grid>
+        <mdl-cell size="3">
+            <button id="menu-speed" class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="menu-speed">
+                <li class="mdl-menu__item">Fast</li>
+                <li class="mdl-menu__item">Medium</li>
+                <li class="mdl-menu__item">Slow</li>
+
+            </ul>
+        </mdl-cell>
+        <mdl-cell size="3">
+            <mdl-button id="add-btn">Add</mdl-button>
+
+
+            <table for="add-btn" class="mdl-menu mdl-js-menu  mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Material</th>
+                        <th>Quantity</th>
+                        <th>Unit price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                        <td>25</td>
+                        <td>$2.90</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                        <td>50</td>
+                        <td>$1.25</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                        <td>10</td>
+                        <td>$2.35</td>
+                    </tr>
+                </tbody>
+            </table>
+           
+        </mdl-cell>
+    </mdl-grid>
+
+
+            <pre><code class="language-markup">
+&lt;mdl-tabs selected=&quot;0&quot; &gt;
+    &lt;mdl-tab-panel title=&quot;Nunc tincidunt&quot;&gt;
+        &lt;p&gt;Proin elit arcu, m nulla...&lt;/p&gt;
+    &lt;/mdl-tab-panel&gt;
+    &lt;mdl-tab-panel title=&quot;Proin dolor&quot;&gt;
+        &lt;p&gt;Morbi tincidunt,...&lt;/p&gt;
+    &lt;/mdl-tab-panel&gt;
+    &lt;mdl-tab-panel title=&quot;Aenean lacinia&quot;&gt;
+        &lt;p&gt;Mauris eleifend est et turpis...&lt;/p&gt;
+    &lt;/mdl-tab-panel&gt;
+&lt;/mdl-tabs&gt;
+    </code>
+</pre>
+
+
+
+</mdl-card>

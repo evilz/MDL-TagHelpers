@@ -9,3 +9,13 @@
 .mdl-card__actions {
      display: flex; 
 }
+
+
+.mdl-progress {
+    width: 100%;
+}
+
+.mdl-card .mdl-data-table {
+    width: 100%;
+    border:0;
+}

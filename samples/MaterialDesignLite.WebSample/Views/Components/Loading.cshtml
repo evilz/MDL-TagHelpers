@@ -1,0 +1,81 @@
+﻿@section LeftSide
+{
+    <h3>
+        Tabs
+    </h3>
+
+    <p>
+      To be added  </p>
+
+    <div style="margin-top: 30px">
+        <ul class="list-bordered">
+            <li>
+                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
+                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
+                    Tabs
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+    <mdl-card-title title="Progress Bar"></mdl-card-title>
+
+    <mdl-card-supporting-text>
+
+        
+                    <h4>Simple progress bar set to 44%</h4>
+
+        <div id="p1" class="mdl-progress mdl-js-progress"></div>
+        <script>
+            document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+                this.MaterialProgress.setProgress(44);
+            });
+        </script>
+
+                    <h4>Progress Bar with Indeterminate Progress</h4>
+
+        <!-- MDL Progress Bar with Indeterminate Progress -->
+        <div id="p2" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+
+                    <h4>Progress Bar with Buffering</h4>
+
+        <!-- MDL Progress Bar with Buffering -->
+        <div id="p3" class="mdl-progress mdl-js-progress"></div>
+        <script>
+            document.querySelector('#p3').addEventListener('mdl-componentupgraded', function() {
+                this.MaterialProgress.setProgress(33);
+                this.MaterialProgress.setBuffer(87);
+            });
+        </script>
+
+
+
+    </mdl-card-supporting-text>
+    <pre><code class="language-markup">
+    </code>
+</pre>
+    
+    <mdl-card-title title="Spinner"></mdl-card-title>
+
+    <mdl-card-supporting-text>
+
+
+        <h4>Default spinner</h4>
+
+        <!-- MDL Spinner Component -->
+        <div class="mdl-spinner mdl-js-spinner is-active"></div>
+
+        <h4>Spinner Component with Single Color</h4>
+        <!-- MDL Spinner Component with Single Color -->
+        <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+
+
+    </mdl-card-supporting-text>
+    <pre><code class="language-markup">
+    </code>
+</pre>
+
+</mdl-card>

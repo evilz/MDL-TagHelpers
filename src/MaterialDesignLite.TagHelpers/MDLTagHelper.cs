@@ -36,7 +36,7 @@ namespace MaterialDesignLite.TagHelpers
             }
             
             var id = Guid.NewGuid().ToString();
-            output.Attributes["id"] = id;
+            output.Attributes["id"] = "gid_"+id;
             return id;
         }
 
