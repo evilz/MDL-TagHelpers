@@ -12,6 +12,9 @@ namespace MaterialDesignLite.TagHelpers
         [HtmlAttributeName("icon")]
         public StyleValues.MDLIcon MdlIcon { get; set; }
 
+        [HtmlAttributeName("icon-size")]
+        public int IconSize { get; set; }
+
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             output.CleanAttributes(Name);
@@ -21,6 +24,11 @@ namespace MaterialDesignLite.TagHelpers
             output.TagName = "i";
             output.AppendCssClass("material-icons");
             output.Content.SetContent(MdlIcon.Ligature); // TODO : MANAGE IE using codepoint ...
+
+            if (IconSize > 0)
+            {
+                output.Attributes["style"] += $" font-size:{IconSize}px";
+            }
 
             await base.ProcessAsync(context, output);
         }

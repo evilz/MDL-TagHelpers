@@ -39,8 +39,7 @@ namespace MaterialDesignLite.WebSample.Controllers
                     BgColor = MDLColors.Orange,
                     Title = "Cards",
                     SubTitle = "Self-contained pieces of paper with data."
-                },
-                RightOnHeader = false
+                }
             });
         }
         public IActionResult Grid() {

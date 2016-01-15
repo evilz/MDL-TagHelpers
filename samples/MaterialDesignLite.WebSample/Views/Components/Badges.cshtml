@@ -22,63 +22,41 @@
     </div>
 }
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Badges on icon</h2>
-    </div>
-    <div style="padding: 30px;">
-        <mdl-badge class="material-icons mdl-color-text--grey-600 mdl-color-badge--green" style="font-size: 32px; right: -10px;" data="1">account_box</mdl-badge>
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
 
-        <mdl-badge class="material-icons" data="♥">account_box</mdl-badge>
+    <mdl-card-title title="Badges on icon"></mdl-card-title>
 
+    <mdl-grid>
+        <mdl-cell>
+            <mdl-icon icon="@MDLIcons.account_box" mdl-badge="1"></mdl-icon>
+            <h4></h4>
+        </mdl-cell>
+        <mdl-cell>
+            <mdl-icon icon="@MDLIcons.account_box" icon-size="32" mdl-badge="1"></mdl-icon>
+            <mdl-badge class="material-icons mdl-color-text--grey-600 mdl-color-badge--green" style="font-size: 32px; right: -10px;" data="1">account_box</mdl-badge>
+            <h4></h4>
+        </mdl-cell>
+        <mdl-cell>
+            <mdl-badge class="material-icons" data="♥">account_box</mdl-badge>
+        </mdl-cell>
+        <mdl-cell>
+            <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+        </mdl-cell>
+    </mdl-grid>
 
-        <span class="material-icons mdl-badge" data-badge="1">account_box</span>
+    <mdl-card-title title="Badges on label"></mdl-card-title>
 
-        <div class="snippet-code">
+<mdl-grid>
+    <mdl-cell><mdl-badge data="4">Inbox</mdl-badge></mdl-cell>
+    <mdl-cell><a href="#">Inbox</a><span class="mdl-badge" data-badge="4"></span></mdl-cell>
+    <mdl-cell><button class="mdl-button mdl-js-button mdl-button--raised">Inbox<span style="right: 10px;" class="mdl-badge" data-badge="4"></span></button>
 
-            <pre class="language-markup codepen-button-enabled">
-<code id="badge/badge-on-icon-text.html"><!-- number badge on icon -->
-&lt;mdl-badge class=&quot;material-icons mdl-color-text--grey-600 mdl-color-badge--greens&quot; style=&quot;font-size: 32px;right: -10px;&quot; data=&quot;1&quot;&gt;account_box&lt;/mdl-badge&gt;               
-</code>
-<code id="badge/badge-on-icon-icon.html"><!-- Icon badge on icon -->
-&lt;mdl-badge class=&quot;material-icons&quot; data=&quot;♥&quot;&gt;account_box&lt;/mdl-badge&gt; 
-</code>
-</pre>
-        </div>
-
-    </div>
-
-
-
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Badges on label</h2>
-    </div>
-    <div style="padding: 30px; margin: 0;" class="mdl-grid">
-
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
-            <mdl-badge data="4">Inbox</mdl-badge>
-        </div>
-
-
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
-
-            <a href="#">Inbox</a><span class="mdl-badge" data-badge="4"></span>
-        </div>
-
-
-        <div class="mdl-cell mdl-cell--4-col mdl-cell--middle">
-
-            <button class="mdl-button mdl-js-button mdl-button--raised">Inbox<span style="right: 10px;" class="mdl-badge" data-badge="4"></span></button>
-
-            @*element.style {
-                /* right: 10px; */
-                /* position: absolute; */
-                margin-top: -8px;
-                margin-right: 0;
-                position: initial;
-                }*@
-
-        </div>
-    </div>
-
-</div>
+@*element.style {
+    /* right: 10px; */
+    /* position: absolute; */
+    margin-top: -8px;
+    margin-right: 0;
+    position: initial;
+    }*@</mdl-cell>
+</mdl-grid>
+    </mdl-card>
