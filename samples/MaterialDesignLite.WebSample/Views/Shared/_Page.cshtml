@@ -1,6 +1,4 @@
-﻿@using System.Collections
-@using System.Linq
-@model PageViewConfig
+﻿@model PageViewConfig
 @{
     Layout = "_Layout";
     ViewBag.PageHeaderColor = ViewBag.PageHeaderColor ??  MDLColors.Orange;
@@ -47,50 +45,6 @@
 </script>
 }
 
-
-<style>
-    h3 i.material-icons {
-        float: left;
-        margin-right: 5px;
-    }
-
-    .mdl-badge.material-icons:after {
-        right: -10px;
-    }
-
-    .mdl-badge[data-badge].mdl-color-badge--green:after {
-        background-color: rgb(76, 175, 80);
-    }
-
-    .amdl-Section {
-    }
-
-    .amdl-Section-Header {
-        min-height: 140px;
-        padding: 20px;
-    }
-
-    .amdl-Section-Title {
-        margin-top: 20px;
-        margin-bottom: 5px; /*mdl-color-text--white*/
-    }
-
-    .amdl-Section-SubTitle {
-        margin-top: 0px;
-        margin-bottom: 5px;
-        font-weight: 100; /*mdl-color-text--indigo-100*/
-    }
-
-    .amdl-Section-FlatContent {
-        padding-right: 20px;
-        padding: 40px;
-    }
-
-</style>
-
-
-
-
 <section class="amdl-Section">
 
     <div class="amdl-Section-Header" mdl-bgcolor="@Model.Header.BgColor">
@@ -106,12 +60,9 @@
             </div>
         </mdl-cell>
 
-
         <mdl-cell size="9" tablet="8" phone="4" style="margin-top:@marginTopContent;">
             <div style="padding: 20px;">
-
                 @RenderBody()
-
             </div>
         </mdl-cell>
     </mdl-grid>

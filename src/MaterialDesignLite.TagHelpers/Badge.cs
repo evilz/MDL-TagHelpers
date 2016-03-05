@@ -60,7 +60,7 @@ namespace MaterialDesignLite.TagHelpers
         [HtmlAttributeName(MDLTagHelper.TagPrefix + Name)]
         public string Data { get; set; }
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name + "color")]
+        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name + "-color")]
         public MDLColor Color { get; set; }
         
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -73,7 +73,7 @@ namespace MaterialDesignLite.TagHelpers
 
             if (Color != null)
             {
-                output.AppendCssClass("mdl-color-badge--green"); // TODO
+                output.AppendCssClass("mdl-color-badge--" + Color); // TODO
             }
 
             await base.ProcessAsync(context, output);

@@ -14,7 +14,7 @@ namespace MaterialDesignLite.TagHelpers
         [HtmlAttributeName(MDLTagHelper.TagPrefix + Name)]
         public string Text { get; set; }
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name + "Large")]
+        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name + "-large")]
         public bool IsLarge { get; set; }
 
         private string WeightClass => IsLarge ? "mdl-tooltip--large" : string.Empty;

@@ -23,6 +23,21 @@ namespace MaterialDesignLite.WebSample.Controllers
             });
         }
 
-      
+        public IActionResult GettingStarted()
+        {
+            return View(new PageViewConfig
+            {
+                Header = new Header
+                {
+                    BgColor = MDLColors.Cyan,
+                    Title = "Getting Started",
+                    SubTitle = "...."
+                },
+            });
+        }
+
+
+
+
     }
 }

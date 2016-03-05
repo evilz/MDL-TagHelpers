@@ -19,8 +19,7 @@ namespace MaterialDesignLite.TagHelpers
             output.Attributes.RemoveAll(NoSpacingAttributeName);
 
             output.TagName = "div";
-
-            output.Attributes["class"] = "mdl-grid" + NoSpacingClass;
+            output.AppendCssClass("mdl-grid" + NoSpacingClass);
 
             await base.ProcessAsync(context, output);
         }

@@ -25,84 +25,108 @@
 
 <style>
     .demo-grid .mdl-cell {
-    box-sizing: border-box;
-    background-color: #BDBDBD;
-    height: 200px;
-    padding-left: 8px;
-    padding-top: 4px;
-    color: white;
-    height: 100px;
-}
-
+        box-sizing: border-box;
+        background-color: #9e9e9e;
+        padding: 4px;
+        color: white;
+    }
+    .demo-grid .mdl-grid {
+        padding: 0;
+    }
 </style>
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Grid cell vertical align</h2>
-    </div>
-    <div style="padding: 30px;">
 
-        <mdl-grid no-spacing="false" style="height:150px">
-            <mdl-cell size="3" desktop="3" tablet="3" phonedsf="1" valign="MDLCellVAlign.Middle" mdl-bgcolor="MDLColors.Grey">cell on middle</mdl-cell>
-            <mdl-cell size="3" desktop="3" tablet="2" phonedsf="1" valign="MDLCellVAlign.Top" mdl-bgcolor="MDLColors.Grey">cell on top</mdl-cell>
-            <mdl-cell size="3" desktop="3" tablet="2" phonedsf="1" valign="MDLCellVAlign.Bottom" mdl-bgcolor="MDLColors.Grey">cell on bottom</mdl-cell>
-            <mdl-cell size="3" desktop="3" tablet="2" phonedsf="1" valign="MDLCellVAlign.Stretch" mdl-bgcolor="MDLColors.Grey">cell stretch</mdl-cell>
+<mdl-card mdl-shadow="@MdlShadows.Dp2" class="demo-grid">
 
-        </mdl-grid>
-        </div>
-       
-        <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Cell size</h2>
-        </div>
-        <div class="demo-grid" style="padding: 30px;">
+    <mdl-card-title title="Grid cell vertical align"></mdl-card-title>
 
-            
+    <mdl-grid no-spacing="false" style="height:150px">
+                <mdl-cell size="3" desktop="3" tablet="2" phone="1" valign="MDLCellVAlign.Middle" >cell on middle</mdl-cell>
+                <mdl-cell size="3" desktop="3" tablet="2" phone="1" valign="MDLCellVAlign.Top"    >cell on top</mdl-cell>
+                <mdl-cell size="3" desktop="3" tablet="2" phone="1" valign="MDLCellVAlign.Bottom" >cell on bottom</mdl-cell>
+                <mdl-cell size="3" desktop="3" tablet="2" phone="1" valign="MDLCellVAlign.Stretch" >cell stretch</mdl-cell>
 
-            <mdl-grid>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-                <mdl-cell size="1" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">1</mdl-cell>
-            </mdl-grid>
-
-            <mdl-grid>
-                <mdl-cell size="4" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">4</mdl-cell>
-                <mdl-cell size="4" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">4</mdl-cell>
-                <mdl-cell size="4" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">4</mdl-cell>
-            </mdl-grid>
-
-            <mdl-grid>
-                <mdl-cell size="6" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">6</mdl-cell>
-                <mdl-cell size="4" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">4</mdl-cell>
-                <mdl-cell size="2" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">2</mdl-cell>
-            </mdl-grid>
-
-            <mdl-grid>
-                <mdl-cell size="6" tablet="8" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">6 (8 tablet)</mdl-cell>
-                <mdl-cell size="4" tablet="6" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">4 (6 tablet)</mdl-cell>
-                <mdl-cell size="2" phone="2" class="mdl-color-text--white" mdl-bgcolor="MDLColors.Grey">2 (4 phone)</mdl-cell>
             </mdl-grid>
 
 
-
-
-            <div class="snippet-code">
-
-                <pre class="language-markup codepen-button-enabled">
-<code id="badge/badge-on-icon-text.html">
-</code>
+    <pre><code class="language-markup">
+&lt;mdl-grid no-spacing=&quot;false&quot; style=&quot;height:150px&quot;&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Middle&quot;&gt;cell on middle&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Top&quot;&gt;cell on top&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Bottom&quot;&gt;cell on bottom&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Stretch&quot;&gt;cell stretch&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+    </code>
 </pre>
-            </div>
 
-        </div>
+    <mdl-card-title title="Cell size"></mdl-card-title>
+       
+            <mdl-grid>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+                <mdl-cell size="1" >1</mdl-cell>
+            </mdl-grid>
+
+            <mdl-grid>
+                <mdl-cell size="4" >4</mdl-cell>
+                <mdl-cell size="4" >4</mdl-cell>
+                <mdl-cell size="4" >4</mdl-cell>
+            </mdl-grid>
+
+            <mdl-grid>
+                <mdl-cell size="6" >6</mdl-cell>
+                <mdl-cell size="4" >4</mdl-cell>
+                <mdl-cell size="2" >2</mdl-cell>
+            </mdl-grid>
+
+            <mdl-grid>
+                <mdl-cell size="6" tablet="8" >6 (8 tablet)</mdl-cell>
+                <mdl-cell size="4" tablet="6" >4 (6 tablet)</mdl-cell>
+                <mdl-cell size="2" phone="2"  >2 (4 phone)</mdl-cell>
+            </mdl-grid>
+
+<pre><code class="language-markup">
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;6&quot; &gt;6&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;2&quot; &gt;2&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;6&quot; tablet=&quot;8&quot; &gt;6 (8 tablet)&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; tablet=&quot;6&quot; &gt;4 (6 tablet)&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;2&quot; phone=&quot;2&quot;  &gt;2 (4 phone)&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+    </code>
+</pre>
 
 
-</div>
+
+        </mdl-card>

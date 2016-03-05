@@ -19,3 +19,139 @@
     width: 100%;
     border:0;
 }
+
+
+/*  some style */
+
+       .ml-header {
+             min-height: 180px;
+         }
+
+        .mdl-layout__header {
+            transition: all .5s;
+        }
+
+        .list-inline, .list-unstyled {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .list-bordered {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .list-bordered li {
+            border-bottom: 1px rgba(0,0,0,.1) solid;
+            transition: all .1s;
+        }
+
+        .list-bordered li a {
+            display: block;
+            padding: 5px;
+        }
+
+        .list-bordered li a:hover {
+            padding-left: 10px;
+        }
+
+        .ml-card-holder {
+            position: relative;
+        }
+
+        .ml-card-holder.ml-card-holder-first {
+            margin-top: -81px;
+        }
+
+        .mdl-layout-title {
+            font-size: 16px;
+        }
+
+        /*general*/
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            font-family: inherit;
+            font-weight: 400;
+            line-height: 1.1;
+            color: #444;
+        }
+
+        .h1, .h2, .h3, h1, h2, h3 {
+            margin-top: 23px;
+            margin-bottom: 11.5px;
+        }
+
+        .h1, h1 {
+            font-size: 33px;
+        }
+
+        .h2, h2 {
+            font-size: 27px;
+        }
+
+        .h3, h3 {
+            font-size: 23px;
+        }
+
+        .h4, h4 {
+            font-size: 17px;
+        }
+
+        .h5, h5 {
+            font-size: 13px;
+        }
+
+        .h6, h6 {
+            font-size: 12px;
+        }
+
+        a {
+            transition: all .2s;
+            text-decoration: none;
+            color: #058494;
+        }
+
+        /* page style*/
+
+            h3 i.material-icons {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .mdl-badge.material-icons:after {
+        right: -10px;
+    }
+
+    .mdl-badge[data-badge].mdl-color-badge--green:after {
+        background-color: rgb(76, 175, 80);
+    }
+
+    .amdl-Section {
+    }
+
+    .amdl-Section-Header {
+        min-height: 140px;
+        padding: 20px;
+    }
+
+    .amdl-Section-Title {
+        margin-top: 20px;
+        margin-bottom: 5px; /*mdl-color-text--white*/
+    }
+
+    .amdl-Section-SubTitle {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        font-weight: 100; /*mdl-color-text--indigo-100*/
+    }
+
+    .amdl-Section-FlatContent {
+        padding-right: 20px;
+        padding: 40px;
+    }
+
+
+
+    /* special change*/
+
+    .mdl-card .mdl-grid{ width: 100%;}
