@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using MaterialDesignLite.TagHelpers.StyleValues;
-using Microsoft.AspNet.Razor.TagHelpers;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {

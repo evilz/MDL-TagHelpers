@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Razor.TagHelpers;
 using MaterialDesignLite.TagHelpers.StyleValues;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {

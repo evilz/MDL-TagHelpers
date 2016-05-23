@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Razor.TagHelpers;
 using MaterialDesignLite.TagHelpers.StyleValues;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {
@@ -25,7 +25,7 @@ namespace MaterialDesignLite.TagHelpers
         {
             output.Attributes.RemoveAll(TypoAttributeName);
             
-            output.Attributes["class"] = output.Attributes["class"]?.Value + " mdl-typography--" + Typo.ToCssClass();
+            output.AppendCssClass("mdl-typography--" + Typo.ToCssClass());
             
             await base.ProcessAsync(context, output);
         }

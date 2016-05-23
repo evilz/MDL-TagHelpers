@@ -1,6 +1,6 @@
 ﻿using System;
-using Microsoft.AspNet.Razor.TagHelpers;
 using System.Linq;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {
@@ -25,7 +25,7 @@ namespace MaterialDesignLite.TagHelpers
             var finalCssClass = cssClass.ToList();
             finalCssClass.Insert(0, currentValue);
 
-            output.Attributes["class"] = string.Join(" ", finalCssClass);
+            output.Attributes.SetAttribute("class",string.Join(" ", finalCssClass));
         }
 
         public static string GetOrCreateId(this TagHelperOutput output)
@@ -36,7 +36,7 @@ namespace MaterialDesignLite.TagHelpers
             }
             
             var id = "gid_" + Guid.NewGuid().ToString();
-            output.Attributes["id"] = id;
+            output.Attributes.SetAttribute("id",id);
             return id;
         }
 

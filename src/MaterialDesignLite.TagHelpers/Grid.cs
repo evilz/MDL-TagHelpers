@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Razor.TagHelpers;
 using MaterialDesignLite.TagHelpers.StyleValues;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {
@@ -124,12 +124,12 @@ namespace MaterialDesignLite.TagHelpers
 
             output.TagName = "div";
             
-            output.Attributes["class"] = Class + " mdl-cell"
+            output.AppendCssClass("mdl-cell" 
                 + SizeClass
                 + DesktopClass
                 + TabletClass
                 + PhoneClass
-                + VAlignClass;
+                + VAlignClass);
 
             await base.ProcessAsync(context, output);
         }

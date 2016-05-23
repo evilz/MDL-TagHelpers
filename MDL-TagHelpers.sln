@@ -1,23 +1,17 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD-2B06-4030-9F0F-DC548F98E1C4}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MaterialDesignLite.TagHelpers", "src\MaterialDesignLite.TagHelpers\MaterialDesignLite.TagHelpers.xproj", "{4483CCF8-629C-4153-9B53-F3915CECD985}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6082A5A3-233D-4EC9-A27F-B6F86496C66A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B1E46CB5-2ADC-4362-8BC2-472FE1C96F32}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MaterialDesignLite.TagHelpers", "src\MaterialDesignLite.TagHelpers\MaterialDesignLite.TagHelpers.xproj", "{20C1B9BF-8069-439C-8169-D89124E3DDC1}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MaterialDesignLite.WebSample", "src\MaterialDesignLite.WebSample\MaterialDesignLite.WebSample.xproj", "{77FD5764-300D-444A-BD34-4BE2E32343EC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{35DCD93F-330E-4480-B095-5EE48B11A4DC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C2C8A8BD-293B-4D94-8AAE-BB3E5D3A691D}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MaterialDesignLite.WebSample", "samples\MaterialDesignLite.WebSample\MaterialDesignLite.WebSample.xproj", "{2841E400-7103-4497-B957-10A7A647E994}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9BD0AE27-78C6-43D6-B5C5-A21FF02AF3BB}"
-	ProjectSection(SolutionItems) = preProject
-		build.cmd = build.cmd
-		global.json = global.json
-		README.md = README.md
-	EndProjectSection
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MaterialDesignLite.TagHelpers.Tests", "test\MaterialDesignLite.TagHelpers.Tests\MaterialDesignLite.TagHelpers.Tests.xproj", "{321EBF7A-B992-4C78-BAEC-4B4FEF495E57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,20 +19,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20C1B9BF-8069-439C-8169-D89124E3DDC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20C1B9BF-8069-439C-8169-D89124E3DDC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20C1B9BF-8069-439C-8169-D89124E3DDC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20C1B9BF-8069-439C-8169-D89124E3DDC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2841E400-7103-4497-B957-10A7A647E994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2841E400-7103-4497-B957-10A7A647E994}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2841E400-7103-4497-B957-10A7A647E994}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2841E400-7103-4497-B957-10A7A647E994}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4483CCF8-629C-4153-9B53-F3915CECD985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4483CCF8-629C-4153-9B53-F3915CECD985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4483CCF8-629C-4153-9B53-F3915CECD985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4483CCF8-629C-4153-9B53-F3915CECD985}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FD5764-300D-444A-BD34-4BE2E32343EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FD5764-300D-444A-BD34-4BE2E32343EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FD5764-300D-444A-BD34-4BE2E32343EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FD5764-300D-444A-BD34-4BE2E32343EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{321EBF7A-B992-4C78-BAEC-4B4FEF495E57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{321EBF7A-B992-4C78-BAEC-4B4FEF495E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{321EBF7A-B992-4C78-BAEC-4B4FEF495E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{321EBF7A-B992-4C78-BAEC-4B4FEF495E57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{20C1B9BF-8069-439C-8169-D89124E3DDC1} = {6082A5A3-233D-4EC9-A27F-B6F86496C66A}
-		{2841E400-7103-4497-B957-10A7A647E994} = {35DCD93F-330E-4480-B095-5EE48B11A4DC}
+		{4483CCF8-629C-4153-9B53-F3915CECD985} = {B1E46CB5-2ADC-4362-8BC2-472FE1C96F32}
+		{77FD5764-300D-444A-BD34-4BE2E32343EC} = {B1E46CB5-2ADC-4362-8BC2-472FE1C96F32}
+		{321EBF7A-B992-4C78-BAEC-4B4FEF495E57} = {C2C8A8BD-293B-4D94-8AAE-BB3E5D3A691D}
 	EndGlobalSection
 EndGlobal

@@ -1,17 +1,33 @@
 ﻿{
-    "version": "1.0.0.1",
-    "title": "MaterialDesignLite.TagHelpers",
-    "description": "Tag Helper for Material Design Lite components",
-    "authors": [ "Vincent Bourdon" ],
-    "tags": [ "MVC6", "ASPNET5", "Tag Helper", "MDL", "Material Design Lite" ],
-    "projectUrl": "https://github.com/dpaquette/TagHelperSamples",
-    "licenseUrl": "https://github.com/dpaquette/TagHelperSamples/blob/master/LICENSE.txt",
-  "dependencies": {
-    "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
-    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final"
-  },
-    "frameworks": {
-        "dnx451": { },
-        "dnxcore50": { }
+  "version": "1.0.0-*",
+  "authors": [ "Evilz" ],
+  "description": "Material Design Lite Tag Helpers for ASP.NET Core.",
+  "packOptions": {
+    "tags": [ "taghelper", "mdl", "Material design lite" ],
+    "projectUrl": "http://github.com/evilz/MDL-taghelpers",
+    "licenseUrl": "",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/evilz/MDL-taghelpers"
     }
+  },
+  "dependencies": {
+    "Microsoft.AspNetCore.Razor":"1.0.0-rc2-final", 
+    "Microsoft.AspNetCore.Razor.Runtime":"1.0.0-rc2-final", 
+  },
+
+  "frameworks": {
+    "net451": { },
+    "netstandard1.5": {
+      "imports": [
+        "portable-net45+win8"
+      ]
+    }
+  },
+  "tools": {
+        "Microsoft.AspNetCore.Razor.Tools": {
+            "version": "1.0.0-preview1-final",
+            "imports": "portable-net45+win8+dnxcore50"
+        }
+    },
 }

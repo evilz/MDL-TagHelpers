@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
-using Microsoft.AspNet.Razor.Runtime.TagHelpers;
-using Microsoft.AspNet.Razor.TagHelpers;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace MaterialDesignLite.TagHelpers
 {
@@ -27,7 +26,7 @@ namespace MaterialDesignLite.TagHelpers
 
             if (IconSize > 0)
             {
-                output.Attributes["style"] += $" font-size:{IconSize}px";
+                output.Attributes.SetAttribute("style",$" font-size:{IconSize}px");
             }
 
             await base.ProcessAsync(context, output);
