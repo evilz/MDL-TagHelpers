@@ -1,0 +1,3 @@
+# Docker support files
+Docker/
+!Docker/Dockerfile.*

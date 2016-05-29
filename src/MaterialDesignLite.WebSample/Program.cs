@@ -18,6 +18,7 @@ namespace MaterialDesignLite.WebSample
                .Build();
 
             var host = new WebHostBuilder()
+                .UseUrls(Environment.GetEnvironmentVariable("ASPNETCORE_SERVER.URLS") ?? String.Empty)
                 .UseConfiguration(config)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

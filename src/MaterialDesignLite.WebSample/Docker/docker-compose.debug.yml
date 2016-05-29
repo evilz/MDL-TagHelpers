@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  materialdesignlite.websample:
+    build:
+      context: ../..
+      dockerfile: app/Docker/Dockerfile.debug
+    environment:
+      - REMOTE_DEBUGGING=${REMOTE_DEBUGGING}
+    ports:
+      - "80:80"
+    volumes:
+      - ..:/app
