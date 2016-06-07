@@ -1,0 +1,29 @@
+﻿@using MaterialDesignLite.WebSample.ViewModels
+@model PageViewConfig
+@{
+    Layout = "_Layout";
+    ViewBag.Page = ViewBag.Page ?? new[] { "" };
+    
+    ViewBag.Header = ViewBag.Header ?? new Header();
+}
+
+
+<section class="amdl-Section">
+
+    <div class="amdl-Section-Header @ViewBag.Header.BgClass" mdl-bgcolor="@ViewBag.Header.BgColor">
+        <h3 class="amdl-Section-Title mdl-color-text--white">@ViewBag.Header.Title</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--@ViewBag.Header.BgColor.WithBritghness100">@ViewBag.Header.SubTitle</h4>
+    </div>
+
+    <mdl-grid no-spacing="true">
+
+        <mdl-cell size="12" style="margin-top:-81px">
+            <div style="padding: 20px;">
+                @RenderBody()
+            </div>
+        </mdl-cell>
+    </mdl-grid>
+</section>
+
+
+

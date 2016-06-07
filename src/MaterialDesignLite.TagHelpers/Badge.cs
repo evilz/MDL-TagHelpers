@@ -73,7 +73,7 @@ namespace MaterialDesignLite.TagHelpers
 
             if (Color != null)
             {
-                output.AppendCssClass("mdl-color-badge--" + Color); // TODO
+                output.AppendCssClass("mdl-color-badge--" + Color); // TODO  ADD ON
             }
 
             await base.ProcessAsync(context, output);

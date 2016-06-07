@@ -128,11 +128,11 @@ namespace MaterialDesignLite.TagHelpers.StyleValues
 
             { "white",new MDLColor("white") },
             { "black",new MDLColor("black") },
-            { "Primary",new MDLColor("Primary") },
-            { "Primary-contrast",new MDLColor("Primary-contrast") },
-            { "Primary-dark",new MDLColor("Primary-dark") },
-            { "Accent",new MDLColor("Accent") },
-            { "Accent-contrast",new MDLColor("Accent-contrast") },
+            { "Primary",new MDLColor("primary") },
+            { "Primary-contrast",new MDLColor("primary-contrast") },
+            { "Primary-dark",new MDLColor("primary-dark") },
+            { "Accent",new MDLColor("accent") },
+            { "Accent-contrast",new MDLColor("accent-contrast") },
         };
 
         public static IEnumerable<MDLColor> All { get { return _allColors.Values; } }

@@ -1,0 +1,305 @@
+﻿@{
+
+    ViewBag.Page = new[] { "Components", "Layout" };
+
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Blue.WithAlpha400,
+        Title = "Layout",
+        SubTitle = "...."
+    };
+}
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+    <mdl-card-title title="Transparent header"></mdl-card-title>
+    <mdl-card-title subtitle="Uses a header that scrolls with the text, rather than staying locked at the top"></mdl-card-title>
+
+    <mdl-card-supporting-text>
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-layout>
+                <mdl-layout-header>
+                    <mdl-layout-icon></mdl-layout-icon>
+
+                    <mdl-header-row title="Title">
+
+                        <mdl-spacer></mdl-spacer>
+
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Nav link 1</a>
+                            <a mdl-nav-item href="#">Nav link 2</a>
+                            <a mdl-nav-item href="#">Nav link 3</a>
+                            <a mdl-nav-item href="#">Nav link 4</a>
+                        </mdl-nav>
+
+                    </mdl-header-row>
+                </mdl-layout-header>
+
+                <mdl-drawer title="Title">
+                    <mdl-nav>
+                        <a mdl-nav-item href="#">Link</a>
+                        <a mdl-nav-item href="#">Link</a>
+                        <a mdl-nav-item href="#">Link</a>
+                        <a mdl-nav-item href="#">Link</a>
+                    </mdl-nav>
+                </mdl-drawer>
+
+                <main class="mdl-layout__content">
+                    <div class="page-content"></div>
+                </main>
+
+            </mdl-layout>
+        </mdl-card>
+    </mdl-card-supporting-text>
+
+
+    <!--Fixed Drawer-->
+    <mdl-card>
+
+        <mdl-card-title title="Fixed drawer, no header"></mdl-card-title>
+        <mdl-card-title subtitle="No header, and the drawer stays open on larger screens (fixed drawer)."></mdl-card-title>
+
+        <mdl-card-supporting-text>
+            <mdl-card mdl-shadow="@MdlShadows.Dp2">
+                <mdl-layout fixed-drawer="true">
+
+                    <mdl-drawer title="Title">
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                        </mdl-nav>
+                    </mdl-drawer>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </mdl-layout>
+            </mdl-card>
+        </mdl-card-supporting-text>
+
+    </mdl-card>
+
+    <!--Fixed Header & Drawer-->
+    <mdl-card>
+
+        <mdl-card-title title="Fixed header and drawer"></mdl-card-title>
+        <mdl-card-title subtitle="The drawer is always open in large screens. The header is always shown, even in small screens."></mdl-card-title>
+
+        <mdl-card-supporting-text>
+            <mdl-card mdl-shadow="@MdlShadows.Dp2">
+                <mdl-layout fixed-drawer="true">
+                    <mdl-layout-header>
+                        <mdl-layout-icon></mdl-layout-icon>
+
+                        <mdl-header-row title="My title">
+
+                            <mdl-spacer></mdl-spacer>
+
+                            <mdl-nav>
+                                <a mdl-nav-item href="#">Nav link 1</a>
+                                <a mdl-nav-item href="#">Nav link 2</a>
+                                <a mdl-nav-item href="#">Nav link 3</a>
+                            </mdl-nav>
+
+                        </mdl-header-row>
+                    </mdl-layout-header>
+
+                    <mdl-drawer title="Title">
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                        </mdl-nav>
+                    </mdl-drawer>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </mdl-layout>
+            </mdl-card>
+        </mdl-card-supporting-text>
+
+    </mdl-card>
+
+    <!--Scrolling header-->
+    <mdl-card>
+
+        <mdl-card-title title="Scrolling header"></mdl-card-title>
+        <mdl-card-title subtitle="Uses a header that scrolls with the text, rather than staying locked at the top"></mdl-card-title>
+
+        <mdl-card-supporting-text>
+            <mdl-card mdl-shadow="@MdlShadows.Dp2">
+                <mdl-layout fixed-drawer="true">
+                    <mdl-layout-header>
+                        <mdl-layout-icon></mdl-layout-icon>
+
+                        <mdl-header-row title="My title">
+
+                            <mdl-spacer></mdl-spacer>
+
+                            <mdl-nav>
+                                <a mdl-nav-item href="#">Nav link 1</a>
+                                <a mdl-nav-item href="#">Nav link 2</a>
+                                <a mdl-nav-item href="#">Nav link 3</a>
+                            </mdl-nav>
+
+                        </mdl-header-row>
+                    </mdl-layout-header>
+
+                    <mdl-drawer title="Title">
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                        </mdl-nav>
+                    </mdl-drawer>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </mdl-layout>
+            </mdl-card>
+        </mdl-card-supporting-text>
+
+    </mdl-card>
+
+    <!--Waterfall header-->
+    <mdl-card>
+
+        <mdl-card-title title="Waterfall header"></mdl-card-title>
+        <mdl-card-title subtitle="Uses a header that contracts as the page scrolls down."></mdl-card-title>
+
+        <mdl-card-supporting-text>
+            <mdl-card mdl-shadow="@MdlShadows.Dp2">
+                <mdl-layout fixed-drawer="true">
+                    <mdl-layout-header>
+                        <mdl-layout-icon></mdl-layout-icon>
+
+                        <mdl-header-row title="My title">
+
+                            <mdl-spacer></mdl-spacer>
+
+                            <mdl-nav>
+                                <a mdl-nav-item href="#">Nav link 1</a>
+                                <a mdl-nav-item href="#">Nav link 2</a>
+                                <a mdl-nav-item href="#">Nav link 3</a>
+                            </mdl-nav>
+
+                        </mdl-header-row>
+                    </mdl-layout-header>
+
+                    <mdl-drawer title="Title">
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                        </mdl-nav>
+                    </mdl-drawer>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </mdl-layout>
+            </mdl-card>
+        </mdl-card-supporting-text>
+
+    </mdl-card>
+
+
+    <!--Scrollable tabs-->
+    <mdl-card>
+
+        <mdl-card-title title="Scrollable tabs"></mdl-card-title>
+        <mdl-card-title subtitle="Simple header with scrollable tabs."></mdl-card-title>
+
+        <mdl-card-supporting-text>
+            <mdl-card mdl-shadow="@MdlShadows.Dp2">
+                <mdl-layout fixed-drawer="true">
+                    <mdl-layout-header>
+                        <mdl-layout-icon></mdl-layout-icon>
+
+                        <mdl-header-row title="My title">
+
+                            <mdl-spacer></mdl-spacer>
+
+                            <mdl-nav>
+                                <a mdl-nav-item href="#">Nav link 1</a>
+                                <a mdl-nav-item href="#">Nav link 2</a>
+                                <a mdl-nav-item href="#">Nav link 3</a>
+                            </mdl-nav>
+
+                        </mdl-header-row>
+                    </mdl-layout-header>
+
+                    <mdl-drawer title="Title">
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                        </mdl-nav>
+                    </mdl-drawer>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </mdl-layout>
+            </mdl-card>
+        </mdl-card-supporting-text>
+
+    </mdl-card>
+
+    <!--Fixed tabs-->
+    <mdl-card>
+
+        <mdl-card-title title="Fixed tabs"></mdl-card-title>
+        <mdl-card-title subtitle="Simple header with fixed tabs"></mdl-card-title>
+
+        <mdl-card-supporting-text>
+            <mdl-card mdl-shadow="@MdlShadows.Dp2">
+                <mdl-layout fixed-drawer="true">
+                    <mdl-layout-header>
+                        <mdl-layout-icon></mdl-layout-icon>
+
+                        <mdl-header-row title="My title">
+
+                            <mdl-spacer></mdl-spacer>
+
+                            <mdl-nav>
+                                <a mdl-nav-item href="#">Nav link 1</a>
+                                <a mdl-nav-item href="#">Nav link 2</a>
+                                <a mdl-nav-item href="#">Nav link 3</a>
+                            </mdl-nav>
+
+                        </mdl-header-row>
+                    </mdl-layout-header>
+
+                    <mdl-drawer title="Title">
+                        <mdl-nav>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                            <a mdl-nav-item href="#">Link</a>
+                        </mdl-nav>
+                    </mdl-drawer>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </mdl-layout>
+            </mdl-card>
+        </mdl-card-supporting-text>
+
+    </mdl-card>
+
+</mdl-card>

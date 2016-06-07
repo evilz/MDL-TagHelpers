@@ -47,6 +47,7 @@ namespace MaterialDesignLite.TagHelpers
         {
             output.TagName = "div";
             output.AppendCssClass("mdl-card__title");
+            output.TagMode = TagMode.StartTagAndEndTag;
             if (Expand)
             { output.AppendCssClass("mdl-card--expand"); }
 

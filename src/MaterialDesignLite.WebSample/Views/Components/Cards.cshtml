@@ -1,23 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+
+    ViewBag.Page = new[] { "Components", "Cards" };
+
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Purple,
+        Title = "Cards",
+        SubTitle = "A card is a sheet of material that serves as an entry point to more detailed information. A card could contain a photo, text, and a link about a single subject."
+    };
 }
 
-@section LeftSide
-{
-
-    <p>A card is a sheet of material that serves as an entry point to more detailed information. A card could contain a photo, text, and a link about a single subject.</p>
-
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Card title
-                </a>
-            </li>
-        </ul>
-    </div>
-}
 
 
 <mdl-grid>

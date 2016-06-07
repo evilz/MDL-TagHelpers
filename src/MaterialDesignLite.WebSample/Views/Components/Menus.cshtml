@@ -1,27 +1,25 @@
-﻿@section LeftSide
-{
-    <h3>
-        Tabs
-    </h3>
+﻿@{
 
-    <p>
-      To be added  </p>
+    ViewBag.Page = new[] { "Components", "Menu" };
 
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Tabs
-                </a>
-            </li>
-        </ul>
-    </div>
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.LightBlue,
+        Title = "Menus",
+        SubTitle = "blabla"
+    };
 }
+
+<style>
+    .mdl-card {
+        overflow: visible;
+    }
+
+</style>
 
 <mdl-card mdl-shadow="@MdlShadows.Dp2">
 
-    <mdl-card-title title="Simple Tabs"></mdl-card-title>
+    <mdl-card-title title="Simple menu"></mdl-card-title>
     <mdl-grid>
         <mdl-cell size="3">
             <button id="menu-speed" class="mdl-button mdl-js-button mdl-button--icon">
@@ -64,12 +62,12 @@
                     </tr>
                 </tbody>
             </table>
-           
+
         </mdl-cell>
     </mdl-grid>
 
 
-            <pre><code class="language-markup">
+    <pre><code class="language-markup">
 &lt;mdl-tabs selected=&quot;0&quot; &gt;
     &lt;mdl-tab-panel title=&quot;Nunc tincidunt&quot;&gt;
         &lt;p&gt;Proin elit arcu, m nulla...&lt;/p&gt;
@@ -87,3 +85,90 @@
 
 
 </mdl-card>
+
+<br />
+
+<mdl-grid>
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" title="&nbsp;" mdl-color="@MDLColors.White" mdl-bgcolor="@MDLColors.Primary" />
+            <div class="mdl-card__menu" style="left: 15px;right: auto">
+
+                <mdl-button mdl-color="@MDLColors.White"
+                            id="demo-menu-lower-left" icon="true">
+                    <mdl-icon icon="@MDLIcons.more_vert"/>
+                </mdl-button>
+
+                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-left">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </mdl-card>
+    </mdl-cell>
+
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" title="Left aligned menu" mdl-color="@MDLColors.White" mdl-bgcolor="@MDLColors.Primary"/>
+            <div class="mdl-card__menu">
+
+                <mdl-button mdl-color="@MDLColors.White" id="demo-menu-lower-right" icon="true"><mdl-icon icon="@MDLIcons.more_vert"></mdl-icon></mdl-button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </mdl-card>
+    </mdl-cell>
+
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" title="Left aligned menu" mdl-color="@MDLColors.White" mdl-bgcolor="@MDLColors.Primary"/>
+            <div class="mdl-card__menu">
+
+                <mdl-button mdl-color="@MDLColors.White" id="demo-menu-lower-right" icon="true"><mdl-icon icon="@MDLIcons.more_vert"></mdl-icon></mdl-button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </mdl-card>
+    </mdl-cell>
+
+
+    <mdl-cell size="3">
+        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+            <mdl-card-title title-size="@MdlCardTitleSize.H2" title="Left aligned menu" mdl-color="@MDLColors.White" mdl-bgcolor="@MDLColors.Primary" />
+            <div class="mdl-card__menu">
+
+                <mdl-button mdl-color="@MDLColors.White" id="demo-menu-lower-right" icon="true"><mdl-icon icon="@MDLIcons.more_vert"></mdl-icon></mdl-button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </mdl-card>
+    </mdl-cell>
+
+</mdl-grid>

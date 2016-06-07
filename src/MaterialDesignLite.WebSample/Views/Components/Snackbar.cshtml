@@ -1,0 +1,82 @@
+﻿@{
+
+    ViewBag.Page = new[] { "Components", "Snackbar" };
+
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Red,
+        Title = "Snackbar",
+        SubTitle = "Transient popup notifications."
+    };
+}
+<mdl-card mdl-shadow="@MdlShadows.Dp2" id="snackbarContainer">
+
+    <mdl-card-title title="Snackbar"></mdl-card-title>
+
+    <mdl-card-supporting-text>
+        <mdl-grid>
+            <mdl-cell>
+                <mdl-card-title subtitle="Snackbar"></mdl-card-title>
+                <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Show Snackbar</button>
+                <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+                    <div class="mdl-snackbar__text"></div>
+                    <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+                <script>
+                    (function() {
+                        'use strict';
+                        var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                        var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+                        var handler = function(event) {
+                            showSnackbarButton.style.backgroundColor = '';
+                        };
+                        showSnackbarButton.addEventListener('click',
+                            function() {
+                                'use strict';
+                                showSnackbarButton.style.backgroundColor = '#' +
+                                    Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                                var data = {
+                                    message: 'Button color changed.',
+                                    timeout: 2000,
+                                    actionHandler: handler,
+                                    actionText: 'Undo'
+                                };
+                                snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                            });
+                    }());
+                </script>
+            </mdl-cell>
+           
+
+            <mdl-cell>
+
+                <mdl-card-title subtitle="Toast"></mdl-card-title>
+
+                <button id="demo-show-toast" class="mdl-button mdl-js-button mdl-button--raised" type="button">Show Toast</button>
+                <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+                    <div class="mdl-snackbar__text"></div>
+                    <button class="mdl-snackbar__action" type="button"></button>
+                </div>
+                <script>
+                    (function () {
+                        'use strict';
+                        window['counter'] = 0;
+                        var snackbarContainer = document.querySelector('#snackbarContainer');
+                        var showToastButton = document.querySelector('#demo-show-toast');
+                        showToastButton.addEventListener('click', function () {
+                            'use strict';
+                            var data = { message: 'Example Message # ' + ++counter };
+                            snackbarContainer.MaterialSnackbar.showSnackbar(data);
+                        });
+                    }());
+                </script>
+            </mdl-cell>
+        </mdl-grid>
+    </mdl-card-supporting-text>
+
+    <pre><code class="language-markup">
+    </code>
+</pre>
+
+
+</mdl-card>

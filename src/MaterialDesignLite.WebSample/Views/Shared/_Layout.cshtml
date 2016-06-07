@@ -1,7 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
@@ -41,13 +40,8 @@
 
         <link rel="stylesheet" href="~/lib/mdl/material.min.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-      
-
-
     </environment>
     <environment names="Staging,Production">
-
-
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
@@ -60,10 +54,8 @@
 
 </head>
 
-
 <body>
-
-    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout has-drawer ">
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout">
         @Html.Partial("_Header")
 
         @Html.Partial("_Drawer")
@@ -72,7 +64,6 @@
             @RenderBody()
         </main>
 
-        <div class="mdl-layout__obfuscator"></div>
     </div>
 
 

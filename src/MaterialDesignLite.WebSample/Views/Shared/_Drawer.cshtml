@@ -40,6 +40,12 @@
         padding: 0;
     }
 
+      .mdl-layout__drawer .mdl-navigation ul {
+            padding-right: 0;
+            list-style:none;
+            margin:0;
+        }
+
         .mdl-layout__drawer .mdl-navigation li {
             position: relative;
             line-height: 0;
@@ -48,12 +54,16 @@
             flex-shrink: 0;
         }
 
+            .mdl-layout__drawer .mdl-navigation li .mdl-navigation__link {
+                padding-left: 50px;
+            }
+
         .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-            background-color: rgba(255,255,255,.2);
+            background-color: rgba(0,0,0,.2);
             color: #fff;
         }
 
-    .demo-navigation .mdl-navigation__link .material-icons {
+    .demo-navigation .mdl-navigation__link>.material-icons {
         margin-right: 10px;
         font-size: 18px;
         color: #bababa !important;
@@ -86,88 +96,73 @@
         margin: 0;
     }
 
-    .mdl-layout__drawer .mdl-navigation li li a.mdl-navigation__link {
-        padding: 8px 20px 8px 48px;
-    }
-
     .collapse {
         height: 0;
         display: none;
     }
 </style>
 
-<div style="border-right: 0" class="mdl-layout__drawer mdl-color-text--blue-grey-50 mdl-color--grey-900" data-simplebar-direction="vertical" >
 
+    <mdl-drawer mdl-color="@MDLColors.BlueGrey.WithBritghness50" mdl-bgcolor="@MDLColors.Grey.WithBritghness900" style="border-right: 0" 
+            data-simplebar-direction="vertical">
+        
     <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
 
         <div class="brand-logo">
-            <div class="logo" style="background-image: url(@Url.Content("~/images/logo.png"));" >
+            <div class="logo" style="background-image: url(@Url.Content("~/images/logo.png"));">
                 ASPNET MDL
             </div>
         </div>
     </header>
 
- 
-        <ul style="margin-top: 0;" close-others="false" class="demo-navigation mdl-navigation" >
-            <li class="active">
-                <a class="mdl-navigation__link " asp-action="Index" asp-controller="Home"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>About</a>
-            </li>
-            <li>
-                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">power_settings_new</i>Getting Started</a>
-            </li>
+        <mdl-nav style="margin-top: 0;padding-bottom:50px;" class="demo-navigation">
+            <a mdl-nav-item href="/"><mdl-icon icon="@MDLIcons.home" />About</a>
+            <a mdl-nav-item href="/GettingStarted"><mdl-icon icon="@MDLIcons.power_settings_new" />Getting Started</a>
+
+            <a mdl-nav-item href="">
+               
+                <mdl-icon icon="@MDLIcons.extension"/>Components
+                <div style="position: absolute; right: 7px;    margin-top: -3px;">
+                    <mdl-icon icon="@MDLIcons.arrow_drop_down" mdl-color="@MDLColors.Green" />
+                </div>
+            </a>
+
+                    <ul class="mdl-navigation in">
+                        <li><a mdl-nav-item href="/Components/Badges"><mdl-icon icon="@MDLIcons.info"/>Badges</a></li>
+                        <li><a mdl-nav-item href="/Components/Buttons"><mdl-icon icon="@MDLIcons.touch_app" />Buttons</a></li>
+                        <li><a mdl-nav-item href="/Components/Cards"><mdl-icon icon="@MDLIcons.credit_card" />Cards</a></li>
+                        <li><a mdl-nav-item href="/Components/Dialog"><mdl-icon icon="@MDLIcons.message" />Dialog</a></li>
+                        <li><a mdl-nav-item href="/Components/Footer"><mdl-icon icon="@MDLIcons.vertical_align_bottom" />Footer</a></li>
+                        <li><a mdl-nav-item href="/Components/Grid"><mdl-icon icon="@MDLIcons.view_module" />Grid</a></li>
+                        <li><a mdl-nav-item href="/Components/Layout"><mdl-icon icon="@MDLIcons.view_quilt" />Layout</a></li>
+                        <li><a mdl-nav-item href="/Components/List"><mdl-icon icon="@MDLIcons.format_list_bulleted" />List</a></li>
+                        <li><a mdl-nav-item href="/Components/Loading"><mdl-icon icon="@MDLIcons.autorenew" />Loading</a></li>
+                        <li><a mdl-nav-item href="/Components/Menus"><mdl-icon icon="@MDLIcons.menu" />Menus</a></li>
+                        <li><a mdl-nav-item href="/Components/Sliders"><mdl-icon icon="@MDLIcons.settings_ethernet" />Sliders</a></li>
+                        <li><a mdl-nav-item href="/Components/Snackbar"><mdl-icon icon="@MDLIcons.picture_in_picture_alt" />Snackbar</a></li>
+                        <li><a mdl-nav-item href="/Components/Tables"><mdl-icon icon="@MDLIcons.view_column" />Tables</a></li>
+                        <li><a mdl-nav-item href="/Components/Tabs"><mdl-icon icon="@MDLIcons.tab" />Tabs</a></li>
+                        <li><a mdl-nav-item href="/Components/TextFields"><mdl-icon icon="@MDLIcons.input" />Text Fields</a></li>
+                        <li><a mdl-nav-item href="/Components/Toggles"><mdl-icon icon="@MDLIcons.radio_button_checked" />Toggles</a></li>
+                        <li><a mdl-nav-item href="/Components/Tooltips"><mdl-icon icon="@MDLIcons.mode_comment" />Tooltips</a></li>
 
 
-            <li>
-                <a class="mdl-navigation__link" href="">
-                    <div style="position: absolute; right: 7px;">
-                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_down</span></i>
-                    </div>
+                    </ul>
+              
+            <a mdl-nav-item href="">
+                
+                <mdl-icon icon="@MDLIcons.format_align_left" />Style
+                <div style="position: absolute; right: 7px;    margin-top: -25px;">
+                    <mdl-icon icon="@MDLIcons.arrow_drop_down" mdl-color="@MDLColors.Green" />
+                </div>
+            </a>
+            <ul class="mdl-navigation in">
+                <ml-menu-group-heading class=""></ml-menu-group-heading>
+                <li><a mdl-nav-item href="/Style/Typography"><mdl-icon icon="@MDLIcons.text_format" />Typography</a></li>
+                <li><a mdl-nav-item href="/Style/Colors"><mdl-icon icon="@MDLIcons.invert_colors" />Color</a></li>
+                <li><a mdl-nav-item href="/Style/Icons"><mdl-icon icon="@MDLIcons.insert_emoticon" />Icons</a></li>
+                <li><a mdl-nav-item href="/Style/Shadows"><mdl-icon icon="@MDLIcons.layers" />Shadow</a></li>
+            </ul>
+</mdl-nav>
 
-                    <i class="mdl-color-text--blue-grey-400 material-icons ">extension</i><span class="">
-                        Components
-                    </span>
-                </a>
-                <ul class="mdl-navigation in" style="height: auto;">
-                    <ml-menu-group-heading class=""></ml-menu-group-heading>
-
-                    <li><a class="mdl-navigation__link"   asp-action="Badges"   asp-controller="Components"><i class="material-icons">info</i>Badges</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Buttons"  asp-controller="Components"><i class="material-icons">touch_app</i>Buttons</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Cards"    asp-controller="Components"><i class="material-icons">credit_card</i>Cards</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Grid"  asp-controller="Components"><i class="material-icons">view_module</i>Grid</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Tabs"     asp-controller="Components"><i class="material-icons">tab</i>Tabs</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Footer"   asp-controller="Components"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Loading"  asp-controller="Components"><i class="material-icons">autorenew</i>Loading</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Menus"    asp-controller="Components"><i class="material-icons">menu</i>Menus</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Sliders"  asp-controller="Components"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Toggles"  asp-controller="Components"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Tables"   asp-controller="Components"><i class="material-icons">view_column</i>Tables</a></li>
-                    <li><a class="mdl-navigation__link " asp-controller="Components"  asp-action="TextFields" ><i class="material-icons">input</i>Text Fields</a></li>
-                    <li><a class="mdl-navigation__link "  asp-action="Tooltips" asp-controller="Components"><i class="material-icons">mode_comment</i>Tooltips</a></li>
-
-                </ul>
-            </li>
-
-            <li>
-                <a class="mdl-navigation__link" href="">
-                    <div class="absolute" style="position: absolute; right: 7px;">
-                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_up</span></i>
-                    </div>
-
-                    <i class="mdl-color-text--blue-grey-400 material-icons ">format_align_left</i><span class="">Style</span>
-                </a>
-                <ul class="mdl-navigation in">
-                    <ml-menu-group-heading class=""></ml-menu-group-heading>
-                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Typography"><i class="material-icons">text_format</i>Typography</a></li>
-                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Colors"><i class="material-icons">invert_colors</i>Color</a></li>
-                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Icons"><i class="material-icons">insert_emoticon</i>Icons</a></li>
-                    <li><a class="mdl-navigation__link " asp-controller="Style" asp-action="Shadows"><i class="material-icons">layers</i>Shadow</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">link</i>GitHub</a>
-            </li>
-
-        </ul>
-   
-</div>
+</mdl-drawer>

@@ -1,22 +1,13 @@
-﻿@section LeftSide
-{
-    <h3>
-        Tabs
-    </h3>
+﻿@{
 
-    <p>
-      To be added  </p>
+    ViewBag.Page = new[] { "Components", "Loading" };
 
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Tabs
-                </a>
-            </li>
-        </ul>
-    </div>
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Blue,
+        Title = "Grid",
+        SubTitle = "blabla"
+    };
 }
 
 <mdl-card mdl-shadow="@MdlShadows.Dp2">

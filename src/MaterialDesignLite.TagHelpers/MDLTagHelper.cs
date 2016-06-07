@@ -22,10 +22,10 @@ namespace MaterialDesignLite.TagHelpers
                 ? output.Attributes["class"].Value.ToString() 
                 : string.Empty;
 
-            var finalCssClass = cssClass.ToList();
+            var finalCssClass = cssClass.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
             finalCssClass.Insert(0, currentValue);
 
-            output.Attributes.SetAttribute("class",string.Join(" ", finalCssClass));
+            output.Attributes.SetAttribute("class",string.Join(" ", finalCssClass).Trim(' '));
         }
 
         public static string GetOrCreateId(this TagHelperOutput output)

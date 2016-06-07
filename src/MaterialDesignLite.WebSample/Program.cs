@@ -18,7 +18,7 @@ namespace MaterialDesignLite.WebSample
                .Build();
 
             var host = new WebHostBuilder()
-                .UseUrls(Environment.GetEnvironmentVariable("ASPNETCORE_SERVER.URLS") ?? String.Empty)
+                .UseUrls(Environment.GetEnvironmentVariable("ASPNETCORE_SERVER.URLS") ?? "http://winbookair:5000")
                 .UseConfiguration(config)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

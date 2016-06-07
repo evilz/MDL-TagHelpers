@@ -1,44 +1,51 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+
+    ViewBag.Page = new[] { "Components", "Badges" };
+
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Red,
+        Title = "Badge",
+        SubTitle = "badge component is an onscreen notification element"
+    };
 }
-
-@section LeftSide
-{
-    <h3>
-        <mdl-icon icon="@MDLIcons.live_help"></mdl-icon> Attributes
-    </h3>
-
-    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
-
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
-                </a>
-            </li>
-        </ul>
-    </div>
-}
-
 <mdl-card mdl-shadow="@MdlShadows.Dp2">
 
     <mdl-card-title title="Badges on icon"></mdl-card-title>
 
-    <mdl-grid>
-        <mdl-cell size="4">
-            <mdl-icon icon="@MDLIcons.account_box" mdl-badge="1"></mdl-icon>
-        </mdl-cell>
+    <mdl-card-supporting-text>
+        <mdl-grid>
+            <mdl-cell>
+                <mdl-card-title subtitle="Default"></mdl-card-title>
 
-        <mdl-cell size="4">
-            <mdl-icon icon="@MDLIcons.account_box" mdl-badge="♥"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="1"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="a"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="A"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="♥"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="☀"></mdl-icon>
 
-        </mdl-cell>
-        <mdl-cell size="4">
-            <mdl-icon icon="@MDLIcons.account_box" icon-size="64" mdl-badge="1" mdl-badge-color="@MDLColors.Green"></mdl-icon>
-        </mdl-cell>
-    </mdl-grid>
+            </mdl-cell>
+            <mdl-cell>
+
+                <mdl-card-title subtitle="With colors"></mdl-card-title>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="1" mdl-badge-color="@MDLColors.Green"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="a" mdl-badge-color="@MDLColors.LightBlue"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="A" mdl-badge-color="@MDLColors.Orange"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" mdl-badge="☀" mdl-badge-color="@MDLColors.Red"></mdl-icon>
+
+               
+            </mdl-cell>
+
+            <mdl-cell>
+
+                <mdl-card-title subtitle="Many sizess"></mdl-card-title>
+                <mdl-icon icon="@MDLIcons.account_box" icon-size="24" mdl-badge="1" mdl-badge-color="@MDLColors.Green"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" icon-size="32" mdl-badge="1" mdl-badge-color="@MDLColors.Green"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" icon-size="64" mdl-badge="1" mdl-badge-color="@MDLColors.Green"></mdl-icon>
+                <mdl-icon icon="@MDLIcons.account_box" icon-size="128" mdl-badge="1" mdl-badge-color="@MDLColors.Green"></mdl-icon>
+            </mdl-cell>
+        </mdl-grid>
+    </mdl-card-supporting-text>
 
     <pre><code class="language-markup">
 &lt;!-- Badge number on icon --&gt;
@@ -58,25 +65,24 @@
 
     <mdl-card-title title="Badges on label"></mdl-card-title>
 
-    <mdl-grid>
-        <mdl-cell size="4">
-            <span mdl-badge="4">Inbox</span>
-        </mdl-cell>
-        <mdl-cell size="4"><a href="#" mdl-badge="4">Inbox</a></mdl-cell>
-        <mdl-cell size="4">
-            <span mdl-badge="4">
-                <mdl-button>Inbox</mdl-button>
-            </span>
-        </mdl-cell>
-    </mdl-grid>
-
+    <mdl-card-supporting-text>
+        <mdl-grid>
+            <mdl-cell>
+                <span mdl-badge="4">Inbox</span>
+            </mdl-cell>
+            <mdl-cell ><a href="#" mdl-badge="4">Inbox</a></mdl-cell>
+            <mdl-cell >
+                <span mdl-badge="4">
+                    <mdl-button>Inbox</mdl-button>
+                </span>
+            </mdl-cell>
+        </mdl-grid>
+        </mdl-card-supporting-text>
 <pre><code class="language-markup">
 &lt;!--  Badge on label --&gt;
 &lt;span mdl-badge=&quot;4&quot;&gt;Inbox&lt;/span&gt;
-
 &lt;!--  Badge on link --&gt;
 &lt;a href=&quot;#&quot; mdl-badge=&quot;4&quot;&gt;Inbox&lt;/a&gt;
-
 &lt;!--  Badge on button --&gt;
 &lt;span mdl-badge=&quot;4&quot;&gt;
     &lt;mdl-button&gt;Inbox&lt;/mdl-button&gt;

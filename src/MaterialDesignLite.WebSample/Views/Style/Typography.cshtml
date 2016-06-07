@@ -1,21 +1,12 @@
-﻿@section LeftSide
-{
-    <h3>Typeface</h3>
+﻿@{
+    ViewBag.Page = new[] { "Components", "Typography" };
 
-    <p>Roboto</p>
-    <p>
-        Roboto has been refined extensively to work across the wider set of supported platforms. It is slightly wider and rounder, giving it greater clarity and making it more optimistic.
-        </p>
-<div style="margin-top: 30px">
-            <ul class="list-bordered">
-                <li>
-                    <a target="_blank" href="https://www.google.com/design/spec/style/color.html#">
-                        <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                        Material design colors spec
-                    </a>
-                </li>
-            </ul>
-        </div>
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.DeepOrange,
+        Title = "Typeface",
+        SubTitle = "Roboto has been refined extensively to work across the wider set of supported platforms."
+    };
 }
 
 

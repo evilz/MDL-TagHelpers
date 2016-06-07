@@ -1,0 +1,92 @@
+﻿@{
+
+    ViewBag.Page = new[] { "Components", "Dialog" };
+
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Red,
+        Title = "Dialog",
+        SubTitle = "Modal windows for dedicated user input."
+    };
+}
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+    <mdl-card-title title="Simple dialog"></mdl-card-title>
+    <mdl-card-supporting-text>
+        <button id="show-dialog-simple" type="button" class="mdl-button">Show Dialog</button>
+        <dialog id="dialog-simple" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Allow data collection?</h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Allowing us to collect data will let us get you the information you want faster.
+                </p>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button">Agree</button>
+                <button type="button" class="mdl-button close">Disagree</button>
+            </div>
+        </dialog>
+        <script>
+            var dialogSimple = document.querySelector('#dialog-simple');
+            var showDialogButton = document.querySelector('#show-dialog-simple');
+            if (!dialogSimple.showModal) {
+                dialogPolyfill.registerDialog(dialogSimple);
+            }
+            showDialogButton.addEventListener('click',
+                function() {
+                    dialogSimple.showModal();
+                });
+            dialogSimple.querySelector('.close')
+                .addEventListener('click',
+                    function() {
+                        dialogSimple.close();
+                    });
+        </script>
+    </mdl-card-supporting-text>
+    <pre><code class="language-markup">
+
+
+    </code>
+</pre>
+
+</mdl-card>
+
+
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+    <mdl-card-title title="Dialog with full width action"></mdl-card-title>
+    <mdl-card-supporting-text>
+        <button id="show-full-width" type="button" class="mdl-button show-modal">Show Modal</button>
+        <dialog id="full-width" class="mdl-dialog">
+            <div class="mdl-dialog__content">
+                <p>
+                    Allow this site to collect usage data to improve your experience?
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button type="button" class="mdl-button">Agree</button>
+                <button type="button" class="mdl-button close">Disagree</button>
+            </div>
+        </dialog>
+        <script>
+            var dialog = document.querySelector('#full-width');
+            var showModalButton = document.querySelector('#show-full-width');
+    if (! dialog.showModal) {
+      dialogPolyfill.registerDialog(dialog);
+    }
+    showModalButton.addEventListener('click', function() {
+      dialog.showModal();
+    });
+    dialog.querySelector('.close').addEventListener('click', function() {
+      dialog.close();
+    });
+        </script>
+    </mdl-card-supporting-text>
+    <pre><code class="language-markup">
+
+    </code>
+</pre>
+
+ 
+</mdl-card>
+

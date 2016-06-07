@@ -19,6 +19,7 @@ namespace MaterialDesignLite.WebSample.ViewModels
 
     public class Header
     {
+        public string BgClass { get; set; }
         public SpectrumAlphaMDLColor BgColor { get; set; }
         public string Title { get; set; }
         public string SubTitle { get; set; }

@@ -55,10 +55,7 @@ namespace MaterialDesignLite.TagHelpers
 
         [HtmlAttributeName(VAlignAttributeName)]
         public MDLCellVAlign VAlign { get; set; }
-
-        [HtmlAttributeName("class")]
-        public string Class { get; set; }
-
+        
         private string SizeClass
         {
             get
@@ -124,12 +121,12 @@ namespace MaterialDesignLite.TagHelpers
 
             output.TagName = "div";
             
-            output.AppendCssClass("mdl-cell" 
-                + SizeClass
-                + DesktopClass
-                + TabletClass
-                + PhoneClass
-                + VAlignClass);
+            output.AppendCssClass("mdl-cell" ,
+                SizeClass,
+                DesktopClass,
+                TabletClass,
+                PhoneClass,
+                VAlignClass);
 
             await base.ProcessAsync(context, output);
         }

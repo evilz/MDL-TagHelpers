@@ -1,77 +1,60 @@
-﻿@section LeftSide
-{
-    <h3>Color palette</h3>
+﻿@{
 
+    ViewBag.Page = new[] { "Components", "Colors" };
 
-    <p>
-    This color palette comprises Primary and Accent colors that can be used for illustration or to develop your brand colors. They’ve been designed to work harmoniously with each other.
-    The color palette starts with Primary colors and fills in the spectrum to create a complete and usable palette for Android, Web, and iOS. Google suggests using the 500 colors as the Primary colors in your app and the other colors as Accents colors.
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="https://www.google.com/design/spec/style/color.html#">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Material design colors spec
-                </a>
-            </li>
-        </ul>
-    </div>
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Amber,
+        Title = "Color palette",
+        SubTitle = "This color palette comprises Primary and Accent colors that can be used for illustration or to develop your brand colors."
+    };
 }
-
-
 
 <mdl-card mdl-shadow="@MdlShadows.Dp2">
 
-    <mdl-card-title title="Background colors"></mdl-card-title>
-
-    <mdl-grid>
-    <mdl-cell size="3" mdl-bgcolor="@MDLColors.Lime.WithAlpha200">Lime - A200</mdl-cell>
-        </mdl-grid>
+    <mdl-card-title title="Palette of colors"></mdl-card-title>
+    <mdl-card-title subtitle="Can be used for text and background"></mdl-card-title>
 
 
-                    <div class="mdl-card__title">
-                        <h4>All Colors</h4>
-                    </div>
+    <mdl-card-supporting-text>
+        <mdl-grid>
 
-                    <div class="mdl-grid">
-
-
-                        @foreach (var color in MDLColors.All)
-                        {
-
-                            <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                                <thead>
-                                    <tr mdl-bgcolor="color">
-                                        @if (color == MDLColors.Black)
-                                        {
-                                            <th class="mdl-data-table__cell--non-numeric mdl-color-text--white">@color.Name</th>
-                                        }
-                                        else
-                                        {
-                                            <th class="mdl-data-table__cell--non-numeric">@color.Name</th>
-                                        }
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @if (color is SpectrumMDLColor)
+            @foreach (var color in MDLColors.All)
+            {
+                <mdl-cell size="4">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr mdl-bgcolor="color">
+                                @if (color == MDLColors.Black)
+                                {
+                                    <th class="mdl-data-table__cell--non-numeric mdl-color-text--white">@color.Name</th>
+                                }
+                                else
+                                {
+                                    <th class="mdl-data-table__cell--non-numeric">@color.Name</th>
+                                }
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (color is SpectrumMDLColor)
                 {
                     foreach (var spectrum in (color as SpectrumMDLColor).AllSpectrums)
                     {
-                                            <tr mdl-bgcolor="spectrum">
-                                                <td class="mdl-data-table__cell">@spectrum.Spectrum</td>
+                                    <tr mdl-bgcolor="spectrum">
+                                        <td class="mdl-data-table__cell">@spectrum.Spectrum</td>
 
-                                            </tr>
-                                        }
-                                    }
-                                </tbody>
-                            </table>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </mdl-cell>
+            }
+        </mdl-grid>
+        </mdl-card-supporting-text>
+            <div class="snippet-code">
 
-                        }
-                    </div>
-
-                    <div class="snippet-code">
-
-                        <pre class="language-markup codepen-button-enabled">
+                <pre class="language-markup codepen-button-enabled">
 <code id="badge/badge-on-icon-text.html"><!-- number badge on icon -->
 &lt;mdl-badge class=&quot;material-icons mdl-color-text--grey-600 mdl-color-badge--greens&quot; style=&quot;font-size: 32px;right: -10px;&quot; data=&quot;1&quot;&gt;account_box&lt;/mdl-badge&gt;               
 </code>
@@ -79,6 +62,6 @@
 &lt;mdl-badge class=&quot;material-icons&quot; data=&quot;♥&quot;&gt;account_box&lt;/mdl-badge&gt; 
 </code>
 </pre>
-                    </div>
-        
+            </div>
+
 </mdl-card>

@@ -23,10 +23,14 @@ namespace MaterialDesignLite.TagHelpers
             output.TagName = "i";
             output.AppendCssClass("material-icons");
             output.Content.SetContent(MdlIcon.Ligature); // TODO : MANAGE IE using codepoint ...
-
+            output.TagMode = TagMode.StartTagAndEndTag;
             if (IconSize > 0)
             {
-                output.Attributes.SetAttribute("style",$" font-size:{IconSize}px");
+                var style = output.Attributes.ContainsName("style")
+                                ? output.Attributes["style"].Value
+                                : string.Empty;
+
+                output.Attributes.SetAttribute("style", $" {style} font-size:{IconSize}px");
             }
 
             await base.ProcessAsync(context, output);

@@ -1,4 +1,5 @@
-﻿@model PageViewConfig
+﻿@using MaterialDesignLite.WebSample.ViewModels
+@model PageViewConfig
 @{
     Layout = "_Layout";
     ViewBag.PageHeaderColor = ViewBag.PageHeaderColor ??  MDLColors.Orange;
@@ -6,6 +7,8 @@
     ViewBag.Page = new[] {"About"};
 
     var marginTopContent = Model.RightOnHeader ? "-81px" : "0px" ;
+
+    ViewBag.Header = ViewBag.Header ?? new Header();
 }
 
 @section script{
@@ -13,24 +16,24 @@
 
        
 
-        $('.mdl-layout__content').scroll(function () {
+        //$('.mdl-layout__content').scroll(function () {
 
-            var offset = $('.simplebar-scroll-content').scrollTop();
+        //    var offset = $('.simplebar-scroll-content').scrollTop();
 
-            if (offset > 180) {
-                $('.mdl-layout__header').removeClass("mdl-color--white");
-                $('.mdl-layout__header').addClass("mdl-color--cyan");
+        //    if (offset > 180) {
+        //        $('.mdl-layout__header').removeClass("mdl-color--white");
+        //        $('.mdl-layout__header').addClass("mdl-color--cyan");
 
-            }
-            else {
-                $('.mdl-layout__header').removeClass("mdl-color--cyan");
-                $('.mdl-layout__header').addClass("mdl-color--white");
-            }
+        //    }
+        //    else {
+        //        $('.mdl-layout__header').removeClass("mdl-color--cyan");
+        //        $('.mdl-layout__header').addClass("mdl-color--white");
+        //    }
          
-            console.log($('.simplebar-scroll-content').scrollTop());
+        //    console.log($('.simplebar-scroll-content').scrollTop());
           
 
-        });
+        //});
 
 
         //$('.mdl-layout__content').simplebar().on('scroll', function () {
@@ -47,13 +50,13 @@
 
 <section class="amdl-Section">
 
-    <div class="amdl-Section-Header" mdl-bgcolor="@Model.Header.BgColor">
+    <div class="amdl-Section-Header @ViewBag.Header.BgClass" mdl-bgcolor="@Model.Header.BgColor">
         <h3 class="amdl-Section-Title mdl-color-text--white">@Model.Header.Title</h3>
         <h4 class="amdl-Section-SubTitle mdl-color-text--@Model.Header.BgColor.WithBritghness100">@Model.Header.SubTitle</h4>
     </div>
 
     <mdl-grid no-spacing="true">
-        
+
         <mdl-cell size="3" tablet="8" phone="4" class="mdl-color--grey-100">
             <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
                 @RenderSection("LeftSide", false)

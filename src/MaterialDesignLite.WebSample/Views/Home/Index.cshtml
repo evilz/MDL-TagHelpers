@@ -1,6 +1,34 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using MaterialDesignLite.WebSample.ViewModels
+@{
+   
+    ViewBag.Page = new[] { "Home", "" };
 
+    ViewBag.Header = new Header
+    {
+        BgClass = "header-bg-1",
+        BgColor = MDLColors.Indigo,
+        Title = "ASPNET TagHelpers",
+        SubTitle = "For Meterial Lite Design"
+    };
 }
 
-Material Design Lite lets you add a Material Design look and feel to your websites. It doesn’t rely on any JavaScript frameworks and aims to optimize for cross-device use, gracefully degrade in older browsers, and offer an experience that is immediately accessible. Get started now.
+
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+    <mdl-card-title title="Material Design Lite"></mdl-card-title>
+    <mdl-card-supporting-text>
+        Material Design Lite lets you add a Material Design look and feel to your websites. It doesn’t rely on any JavaScript frameworks and aims to optimize for cross-device use, gracefully degrade in older browsers, and offer an experience that is immediately accessible. Get started now.
+    </mdl-card-supporting-text>
+
+    <mdl-card-title title="ASP.NET Core Tag Helpers"></mdl-card-title>
+    <mdl-card-supporting-text>
+        Tag Helpers are the new HTML-friendly way to create views and define UI in ASP.NET MVC applications. They are recommended as the better alternative to traditional MVC HTML helpers, while still allowing you to extend the elements with server MVC functionality. Tag Helpers are also much more “understandable” to front end developers and designers.
+
+        We at Telerik are working on Tag Helpers for the existing Telerik MVC components, and plan to include them as part of the product for the upcoming RC and RTM versions of ASP.NET Core MVC.
+     </mdl-card-supporting-text>
+
+
+</mdl-card>
+
+
+

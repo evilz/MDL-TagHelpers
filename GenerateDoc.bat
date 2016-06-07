@@ -1,9 +1,9 @@
-cd samples/MaterialDesignLite.WebSample
+#cd samples/MaterialDesignLite.WebSample
 
-start dnx web
+#start dnx web
 
-cd ../..
+#cd ../..
  
-SLEEP 7
+#SLEEP 7
 cd Webcopy
-WCOPY http://localhost:5004 /recursive /o ../StaticDemo
+WCOPY http://localhost:5000 /recursive /o ../StaticDemo

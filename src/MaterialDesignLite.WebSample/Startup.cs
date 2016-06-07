@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace MaterialDesignLite.WebSample
 {
@@ -28,7 +29,9 @@ namespace MaterialDesignLite.WebSample
         public void ConfigureServices(IServiceCollection services)
         {
             // Add framework services.
-            services.AddMvc();
+            services
+                .AddMvc()
+                .AddRazorOptions(o=>o.ViewLocationExpanders.Add(new SingleControllerViewLocationExpander()));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +43,7 @@ namespace MaterialDesignLite.WebSample
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+               // app.UseBrowserLink();
             }
             else
             {
@@ -53,8 +56,24 @@ namespace MaterialDesignLite.WebSample
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{*path}",
+                    defaults: new { controller = "Main", action = "Path" });
+                
             });
+        }
+    }
+
+    public class SingleControllerViewLocationExpander : IViewLocationExpander
+    {
+        public void PopulateValues(ViewLocationExpanderContext context) { }
+
+        public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
+        {
+            yield return "/Views/{0}.cshtml";
+            foreach (var location in viewLocations)
+            {
+                yield return location;
+            }
         }
     }
 }

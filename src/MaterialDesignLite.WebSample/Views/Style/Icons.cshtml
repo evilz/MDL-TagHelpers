@@ -1,52 +1,45 @@
-﻿@section LeftSide
-{
+﻿@{
+ViewBag.Page = new[] { "Components", "Icons" };
 
-    <p>
-        Material Design Icons are the official open-source icons featured in the Google Material Design specification.
-        <div style="margin-top: 30px">
-            <ul class="list-bordered">
-                <li>
-                    <a target="_blank" href="http://google.github.io/material-design-icons/">
-                        <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                        Material icons guide
-                    </a>
-                </li>
-            </ul>
-        </div>
+ViewBag.Header = new Header
+{
+    BgColor = MDLColors.Orange,
+    Title = "Material Design Icons",
+    SubTitle = "Material Design Icons are the official open-source icons featured in the Google Material Design specification."
+};
 }
 
+<mdl-card mdl-shadow="@MdlShadows.Dp2">
 
-        <mdl-card mdl-shadow="@MdlShadows.Dp2">
+    <mdl-card-title title="Specific  icon"></mdl-card-title>
 
-            <mdl-card-title title="Specific  icon"></mdl-card-title>
-          
-                    <div style="padding: 30px;">
-                        <mdl-icon icon="@@MDLIcons.accessibility"></mdl-icon>
-                    </div>
-            <pre><code class="language-markup">
+    <div style="padding: 30px;">
+        <mdl-icon icon="@@MDLIcons.accessibility"></mdl-icon>
+    </div>
+    <pre><code class="language-markup">
 &lt;mdl-icon icon=&quot;MDLIcons.accessibility&quot; &gt;&lt;/mdl-icon&gt;               
 </code></pre>
-                    <mdl-card-title title="All icons"></mdl-card-title>
-                    
-                    <div class="mdl-grid" style="padding: 30px;">
+    <mdl-card-title title="All icons"></mdl-card-title>
+
+    <div class="mdl-grid" style="padding: 30px;">
 
 
-                        @foreach (var icon in MDLIcons.All)
-                        {
-                            <div class="mdl-cell mdl-cell--1-col mdl-color-text--grey">
-                                <mdl-icon icon="@icon" mdl-tooltips="@icon.Name"></mdl-icon>
-                            </div>
+        @foreach (var icon in MDLIcons.All)
+        {
+            <div class="mdl-cell mdl-cell--1-col mdl-color-text--grey">
+                <mdl-icon icon="@icon" mdl-tooltips="@icon.Name"></mdl-icon>
+            </div>
 
 
-                        }
+        }
 
 
 
 
-                       
 
-                    </div>
 
-              
+    </div>
 
-            </mdl-card>
+
+
+</mdl-card>

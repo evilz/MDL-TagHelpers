@@ -1,36 +1,53 @@
-﻿@section LeftSide
-{
-    <h3>
-        Buttons & Floating Action Button
-    </h3>
+﻿@using MaterialDesignLite.WebSample.ViewModels
+@{
 
-    <p>
-        A button clearly communicates what action will occur when the user touches it. It consists of text, an image, or both, designed in accordance with your app’s color theme.
-    </p>
+    ViewBag.Page = new[] { "Components", "Buttons" };
 
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#buttons-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Button
-                </a>
-            </li>
-        </ul>
-    </div>
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Pink,
+        Title = "Buttons",
+        SubTitle = "There are 3 main button types described in material design. Raised Button, Floating circular action button & Flat buttons."
+    };
 }
 
 <mdl-card mdl-shadow="@MdlShadows.Dp2">
 
     <mdl-card-title title="Flat button"></mdl-card-title>
-    <mdl-grid>
-        <mdl-cell> <mdl-button>Button</mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button ripple="false">Button</mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button disabled>Button</mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button color="@ButtonColors.Primary">Button</mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button color="@ButtonColors.Accent">Button</mdl-button> </mdl-cell>
+    <mdl-card-supporting-text>
+        <mdl-grid>
 
-    </mdl-grid>
+            <mdl-cell>
+                <mdl-card-title subtitle="Default"></mdl-card-title>
+
+                <mdl-button>Button</mdl-button>
+                <mdl-button ripple="false">No Ripple</mdl-button>
+                <mdl-button disabled>Disabled</mdl-button>
+                <mdl-button color="@ButtonColors.Primary">Primary</mdl-button>
+                <mdl-button color="@ButtonColors.Accent">Accent</mdl-button>
+            </mdl-cell>
+
+            <mdl-cell>
+                <mdl-card-title subtitle="With colors"></mdl-card-title>
+
+                <mdl-button mdl-color="@MDLColors.Green">Success</mdl-button>
+                <mdl-button mdl-color="@MDLColors.LightBlue">Info</mdl-button>
+                <mdl-button mdl-color="@MDLColors.Orange">Warning</mdl-button>
+                <mdl-button mdl-color="@MDLColors.Red">Danger</mdl-button>
+            </mdl-cell>
+
+            <mdl-cell>
+                <mdl-card-title subtitle="With icons"></mdl-card-title>
+
+                <mdl-button><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button>
+                <mdl-button ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button>
+                <mdl-button disabled><mdl-icon icon="@MDLIcons.done"></mdl-icon></mdl-button>
+                <mdl-button color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.label"></mdl-icon></mdl-button>
+                <mdl-button color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.label_outline"></mdl-icon></mdl-button>
+            </mdl-cell>
+        </mdl-grid>
+
+    </mdl-card-supporting-text>
 
     <pre><code class="language-markup">
 &lt;!-- Flat button with ripple effect --&gt;
@@ -50,14 +67,37 @@
 </pre>
 
     <mdl-card-title title="Raised button"></mdl-card-title>
-    <mdl-grid>
-        <mdl-cell> <mdl-button raised="true">Button</mdl-button>                               </mdl-cell>
-        <mdl-cell> <mdl-button raised="true" ripple="false">Button</mdl-button>                </mdl-cell>
-        <mdl-cell> <mdl-button raised="true" disabled>Button</mdl-button>                      </mdl-cell>
-        <mdl-cell> <mdl-button raised="true" color="@ButtonColors.Primary">Button</mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button raised="true" color="@ButtonColors.Accent">Button</mdl-button>  </mdl-cell>
+    <mdl-card-supporting-text>
+        <mdl-grid>
+            <mdl-cell>
+                <mdl-card-title subtitle="Default"></mdl-card-title>
 
-    </mdl-grid>
+                <mdl-button raised="true">Button</mdl-button>
+                <mdl-button raised="true" ripple="false">Button</mdl-button>
+                <mdl-button raised="true" disabled>Button</mdl-button>
+                <mdl-button raised="true" color="@ButtonColors.Primary">Button</mdl-button>
+                <mdl-button raised="true" color="@ButtonColors.Accent">Button</mdl-button>
+            </mdl-cell>
+
+            <mdl-cell>
+                <mdl-card-title subtitle="With colors"></mdl-card-title>
+
+                <mdl-button raised="true" mdl-color="@MDLColors.PrimaryContrast" mdl-bgcolor="@MDLColors.Green">Success</mdl-button>
+
+                <mdl-button raised="true" mdl-color="@MDLColors.PrimaryContrast" mdl-bgcolor="@MDLColors.LightBlue">Info</mdl-button>
+                <mdl-button raised="true" mdl-color="@MDLColors.PrimaryContrast" mdl-bgcolor="@MDLColors.Orange">Warning</mdl-button>
+                <mdl-button raised="true" mdl-color="@MDLColors.PrimaryContrast" mdl-bgcolor="@MDLColors.Red">Danger</mdl-button>
+            </mdl-cell>
+            <mdl-cell>
+                <mdl-card-title subtitle="With icons"></mdl-card-title>
+
+                <mdl-button raised="true"><mdl-icon icon="@MDLIcons.fast_rewind"></mdl-icon></mdl-button>
+                <mdl-button raised="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.play_arrow"></mdl-icon></mdl-button>
+                <mdl-button raised="true"><mdl-icon icon="@MDLIcons.fast_forward"></mdl-icon></mdl-button>
+            </mdl-cell>
+
+        </mdl-grid>
+    </mdl-card-supporting-text>
 
     <pre><code class="language-markup">
 &lt;!-- Raised button with ripple effect --&gt;
@@ -77,14 +117,40 @@
 </pre>
 
     <mdl-card-title title="Icon buttons"></mdl-card-title>
-    <mdl-grid>
-        <mdl-cell> <mdl-button icon="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button></mdl-cell>
-        <mdl-cell> <mdl-button icon="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button icon="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button icon="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button icon="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button> </mdl-cell>
+    <mdl-card-supporting-text>
+        <mdl-grid>
+            <mdl-cell>
+                <mdl-card-title subtitle="Default"></mdl-card-title>
+                <mdl-button icon="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button>
 
-    </mdl-grid>
+                <mdl-button icon="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button>
+                <mdl-button icon="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button>
+                <mdl-button icon="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button>
+                <mdl-button icon="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button>
+
+            </mdl-cell>
+
+            <mdl-cell>
+                <mdl-card-title subtitle="With colors"></mdl-card-title>
+
+                <mdl-button mdl-color="@MDLColors.Green" icon="true"><mdl-icon icon="@MDLIcons.plus_one"></mdl-icon></mdl-button>
+                <mdl-button mdl-color="@MDLColors.LightBlue" icon="true"><mdl-icon icon="@MDLIcons.group"></mdl-icon></mdl-button>
+                <mdl-button mdl-color="@MDLColors.Orange" icon="true"><mdl-icon icon="@MDLIcons.whatshot"></mdl-icon></mdl-button>
+                <mdl-button mdl-color="@MDLColors.Red" icon="true"><mdl-icon icon="@MDLIcons.school"></mdl-icon></mdl-button>
+
+
+            </mdl-cell>
+            <mdl-cell>
+                <mdl-card-title subtitle="With background colors"></mdl-card-title>
+
+                <mdl-button mdl-bgcolor="@MDLColors.Green" icon="true"><mdl-icon icon="@MDLIcons.plus_one"></mdl-icon></mdl-button>
+                <mdl-button mdl-bgcolor="@MDLColors.LightBlue" icon="true"><mdl-icon icon="@MDLIcons.group"></mdl-icon></mdl-button>
+                <mdl-button mdl-bgcolor="@MDLColors.Orange" icon="true"><mdl-icon icon="@MDLIcons.whatshot"></mdl-icon></mdl-button>
+                <mdl-button mdl-bgcolor="@MDLColors.Red" icon="true"><mdl-icon icon="@MDLIcons.school"></mdl-icon></mdl-button>
+            </mdl-cell>
+
+        </mdl-grid>
+    </mdl-card-supporting-text>
 
     <pre><code class="language-markup">
 &lt;!-- Icon button with ripple effect --&gt;
@@ -106,15 +172,50 @@
 
 
     <mdl-card-title title="FAB button"></mdl-card-title>
-    <mdl-grid>
-        <mdl-cell> <mdl-button fab="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button></mdl-cell>
-        <mdl-cell> <mdl-button fab="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button fab="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button fab="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button fab="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button> </mdl-cell>
-        <mdl-cell> <mdl-button fab="true" mini="true"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button> </mdl-cell>
 
-    </mdl-grid>
+    <mdl-card-supporting-text>
+        <mdl-grid>
+            <mdl-cell>
+                <mdl-card-title subtitle="Default"></mdl-card-title>
+                <mdl-button fab="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button>
+                <mdl-button fab="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button>
+                <mdl-button fab="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button>
+                <mdl-button fab="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button>
+                <mdl-button fab="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button>
+
+            </mdl-cell>
+
+            <mdl-cell>
+                <mdl-card-title subtitle="With colors"></mdl-card-title>
+
+                <mdl-button mdl-color="@MDLColors.Green" fab="true"><mdl-icon icon="@MDLIcons.plus_one"></mdl-icon></mdl-button>
+                <mdl-button mdl-color="@MDLColors.LightBlue" fab="true"><mdl-icon icon="@MDLIcons.group"></mdl-icon></mdl-button>
+                <mdl-button mdl-color="@MDLColors.Orange" fab="true"><mdl-icon icon="@MDLIcons.whatshot"></mdl-icon></mdl-button>
+                <mdl-button mdl-color="@MDLColors.Red" fab="true"><mdl-icon icon="@MDLIcons.school"></mdl-icon></mdl-button>
+
+
+            </mdl-cell>
+            <mdl-cell>
+                <mdl-card-title subtitle="With background colors"></mdl-card-title>
+
+                <mdl-button mdl-bgcolor="@MDLColors.Green" fab="true"><mdl-icon icon="@MDLIcons.plus_one"></mdl-icon></mdl-button>
+                <mdl-button mdl-bgcolor="@MDLColors.LightBlue" fab="true"><mdl-icon icon="@MDLIcons.group"></mdl-icon></mdl-button>
+                <mdl-button mdl-bgcolor="@MDLColors.Orange" fab="true"><mdl-icon icon="@MDLIcons.whatshot"></mdl-icon></mdl-button>
+                <mdl-button mdl-bgcolor="@MDLColors.Red" fab="true"><mdl-icon icon="@MDLIcons.school"></mdl-icon></mdl-button>
+            </mdl-cell>
+
+            <mdl-cell>
+                <mdl-card-title subtitle="Mini"></mdl-card-title>
+
+                <mdl-button mini="true" fab="true"><mdl-icon icon="@MDLIcons.add"></mdl-icon></mdl-button>
+                <mdl-button mini="true" fab="true" ripple="false"><mdl-icon icon="@MDLIcons.image"></mdl-icon></mdl-button>
+                <mdl-button mini="true" fab="true" disabled><mdl-icon icon="@MDLIcons.smartphone"></mdl-icon></mdl-button>
+                <mdl-button mini="true" fab="true" color="@ButtonColors.Primary"><mdl-icon icon="@MDLIcons.mood"></mdl-icon></mdl-button>
+                <mdl-button mini="true" fab="true" color="@ButtonColors.Accent"><mdl-icon icon="@MDLIcons.mood_bad"></mdl-icon></mdl-button>
+            </mdl-cell>
+
+        </mdl-grid>
+    </mdl-card-supporting-text>
 
     <pre><code class="language-markup">
 &lt;!-- FAB button with ripple effect --&gt;

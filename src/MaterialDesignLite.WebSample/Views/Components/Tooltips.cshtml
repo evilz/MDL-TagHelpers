@@ -1,17 +1,13 @@
-﻿@section LeftSide
-{
-    <p>
-        The Material Design Lite (MDL) tooltip component is an enhanced version of the standard HTML tooltip as produced by the title attribute. A tooltip consists of text and/or an image that clearly communicates additional information about an element when the user hovers over or, in a touch-based UI, touches the element. The MDL tooltip component is pre-styled (colors, fonts, and other settings are contained in material.min.css) to provide a vivid, attractive visual element that displays related but typically non-essential content, e.g., a definition, clarification, or brief instruction.
-        <div style="margin-top: 30px">
-            <ul class="list-bordered">
-                <li>
-                    <a target="_blank" href="http://www.getmdl.io/components/index.html#tooltips-section">
-                        <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                        tooltips
-                    </a>
-                </li>
-            </ul>
-        </div>
+﻿@{
+
+    ViewBag.Page = new[] { "Components", "Tooltips" };
+
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.Yellow,
+        Title = "Tooltips",
+        SubTitle = "blabla"
+    };
 }
 
 
@@ -21,8 +17,8 @@
 
     <mdl-grid>
         <mdl-cell size="3">
-            <a href="#" mdl-tooltips="tooltips on link" >
-              Some awesome link
+            <a href="#" mdl-tooltips="tooltips on link">
+                Some awesome link
             </a>
 
         </mdl-cell>
@@ -33,7 +29,7 @@
 
         </mdl-cell>
         <mdl-cell size="3">
-            <mdl-button  mdl-tooltips="Click me !">
+            <mdl-button mdl-tooltips="Click me !">
                 button
             </mdl-button>
 
@@ -45,22 +41,30 @@
         </mdl-cell>
 
     </mdl-grid>
+    <pre><code class="language-markup">
+    </code>
+</pre>
 
     <mdl-card-title title="Rich Tooltip"></mdl-card-title>
 
     <mdl-grid>
-        <mdl-cell size="4">
-            <div id="tt3" class="icon material-icons">cloud_upload</div>
-            <mdl-tooltips for="tt3"> Upload <strong>file.zip</strong></mdl-tooltips>
+        <mdl-cell size="4"></mdl-cell>
+            <mdl-cell size="4">
+                <div id="tt3" class="icon material-icons">cloud_upload</div>
+                <mdl-tooltips for="tt3"> <mdl-icon size="16" icon="@MDLIcons.add"/> Upload <strong mdl-color="@MDLColors.Yellow">file.zip</strong></mdl-tooltips>
 
-        </mdl-cell>
-        <mdl-cell size="4">
-            <!-- Multiline Tooltip -->
-            <div id="tt4" class="icon material-icons">share</div>
-            <div class="mdl-tooltip" for="tt4">
-                Share your content<br>via social media
-            </div>
-        </mdl-cell>
+            </mdl-cell>
+            <mdl-cell size="4">
+                <!-- Multiline Tooltip -->
+                <div id="tt4" class="icon material-icons">share</div>
+                <div class="mdl-tooltip" for="tt4">
+                    Share your content<br>via social media
+                </div>
+            </mdl-cell>
 
-    </mdl-grid>
+</mdl-grid>
+
+    <pre><code class="language-markup">
+    </code>
+</pre>
 </mdl-card>

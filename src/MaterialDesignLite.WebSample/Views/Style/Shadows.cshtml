@@ -1,33 +1,24 @@
-﻿@section LeftSide
-{
-    <h3>Elevation and shadows</h3>
+﻿@{
+    ViewBag.Page = new[] { "Components", "Shadows" };
 
-
-    <p>
-        Objects in material design possess similar qualities to objects in the physical world. In the physical world, objects can be stacked or affixed to one another, but cannot pass through each other. Objects cast shadows and reflect light.
-    </p>
-    <p>
-        These qualities form a spatial model that is familiar to users and can be applied consistently across apps. Underpinning this spatial model are the concepts of elevation and shadow.
-    </p>
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="https://www.google.com/design/spec/what-is-material/elevation-shadows.html#">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Material design colors spec
-                </a>
-            </li>
-        </ul>
-    </div>
+    ViewBag.Header = new Header
+    {
+        BgColor = MDLColors.DeepOrange,
+        Title = "Elevation and shadows",
+        SubTitle = " Objects in material design possess similar qualities to objects in the physical world. In the physical world, objects can be stacked or affixed to one another, but cannot pass through each other. Objects cast shadows and reflect light."
+    };
 }
 
 <div style="padding: 30px;">
 
-    <mdl-grid>
-        @foreach (var mdlShadow in MdlShadows.All)
-        {
-            <mdl-cell size="3" class="mdl-card" mdl-shadow="@mdlShadow">@mdlShadow.Deep</mdl-cell>
-        }
-    </mdl-grid>
+    <mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+        <mdl-grid>
+            @foreach (var mdlShadow in MdlShadows.All)
+            {
+                <mdl-cell class="mdl-typography--text-center" style="margin: 20px;padding-top: 65px;width: 150px;height: 150px" mdl-shadow="@mdlShadow">@mdlShadow.Deep dp</mdl-cell>
+            }
+        </mdl-grid>
+        </mdl-card>
 
 </div>

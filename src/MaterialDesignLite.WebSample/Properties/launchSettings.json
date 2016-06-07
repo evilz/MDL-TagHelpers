@@ -3,15 +3,14 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://winbookair:57660/",
+      "applicationUrl": "http://localhost:5000",
       "sslPort": 0
     }
   },
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "http://winbookair:57660/",
+      "launchUrl": "http://localhost:5000/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
