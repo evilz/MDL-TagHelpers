@@ -49,7 +49,7 @@
 <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
     <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
     <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / Tabs</span>
+        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / Menu</span>
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -249,9 +249,9 @@
 
 <section class="amdl-Section">
 
-    <div class="amdl-Section-Header mdl-color--green">
-        <h3 class="amdl-Section-Title mdl-color-text--white">Tabs</h3>
-        <h4 class="amdl-Section-SubTitle mdl-color-text--green-100">blabla</h4>
+    <div class="amdl-Section-Header mdl-color--light-blue">
+        <h3 class="amdl-Section-Title mdl-color-text--white">Menus</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--light-blue-100">blabla</h4>
     </div>
 
     <div class="mdl-grid mdl-grid--no-spacing">
@@ -259,12 +259,61 @@
         <div style="margin-top:-81px" class="mdl-cell  mdl-cell--12-col">
             <div style="padding: 20px;">
                 
+<style>
+    .mdl-card {
+        overflow: visible;
+    }
+
+</style>
+
 <div class="mdl-card mdl-shadow--2dp">
 
-    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Simple Tabs</h2></div>
+    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Simple menu</h2></div>
+    <div class="mdl-grid">
+        <div class="mdl-cell  mdl-cell--3-col">
+            <button id="menu-speed" class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect" for="menu-speed">
+                <li class="mdl-menu__item">Fast</li>
+                <li class="mdl-menu__item">Medium</li>
+                <li class="mdl-menu__item">Slow</li>
 
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect"><div class="mdl-tabs__tab-bar"><a href="#gid_e5cd5ad0-eaeb-426a-9d4d-8dc0e2c4e237" class="mdl-tabs__tab is-active">Nunc tincidunt</a><a href="#gid_adf0721d-111a-48f1-ae50-a0816768b5eb" class="mdl-tabs__tab">Proin dolor</a><a href="#gid_1863dd40-a2e2-4367-9821-c44b006a423e" class="mdl-tabs__tab">Aenean lacinia</a></div><div class="mdl-tabs__panel is-active" id="gid_e5cd5ad0-eaeb-426a-9d4d-8dc0e2c4e237"><div class="mdl-grid"><div class="mdl-cell  mdl-cell--12-col"><p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p></div></div></div><div class="mdl-tabs__panel" id="gid_adf0721d-111a-48f1-ae50-a0816768b5eb"><div class="mdl-grid"><div class="mdl-cell  mdl-cell--12-col"><p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p></div></div></div><div class="mdl-tabs__panel" id="gid_1863dd40-a2e2-4367-9821-c44b006a423e"><div class="mdl-grid"><div class="mdl-cell  mdl-cell--12-col"><p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p><p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p></div></div></div></div>
+            </ul>
+        </div>
+        <div class="mdl-cell  mdl-cell--3-col">
+            <button id="add-btn" class="mdl-button mdl-js-button mdl-js-ripple-effect">Add</button>
 
+
+            <table for="add-btn" class="mdl-menu mdl-js-menu  mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+                <thead>
+                    <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Material</th>
+                        <th>Quantity</th>
+                        <th>Unit price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                        <td>25</td>
+                        <td>$2.90</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                        <td>50</td>
+                        <td>$1.25</td>
+                    </tr>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                        <td>10</td>
+                        <td>$2.35</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
 
 
     <pre><code class="language-markup">
@@ -282,9 +331,92 @@
     </code>
 </pre>
 
-  
+
 
 </div>
+
+<br>
+
+<div class="mdl-grid">
+    <div class="mdl-cell  mdl-cell--3-col">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-color--primary mdl-color-text--white"><h2 class="mdl-card__title-text">&nbsp;</h2></div>
+            <div class="mdl-card__menu" style="left: 15px;right: auto">
+
+                <button id="demo-menu-lower-left" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white">
+                    <i class="material-icons">more_vert</i>
+                </button>
+
+                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled="" class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="mdl-cell  mdl-cell--3-col">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-color--primary mdl-color-text--white"><h2 class="mdl-card__title-text">Left aligned menu</h2></div>
+            <div class="mdl-card__menu">
+
+                <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white"><i class="material-icons">more_vert</i></button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled="" class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="mdl-cell  mdl-cell--3-col">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-color--primary mdl-color-text--white"><h2 class="mdl-card__title-text">Left aligned menu</h2></div>
+            <div class="mdl-card__menu">
+
+                <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white"><i class="material-icons">more_vert</i></button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled="" class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="mdl-cell  mdl-cell--3-col">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-color--primary mdl-color-text--white"><h2 class="mdl-card__title-text">Left aligned menu</h2></div>
+            <div class="mdl-card__menu">
+
+                <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white"><i class="material-icons">more_vert</i></button>
+
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">Another Action</li>
+                    <li disabled="" class="mdl-menu__item">Disabled Action</li>
+                    <li class="mdl-menu__item">Yet Another Action</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
             </div>
         </div>
     </div>

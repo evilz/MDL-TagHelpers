@@ -1,0 +1,597 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MDL Tag Helpers for asp.net 5</title>
+
+    <!-- Add to homescreen -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fallback to homescreen for Chrome <39 on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Material Design Lite">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon" href="images/ios-desktop.png">
+
+    <!-- TODO: Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
+    <!-- <meta name="msapplication-TileColor" content="#3372DF"> -->
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="..\lib\simplebar\simplebar.css">
+    <link rel="stylesheet" href="..\css\prism-default.css">
+    
+
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="..\lib\mdl\material.min.css">
+        <link rel="stylesheet" href="..\css\site.css">
+    
+    
+
+</head>
+
+<body>
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout">
+        
+<header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
+    <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
+    <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / Layout</span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+                <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+                <input class="mdl-textfield__input" type="text" id="search">
+                <label class="mdl-textfield__label" for="search">Enter your query...</label>
+            </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="hdrbtn">
+            <i class="material-icons">more_vert</i>
+            <span class="mdl-button__ripple-container"></span>
+        </button>
+        <div class="mdl-menu__container ">
+            <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+            <ul class="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right mdl-js-ripple-effect--ignore-events" for="hdrbtn">
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">About<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Contact<span class="mdl-menu__item-ripple-container"></span></li>
+                <li class="mdl-menu__item mdl-js-ripple-effect" tabindex="-1">Legal information<span class="mdl-menu__item-ripple-container"></span></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+        
+<style>
+    .brand-logo {
+        min-height: 64px;
+        color: #FFF;
+        line-height: 64px;
+        text-align: center;
+        font-weight: 300;
+        font-size: 0.1px;
+    }
+
+    .logo {
+        background-image: url(/images/logo.png);
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+    .demo-avatar-dropdown {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        padding: 7px 10px 7px 20px;
+        font-size: 12px;
+        color: rgba(255,255,255,.5);
+    }
+
+    .clear:after {
+        display: table;
+        content: " ";
+    }
+
+    .clear, .clear:after, .dl-horizontal dd:after {
+        clear: both;
+    }
+
+    .mdl-layout__drawer .mdl-navigation, .mdl-menu {
+        padding: 0;
+    }
+
+      .mdl-layout__drawer .mdl-navigation ul {
+            padding-right: 0;
+            list-style:none;
+            margin:0;
+        }
+
+        .mdl-layout__drawer .mdl-navigation li {
+            position: relative;
+            line-height: 0;
+            -webkit-flex-shrink: 0;
+            -ms-flex-negative: 0;
+            flex-shrink: 0;
+        }
+
+            .mdl-layout__drawer .mdl-navigation li .mdl-navigation__link {
+                padding-left: 50px;
+            }
+
+        .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+            background-color: rgba(0,0,0,.2);
+            color: #fff;
+        }
+
+    .demo-navigation .mdl-navigation__link>.material-icons {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #bababa !important;
+    }
+
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+        display: -webkit-flex !important;
+        display: -ms-flexbox !important;
+        display: flex !important;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        line-height: 20px;
+        padding: 13px 20px;
+    }
+
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        margin: 0;
+        color: #757575;
+    }
+
+    .mdl-navigation__link {
+        color: #424242;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 13px;
+        margin: 0;
+    }
+
+    .collapse {
+        height: 0;
+        display: none;
+    }
+</style>
+
+
+    <div style="border-right: 0" data-simplebar-direction="vertical" class="mdl-layout__drawer mdl-color--grey-900 mdl-color-text--blue-grey-50">
+        
+    <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+
+        <div class="brand-logo">
+            <div class="logo" style="background-image: url(../images/logo.png);">
+                ASPNET MDL
+            </div>
+        </div>
+    </header>
+
+        <nav style="margin-top: 0;padding-bottom:50px;" class="demo-navigation mdl-navigation">
+            <a mdl-nav-item="" href="..\index.htm" class="mdl-navigation__link"><i class="material-icons">home</i>About</a>
+            <a mdl-nav-item="" href="/GettingStarted" class="mdl-navigation__link"><i class="material-icons">power_settings_new</i>Getting Started</a>
+
+            <a mdl-nav-item="" href="" class="mdl-navigation__link">
+               
+                <i class="material-icons">extension</i>Components
+                <div style="position: absolute; right: 7px;    margin-top: -3px;">
+                    <i class="material-icons mdl-color-text--green">arrow_drop_down</i>
+                </div>
+            </a>
+
+                    <ul class="mdl-navigation in">
+                        <li><a mdl-nav-item="" href="Badges.htm" class="mdl-navigation__link"><i class="material-icons">info</i>Badges</a></li>
+                        <li><a mdl-nav-item="" href="Buttons.htm" class="mdl-navigation__link"><i class="material-icons">touch_app</i>Buttons</a></li>
+                        <li><a mdl-nav-item="" href="Cards.htm" class="mdl-navigation__link"><i class="material-icons">credit_card</i>Cards</a></li>
+                        <li><a mdl-nav-item="" href="Dialog.htm" class="mdl-navigation__link"><i class="material-icons">message</i>Dialog</a></li>
+                        <li><a mdl-nav-item="" href="Footer.htm" class="mdl-navigation__link"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
+                        <li><a mdl-nav-item="" href="Grid.htm" class="mdl-navigation__link"><i class="material-icons">view_module</i>Grid</a></li>
+                        <li><a mdl-nav-item="" href="Layout.htm" class="mdl-navigation__link"><i class="material-icons">view_quilt</i>Layout</a></li>
+                        <li><a mdl-nav-item="" href="List.htm" class="mdl-navigation__link"><i class="material-icons">format_list_bulleted</i>List</a></li>
+                        <li><a mdl-nav-item="" href="Loading.htm" class="mdl-navigation__link"><i class="material-icons">autorenew</i>Loading</a></li>
+                        <li><a mdl-nav-item="" href="Menus.htm" class="mdl-navigation__link"><i class="material-icons">menu</i>Menus</a></li>
+                        <li><a mdl-nav-item="" href="Sliders.htm" class="mdl-navigation__link"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
+                        <li><a mdl-nav-item="" href="Snackbar.htm" class="mdl-navigation__link"><i class="material-icons">picture_in_picture_alt</i>Snackbar</a></li>
+                        <li><a mdl-nav-item="" href="Tables.htm" class="mdl-navigation__link"><i class="material-icons">view_column</i>Tables</a></li>
+                        <li><a mdl-nav-item="" href="Tabs.htm" class="mdl-navigation__link"><i class="material-icons">tab</i>Tabs</a></li>
+                        <li><a mdl-nav-item="" href="TextFields.htm" class="mdl-navigation__link"><i class="material-icons">input</i>Text Fields</a></li>
+                        <li><a mdl-nav-item="" href="Toggles.htm" class="mdl-navigation__link"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
+                        <li><a mdl-nav-item="" href="Tooltips.htm" class="mdl-navigation__link"><i class="material-icons">mode_comment</i>Tooltips</a></li>
+
+
+                    </ul>
+              
+            <a mdl-nav-item="" href="" class="mdl-navigation__link">
+                
+                <i class="material-icons">format_align_left</i>Style
+                <div style="position: absolute; right: 7px;    margin-top: -25px;">
+                    <i class="material-icons mdl-color-text--green">arrow_drop_down</i>
+                </div>
+            </a>
+            <ul class="mdl-navigation in">
+                <ml-menu-group-heading class=""></ml-menu-group-heading>
+                <li><a mdl-nav-item="" href="..\Style\Typography.htm" class="mdl-navigation__link"><i class="material-icons">text_format</i>Typography</a></li>
+                <li><a mdl-nav-item="" href="..\Style\Colors.htm" class="mdl-navigation__link"><i class="material-icons">invert_colors</i>Color</a></li>
+                <li><a mdl-nav-item="" href="..\Style\Icons.htm" class="mdl-navigation__link"><i class="material-icons">insert_emoticon</i>Icons</a></li>
+                <li><a mdl-nav-item="" href="..\Style\Shadows.htm" class="mdl-navigation__link"><i class="material-icons">layers</i>Shadow</a></li>
+            </ul>
+</nav>
+
+</div>
+
+        <main class="mdl-layout__content mdl-color--grey-100" data-simplebar-direction="vertical">
+            
+
+<section class="amdl-Section">
+
+    <div class="amdl-Section-Header mdl-color--blue-A400">
+        <h3 class="amdl-Section-Title mdl-color-text--white">Layout</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--blue-100">....</h4>
+    </div>
+
+    <div class="mdl-grid mdl-grid--no-spacing">
+
+        <div style="margin-top:-81px" class="mdl-cell  mdl-cell--12-col">
+            <div style="padding: 20px;">
+                <div class="mdl-card mdl-shadow--2dp">
+
+    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Transparent header</h2></div>
+    <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Uses a header that scrolls with the text, rather than staying locked at the top</div></div>
+
+    <div class="mdl-card__supporting-text">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-layout mdl-js-layout">
+                <header class="mdl-layout__header">
+                    <div class="mdl-layout-icon"></div>
+
+                    <div class="mdl-layout__header-row"><span class="mdl-layout__title">Title</span>
+
+                        <div class="mdl-layout-spacer"></div>
+
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 1</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 2</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 3</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 4</a>
+                        </nav>
+
+                    </div>
+                </header>
+
+                <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                    <nav class="mdl-navigation">
+                        <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                    </nav>
+                </div>
+
+                <main class="mdl-layout__content">
+                    <div class="page-content"></div>
+                </main>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--Fixed Drawer-->
+    <div class="mdl-card">
+
+        <div class="mdl-card__title"><h2 class="mdl-card__title-text">Fixed drawer, no header</h2></div>
+        <div class="mdl-card__title"><div class="mdl-card__subtitle-text">No header, and the drawer stays open on larger screens (fixed drawer).</div></div>
+
+        <div class="mdl-card__supporting-text">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+
+                    <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        </nav>
+                    </div>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Fixed Header & Drawer-->
+    <div class="mdl-card">
+
+        <div class="mdl-card__title"><h2 class="mdl-card__title-text">Fixed header and drawer</h2></div>
+        <div class="mdl-card__title"><div class="mdl-card__subtitle-text">The drawer is always open in large screens. The header is always shown, even in small screens.</div></div>
+
+        <div class="mdl-card__supporting-text">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout-icon"></div>
+
+                        <div class="mdl-layout__header-row"><span class="mdl-layout__title">My title</span>
+
+                            <div class="mdl-layout-spacer"></div>
+
+                            <nav class="mdl-navigation">
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 1</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 2</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 3</a>
+                            </nav>
+
+                        </div>
+                    </header>
+
+                    <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        </nav>
+                    </div>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Scrolling header-->
+    <div class="mdl-card">
+
+        <div class="mdl-card__title"><h2 class="mdl-card__title-text">Scrolling header</h2></div>
+        <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Uses a header that scrolls with the text, rather than staying locked at the top</div></div>
+
+        <div class="mdl-card__supporting-text">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout-icon"></div>
+
+                        <div class="mdl-layout__header-row"><span class="mdl-layout__title">My title</span>
+
+                            <div class="mdl-layout-spacer"></div>
+
+                            <nav class="mdl-navigation">
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 1</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 2</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 3</a>
+                            </nav>
+
+                        </div>
+                    </header>
+
+                    <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        </nav>
+                    </div>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Waterfall header-->
+    <div class="mdl-card">
+
+        <div class="mdl-card__title"><h2 class="mdl-card__title-text">Waterfall header</h2></div>
+        <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Uses a header that contracts as the page scrolls down.</div></div>
+
+        <div class="mdl-card__supporting-text">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout-icon"></div>
+
+                        <div class="mdl-layout__header-row"><span class="mdl-layout__title">My title</span>
+
+                            <div class="mdl-layout-spacer"></div>
+
+                            <nav class="mdl-navigation">
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 1</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 2</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 3</a>
+                            </nav>
+
+                        </div>
+                    </header>
+
+                    <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        </nav>
+                    </div>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!--Scrollable tabs-->
+    <div class="mdl-card">
+
+        <div class="mdl-card__title"><h2 class="mdl-card__title-text">Scrollable tabs</h2></div>
+        <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Simple header with scrollable tabs.</div></div>
+
+        <div class="mdl-card__supporting-text">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout-icon"></div>
+
+                        <div class="mdl-layout__header-row"><span class="mdl-layout__title">My title</span>
+
+                            <div class="mdl-layout-spacer"></div>
+
+                            <nav class="mdl-navigation">
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 1</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 2</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 3</a>
+                            </nav>
+
+                        </div>
+                    </header>
+
+                    <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        </nav>
+                    </div>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Fixed tabs-->
+    <div class="mdl-card">
+
+        <div class="mdl-card__title"><h2 class="mdl-card__title-text">Fixed tabs</h2></div>
+        <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Simple header with fixed tabs</div></div>
+
+        <div class="mdl-card__supporting-text">
+            <div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+                    <header class="mdl-layout__header">
+                        <div class="mdl-layout-icon"></div>
+
+                        <div class="mdl-layout__header-row"><span class="mdl-layout__title">My title</span>
+
+                            <div class="mdl-layout-spacer"></div>
+
+                            <nav class="mdl-navigation">
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 1</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 2</a>
+                                <a mdl-nav-item="" href="#" class="mdl-navigation__link">Nav link 3</a>
+                            </nav>
+
+                        </div>
+                    </header>
+
+                    <div class="mdl-layout__drawer"><span class="mdl-layout__title">Title</span>
+                        <nav class="mdl-navigation">
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                            <a mdl-nav-item="" href="#" class="mdl-navigation__link">Link</a>
+                        </nav>
+                    </div>
+
+                    <main class="mdl-layout__content">
+                        <div class="page-content"></div>
+                    </main>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+        </main>
+
+    </div>
+
+
+
+    <!-- IE Compatibility shims -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js""></script>
+    <![endif]-->
+    <!--[if IE]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
+    <![endif]-->
+    <!-- end shims -->
+    <!-- Enable Prism syntax highlighting -->
+    <script src="..\lib\prism\prism.js"></script>
+    <script src="..\lib\prism\prism-markup.min.js"></script>
+
+    <!-- Built with love using Material Design Lite -->
+
+    <script src="..\lib\jquery\jquery-2.1.4.min.js"></script>
+    <script src="..\lib\simplebar\simplebar.min.js"></script>
+
+
+    
+        <script src="..\lib\mdl\material.min.js"></script>
+    
+    
+
+    
+</body>
+</html>

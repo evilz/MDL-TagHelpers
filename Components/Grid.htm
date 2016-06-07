@@ -1,7 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
@@ -32,119 +31,25 @@
     <link rel="stylesheet" href="..\lib\simplebar\simplebar.css">
     <link rel="stylesheet" href="..\css\prism-default.css">
     
-    
-
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-<meta name="x-stylesheet-fallback-test" class="mdl-layout"><script>!function(a,b,c){var d,e=document,f=e.getElementsByTagName("SCRIPT"),g=f[f.length-1].previousElementSibling,h=e.defaultView&&e.defaultView.getComputedStyle?e.defaultView.getComputedStyle(g):g.currentStyle;if(h&&h[a]!==b)for(d=0;d<c.length;d++)e.write('<link rel="stylesheet" href="'+c[d]+'"/>')}("display","flex",["\/lib\/mdl\/material.min.css"]);</script>
-
-        <link rel="stylesheet" href="..\css\site.css?v=Axuyfp01xOJn_uckNUbk2ETVz_trrVRnkPdrQB49k78">
+        <link rel="stylesheet" href="..\lib\mdl\material.min.css">
+        <link rel="stylesheet" href="..\css\site.css">
     
-
-    <style>
-         .ml-header {
-             min-height: 180px;
-         }
-
-        .mdl-layout__header {
-            transition: all .5s;
-        }
-
-        .list-inline, .list-unstyled {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .list-bordered {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .list-bordered li {
-            border-bottom: 1px rgba(0,0,0,.1) solid;
-            transition: all .1s;
-        }
-
-        .list-bordered li a {
-            display: block;
-            padding: 5px;
-        }
-
-        .list-bordered li a:hover {
-            padding-left: 10px;
-        }
-
-        .ml-card-holder {
-            position: relative;
-        }
-
-        .ml-card-holder.ml-card-holder-first {
-            margin-top: -81px;
-        }
-
-        .mdl-layout-title {
-            font-size: 16px;
-        }
-
-        /*general*/
-        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-            font-family: inherit;
-            font-weight: 400;
-            line-height: 1.1;
-            color: #444;
-        }
-
-        .h1, .h2, .h3, h1, h2, h3 {
-            margin-top: 23px;
-            margin-bottom: 11.5px;
-        }
-
-        .h1, h1 {
-            font-size: 33px;
-        }
-
-        .h2, h2 {
-            font-size: 27px;
-        }
-
-        .h3, h3 {
-            font-size: 23px;
-        }
-
-        .h4, h4 {
-            font-size: 17px;
-        }
-
-        .h5, h5 {
-            font-size: 13px;
-        }
-
-        .h6, h6 {
-            font-size: 12px;
-        }
-
-        a {
-            transition: all .2s;
-            text-decoration: none;
-            color: #058494;
-        }
-    </style>
+    
 
 </head>
 
-
 <body>
-
-    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout has-drawer ">
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout">
         
 <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
     <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
     <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title "><a href="#/dashboard">About </a>  / About</span>
+        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / Grid</span>
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -213,6 +118,12 @@
         padding: 0;
     }
 
+      .mdl-layout__drawer .mdl-navigation ul {
+            padding-right: 0;
+            list-style:none;
+            margin:0;
+        }
+
         .mdl-layout__drawer .mdl-navigation li {
             position: relative;
             line-height: 0;
@@ -221,12 +132,16 @@
             flex-shrink: 0;
         }
 
+            .mdl-layout__drawer .mdl-navigation li .mdl-navigation__link {
+                padding-left: 50px;
+            }
+
         .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-            background-color: rgba(255,255,255,.2);
+            background-color: rgba(0,0,0,.2);
             color: #fff;
         }
 
-    .demo-navigation .mdl-navigation__link .material-icons {
+    .demo-navigation .mdl-navigation__link>.material-icons {
         margin-right: 10px;
         font-size: 18px;
         color: #bababa !important;
@@ -259,261 +174,198 @@
         margin: 0;
     }
 
-    .mdl-layout__drawer .mdl-navigation li li a.mdl-navigation__link {
-        padding: 8px 20px 8px 48px;
-    }
-
     .collapse {
         height: 0;
         display: none;
     }
 </style>
 
-<div style="border-right: 0" class="mdl-layout__drawer mdl-color-text--blue-grey-50 mdl-color--grey-900" data-simplebar-direction="vertical">
 
+    <div style="border-right: 0" data-simplebar-direction="vertical" class="mdl-layout__drawer mdl-color--grey-900 mdl-color-text--blue-grey-50">
+        
     <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
 
         <div class="brand-logo">
-            <div class="logo">
+            <div class="logo" style="background-image: url(../images/logo.png);">
                 ASPNET MDL
             </div>
         </div>
     </header>
 
- 
-        <ul style="margin-top: 0;" close-others="false" class="demo-navigation mdl-navigation">
-            <li class="active">
-                <a class="mdl-navigation__link " href="..\index.htm"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>About</a>
-            </li>
-            <li>
-                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">power_settings_new</i>Getting Started</a>
-            </li>
+        <nav style="margin-top: 0;padding-bottom:50px;" class="demo-navigation mdl-navigation">
+            <a mdl-nav-item="" href="..\index.htm" class="mdl-navigation__link"><i class="material-icons">home</i>About</a>
+            <a mdl-nav-item="" href="/GettingStarted" class="mdl-navigation__link"><i class="material-icons">power_settings_new</i>Getting Started</a>
+
+            <a mdl-nav-item="" href="" class="mdl-navigation__link">
+               
+                <i class="material-icons">extension</i>Components
+                <div style="position: absolute; right: 7px;    margin-top: -3px;">
+                    <i class="material-icons mdl-color-text--green">arrow_drop_down</i>
+                </div>
+            </a>
+
+                    <ul class="mdl-navigation in">
+                        <li><a mdl-nav-item="" href="Badges.htm" class="mdl-navigation__link"><i class="material-icons">info</i>Badges</a></li>
+                        <li><a mdl-nav-item="" href="Buttons.htm" class="mdl-navigation__link"><i class="material-icons">touch_app</i>Buttons</a></li>
+                        <li><a mdl-nav-item="" href="Cards.htm" class="mdl-navigation__link"><i class="material-icons">credit_card</i>Cards</a></li>
+                        <li><a mdl-nav-item="" href="Dialog.htm" class="mdl-navigation__link"><i class="material-icons">message</i>Dialog</a></li>
+                        <li><a mdl-nav-item="" href="Footer.htm" class="mdl-navigation__link"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
+                        <li><a mdl-nav-item="" href="Grid.htm" class="mdl-navigation__link"><i class="material-icons">view_module</i>Grid</a></li>
+                        <li><a mdl-nav-item="" href="Layout.htm" class="mdl-navigation__link"><i class="material-icons">view_quilt</i>Layout</a></li>
+                        <li><a mdl-nav-item="" href="List.htm" class="mdl-navigation__link"><i class="material-icons">format_list_bulleted</i>List</a></li>
+                        <li><a mdl-nav-item="" href="Loading.htm" class="mdl-navigation__link"><i class="material-icons">autorenew</i>Loading</a></li>
+                        <li><a mdl-nav-item="" href="Menus.htm" class="mdl-navigation__link"><i class="material-icons">menu</i>Menus</a></li>
+                        <li><a mdl-nav-item="" href="Sliders.htm" class="mdl-navigation__link"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
+                        <li><a mdl-nav-item="" href="Snackbar.htm" class="mdl-navigation__link"><i class="material-icons">picture_in_picture_alt</i>Snackbar</a></li>
+                        <li><a mdl-nav-item="" href="Tables.htm" class="mdl-navigation__link"><i class="material-icons">view_column</i>Tables</a></li>
+                        <li><a mdl-nav-item="" href="Tabs.htm" class="mdl-navigation__link"><i class="material-icons">tab</i>Tabs</a></li>
+                        <li><a mdl-nav-item="" href="TextFields.htm" class="mdl-navigation__link"><i class="material-icons">input</i>Text Fields</a></li>
+                        <li><a mdl-nav-item="" href="Toggles.htm" class="mdl-navigation__link"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
+                        <li><a mdl-nav-item="" href="Tooltips.htm" class="mdl-navigation__link"><i class="material-icons">mode_comment</i>Tooltips</a></li>
 
 
-            <li>
-                <a class="mdl-navigation__link" href="">
-                    <div style="position: absolute; right: 7px;">
-                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_down</span></i>
-                    </div>
+                    </ul>
+              
+            <a mdl-nav-item="" href="" class="mdl-navigation__link">
+                
+                <i class="material-icons">format_align_left</i>Style
+                <div style="position: absolute; right: 7px;    margin-top: -25px;">
+                    <i class="material-icons mdl-color-text--green">arrow_drop_down</i>
+                </div>
+            </a>
+            <ul class="mdl-navigation in">
+                <ml-menu-group-heading class=""></ml-menu-group-heading>
+                <li><a mdl-nav-item="" href="..\Style\Typography.htm" class="mdl-navigation__link"><i class="material-icons">text_format</i>Typography</a></li>
+                <li><a mdl-nav-item="" href="..\Style\Colors.htm" class="mdl-navigation__link"><i class="material-icons">invert_colors</i>Color</a></li>
+                <li><a mdl-nav-item="" href="..\Style\Icons.htm" class="mdl-navigation__link"><i class="material-icons">insert_emoticon</i>Icons</a></li>
+                <li><a mdl-nav-item="" href="..\Style\Shadows.htm" class="mdl-navigation__link"><i class="material-icons">layers</i>Shadow</a></li>
+            </ul>
+</nav>
 
-                    <i class="mdl-color-text--blue-grey-400 material-icons ">extension</i><span class="">
-                        Components
-                    </span>
-                </a>
-                <ul class="mdl-navigation in" style="height: auto;">
-                    <ml-menu-group-heading class=""></ml-menu-group-heading>
-
-                    <li><a class="mdl-navigation__link" href="Badges.htm"><i class="material-icons">info</i>Badges</a></li>
-                    <li><a class="mdl-navigation__link " href="Buttons.htm"><i class="material-icons">touch_app</i>Buttons</a></li>
-                    <li><a class="mdl-navigation__link " href="Cards.htm"><i class="material-icons">credit_card</i>Cards</a></li>
-                    <li><a class="mdl-navigation__link " href="Grid.htm"><i class="material-icons">view_module</i>Grid</a></li>
-                    <li><a class="mdl-navigation__link " href="Tabs.htm"><i class="material-icons">tab</i>Tabs</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Footer"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Loading"><i class="material-icons">autorenew</i>Loading</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Menus"><i class="material-icons">menu</i>Menus</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Sliders"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Toggles"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Tables"><i class="material-icons">view_column</i>Tables</a></li>
-                    <li><a class="mdl-navigation__link " href="TextFields.htm"><i class="material-icons">input</i>Text Fields</a></li>
-                    <li><a class="mdl-navigation__link " href="Tooltips.htm"><i class="material-icons">mode_comment</i>Tooltips</a></li>
-
-                </ul>
-            </li>
-
-            <li>
-                <a class="mdl-navigation__link" href="">
-                    <div class="absolute" style="position: absolute; right: 7px;">
-                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_up</span></i>
-                    </div>
-
-                    <i class="mdl-color-text--blue-grey-400 material-icons ">format_align_left</i><span class="">Style</span>
-                </a>
-                <ul class="mdl-navigation in">
-                    <ml-menu-group-heading class=""></ml-menu-group-heading>
-                    <li><a class="mdl-navigation__link " href="..\Style\Typography.htm"><i class="material-icons">text_format</i>Typography</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Style\Colors.htm"><i class="material-icons">invert_colors</i>Color</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Style\Icons.htm"><i class="material-icons">insert_emoticon</i>Icons</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Style\Shadows.htm"><i class="material-icons">layers</i>Shadow</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">link</i>GitHub</a>
-            </li>
-
-        </ul>
-   
 </div>
 
         <main class="mdl-layout__content mdl-color--grey-100" data-simplebar-direction="vertical">
             
 
-
-<style>
-    h3 i.material-icons {
-        float: left;
-        margin-right: 5px;
-    }
-
-    .mdl-badge.material-icons:after {
-        right: -10px;
-    }
-
-    .mdl-badge[data-badge].mdl-color-badge--green:after {
-        background-color: rgb(76, 175, 80);
-    }
-
-    .amdl-Section {
-    }
-
-    .amdl-Section-Header {
-        min-height: 140px;
-        padding: 20px;
-    }
-
-    .amdl-Section-Title {
-        margin-top: 20px;
-        margin-bottom: 5px; /*mdl-color-text--white*/
-    }
-
-    .amdl-Section-SubTitle {
-        margin-top: 0px;
-        margin-bottom: 5px;
-        font-weight: 100; /*mdl-color-text--indigo-100*/
-    }
-
-    .amdl-Section-FlatContent {
-        padding-right: 20px;
-        padding: 40px;
-    }
-
-</style>
-
-
-
-
 <section class="amdl-Section">
 
-    <div class="amdl-Section-Header mdl-color--blue">
+    <div class="amdl-Section-Header mdl-color--indigo">
         <h3 class="amdl-Section-Title mdl-color-text--white">Grid</h3>
-        <h4 class="amdl-Section-SubTitle mdl-color-text--blue-100">blblblblb</h4>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--indigo-100">blabla</h4>
     </div>
 
     <div class="mdl-grid mdl-grid--no-spacing">
-        
-        <div class="mdl-color--grey-100 mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
-                
-    <h3>
-        <i class="material-icons">notifications</i> Badges
-    </h3>
 
-    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
-
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
-                </a>
-            </li>
-        </ul>
-    </div>
-
-            </div>
-        </div>
-
-
-        <div style="margin-top:-81px;" class=" mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div style="margin-top:-81px" class="mdl-cell  mdl-cell--12-col">
             <div style="padding: 20px;">
-
                 
-
-
 <style>
     .demo-grid .mdl-cell {
-    box-sizing: border-box;
-    background-color: #BDBDBD;
-    height: 200px;
-    padding-left: 8px;
-    padding-top: 4px;
-    color: white;
-    height: 100px;
-}
-
+        box-sizing: border-box;
+        background-color: #9e9e9e;
+        padding: 4px;
+        color: white;
+    }
+    .demo-grid .mdl-grid {
+        padding: 0;
+    }
 </style>
 
-<div style="width: auto; " class="mdl-card mdl-shadow--2dp">
-    <div class="mdl-card__title">
-        <h2 class="mdl-card__title-text">Grid cell vertical align</h2>
-    </div>
-    <div style="padding: 30px;">
 
-        <div style="height:150px" class="mdl-grid">
-            <div phonedsf="1" class=" mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--3-col-tablet mdl-cell--middle mdl-color--grey">cell on middle</div>
-            <div phonedsf="1" class=" mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--top mdl-color--grey">cell on top</div>
-            <div phonedsf="1" class=" mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--bottom mdl-color--grey">cell on bottom</div>
-            <div phonedsf="1" class=" mdl-cell mdl-cell--3-col mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--stretch mdl-color--grey">cell stretch</div>
+<div class="demo-grid mdl-card mdl-shadow--2dp">
 
-        </div>
-        </div>
-       
-        <div class="mdl-card__title">
-            <h2 class="mdl-card__title-text">Cell size</h2>
-        </div>
-        <div class="demo-grid" style="padding: 30px;">
+    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Grid cell vertical align</h2></div>
 
-            
+    <div style="height:150px" class="mdl-grid">
+                <div class="mdl-cell  mdl-cell--3-col  mdl-cell--3-col-desktop  mdl-cell--2-col-tablet  mdl-cell--1-col-phone  mdl-cell--middle">cell on middle</div>
+                <div class="mdl-cell  mdl-cell--3-col  mdl-cell--3-col-desktop  mdl-cell--2-col-tablet  mdl-cell--1-col-phone  mdl-cell--top">cell on top</div>
+                <div class="mdl-cell  mdl-cell--3-col  mdl-cell--3-col-desktop  mdl-cell--2-col-tablet  mdl-cell--1-col-phone  mdl-cell--bottom">cell on bottom</div>
+                <div class="mdl-cell  mdl-cell--3-col  mdl-cell--3-col-desktop  mdl-cell--2-col-tablet  mdl-cell--1-col-phone  mdl-cell--stretch">cell stretch</div>
 
-            <div class="mdl-grid">
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--1-col mdl-color--grey">1</div>
-            </div>
-
-            <div class="mdl-grid">
-                <div class="mdl-color-text--white mdl-cell mdl-cell--4-col mdl-color--grey">4</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--4-col mdl-color--grey">4</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--4-col mdl-color--grey">4</div>
-            </div>
-
-            <div class="mdl-grid">
-                <div class="mdl-color-text--white mdl-cell mdl-cell--6-col mdl-color--grey">6</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--4-col mdl-color--grey">4</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--2-col mdl-color--grey">2</div>
-            </div>
-
-            <div class="mdl-grid">
-                <div class="mdl-color-text--white mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet mdl-color--grey">6 (8 tablet)</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet mdl-color--grey">4 (6 tablet)</div>
-                <div class="mdl-color-text--white mdl-cell mdl-cell--2-col mdl-cell--2-col-phone mdl-color--grey">2 (4 phone)</div>
             </div>
 
 
-
-
-            <div class="snippet-code">
-
-                <pre class="language-markup codepen-button-enabled">
-<code id="badge/badge-on-icon-text.html">
-</code>
+    <pre><code class="language-markup">
+&lt;mdl-grid no-spacing=&quot;false&quot; style=&quot;height:150px&quot;&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Middle&quot;&gt;cell on middle&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Top&quot;&gt;cell on top&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Bottom&quot;&gt;cell on bottom&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;3&quot; valign=&quot;MDLCellVAlign.Stretch&quot;&gt;cell stretch&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+    </code>
 </pre>
+
+    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Cell size</h2></div>
+       
+            <div class="mdl-grid">
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
+                <div class="mdl-cell  mdl-cell--1-col">1</div>
             </div>
 
+            <div class="mdl-grid">
+                <div class="mdl-cell  mdl-cell--4-col">4</div>
+                <div class="mdl-cell  mdl-cell--4-col">4</div>
+                <div class="mdl-cell  mdl-cell--4-col">4</div>
+            </div>
+
+            <div class="mdl-grid">
+                <div class="mdl-cell  mdl-cell--6-col">6</div>
+                <div class="mdl-cell  mdl-cell--4-col">4</div>
+                <div class="mdl-cell  mdl-cell--2-col">2</div>
+            </div>
+
+            <div class="mdl-grid">
+                <div class="mdl-cell  mdl-cell--6-col  mdl-cell--8-col-tablet">6 (8 tablet)</div>
+                <div class="mdl-cell  mdl-cell--4-col  mdl-cell--6-col-tablet">4 (6 tablet)</div>
+                <div class="mdl-cell  mdl-cell--2-col  mdl-cell--2-col-phone">2 (4 phone)</div>
+            </div>
+
+<pre><code class="language-markup">
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;1&quot; &gt;1&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;6&quot; &gt;6&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; &gt;4&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;2&quot; &gt;2&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+&lt;mdl-grid&gt;
+    &lt;mdl-cell size=&quot;6&quot; tablet=&quot;8&quot; &gt;6 (8 tablet)&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;4&quot; tablet=&quot;6&quot; &gt;4 (6 tablet)&lt;/mdl-cell&gt;
+    &lt;mdl-cell size=&quot;2&quot; phone=&quot;2&quot;  &gt;2 (4 phone)&lt;/mdl-cell&gt;
+&lt;/mdl-grid&gt;
+    </code>
+</pre>
+
+
+
         </div>
-
-
-</div>
 
             </div>
         </div>
@@ -525,7 +377,6 @@
 
         </main>
 
-        <div class="mdl-layout__obfuscator"></div>
     </div>
 
 
@@ -552,45 +403,10 @@
 
 
     
-    
         <script src="..\lib\mdl\material.min.js"></script>
     
+    
 
     
-    <script>
-
-       
-
-        $('.mdl-layout__content').scroll(function () {
-
-            var offset = $('.simplebar-scroll-content').scrollTop();
-
-            if (offset > 180) {
-                $('.mdl-layout__header').removeClass("mdl-color--white");
-                $('.mdl-layout__header').addClass("mdl-color--cyan");
-
-            }
-            else {
-                $('.mdl-layout__header').removeClass("mdl-color--cyan");
-                $('.mdl-layout__header').addClass("mdl-color--white");
-            }
-         
-            console.log($('.simplebar-scroll-content').scrollTop());
-          
-
-        });
-
-
-        //$('.mdl-layout__content').simplebar().on('scroll', function () {
-
-        
-
-        //    var offset = $('.mdl-layout__content').scrollTop()
-
-        //    console.log(offset);
-        //});
-
-</script>
-
 </body>
 </html>

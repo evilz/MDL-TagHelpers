@@ -49,7 +49,7 @@
 <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
     <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
     <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / Tabs</span>
+        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / List</span>
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -249,42 +249,239 @@
 
 <section class="amdl-Section">
 
-    <div class="amdl-Section-Header mdl-color--green">
-        <h3 class="amdl-Section-Title mdl-color-text--white">Tabs</h3>
-        <h4 class="amdl-Section-SubTitle mdl-color-text--green-100">blabla</h4>
+    <div class="amdl-Section-Header mdl-color--red">
+        <h3 class="amdl-Section-Title mdl-color-text--white">List</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--red-100">Customizable scrollable lists.</h4>
     </div>
 
     <div class="mdl-grid mdl-grid--no-spacing">
 
         <div style="margin-top:-81px" class="mdl-cell  mdl-cell--12-col">
             <div style="padding: 20px;">
-                
-<div class="mdl-card mdl-shadow--2dp">
+                <div class="mdl-card mdl-shadow--2dp">
 
-    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Simple Tabs</h2></div>
+    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Binded lists</h2></div>
 
-    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect"><div class="mdl-tabs__tab-bar"><a href="#gid_e5cd5ad0-eaeb-426a-9d4d-8dc0e2c4e237" class="mdl-tabs__tab is-active">Nunc tincidunt</a><a href="#gid_adf0721d-111a-48f1-ae50-a0816768b5eb" class="mdl-tabs__tab">Proin dolor</a><a href="#gid_1863dd40-a2e2-4367-9821-c44b006a423e" class="mdl-tabs__tab">Aenean lacinia</a></div><div class="mdl-tabs__panel is-active" id="gid_e5cd5ad0-eaeb-426a-9d4d-8dc0e2c4e237"><div class="mdl-grid"><div class="mdl-cell  mdl-cell--12-col"><p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.</p></div></div></div><div class="mdl-tabs__panel" id="gid_adf0721d-111a-48f1-ae50-a0816768b5eb"><div class="mdl-grid"><div class="mdl-cell  mdl-cell--12-col"><p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p></div></div></div><div class="mdl-tabs__panel" id="gid_1863dd40-a2e2-4367-9821-c44b006a423e"><div class="mdl-grid"><div class="mdl-cell  mdl-cell--12-col"><p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p><p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p></div></div></div></div>
+    <div class="mdl-card__supporting-text">
+        <div class="mdl-grid">
+            <div class="mdl-cell">
+                <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Simple list</div></div>
 
+                <ul class="demo-list-item mdl-list">
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            Bryan Cranston
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            Aaron Paul
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            Bob Odenkirk
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mdl-cell">
 
+                <div class="mdl-card__title"><div class="mdl-card__subtitle-text">With avatar</div></div>
+                <ul class="demo-list-icon mdl-list">
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            Bryan Cranston
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            Aaron Paul
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-icon">person</i>
+                            Bob Odenkirk
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="mdl-cell">
+
+                <div class="mdl-card__title"><div class="mdl-card__subtitle-text">With avatar and action</div></div>
+                <div class="demo-list-action mdl-list">
+                    <div class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bryan Cranston</span>
+                        </span>
+                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                    </div>
+                    <div class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Aaron Paul</span>
+                        </span>
+                        <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                    </div>
+                    <div class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">person</i>
+                            <span>Bob Odenkirk</span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <pre><code class="language-markup">
-&lt;mdl-tabs selected=&quot;0&quot; &gt;
-    &lt;mdl-tab-panel title=&quot;Nunc tincidunt&quot;&gt;
-        &lt;p&gt;Proin elit arcu, m nulla...&lt;/p&gt;
-    &lt;/mdl-tab-panel&gt;
-    &lt;mdl-tab-panel title=&quot;Proin dolor&quot;&gt;
-        &lt;p&gt;Morbi tincidunt,...&lt;/p&gt;
-    &lt;/mdl-tab-panel&gt;
-    &lt;mdl-tab-panel title=&quot;Aenean lacinia&quot;&gt;
-        &lt;p&gt;Mauris eleifend est et turpis...&lt;/p&gt;
-    &lt;/mdl-tab-panel&gt;
-&lt;/mdl-tabs&gt;
+
     </code>
 </pre>
 
-  
+    <div class="mdl-card__supporting-text">
+        <div class="mdl-grid">
+            <div class="mdl-cell  mdl-cell--3-col">
+                <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Avatar and control</div></div>
 
+                <ul class="demo-list-control mdl-list">
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons  mdl-list__item-avatar">person</i>
+                            Bryan Cranston
+                        </span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="list-checkbox-1">
+                                <input type="checkbox" id="list-checkbox-1" class="mdl-checkbox__input" checked="">
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons  mdl-list__item-avatar">person</i>
+                            Aaron Paul
+                        </span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="demo-list-radio mdl-radio mdl-js-radio mdl-js-ripple-effect" for="list-option-1">
+                                <input type="radio" id="list-option-1" class="mdl-radio__button" name="options" value="1" checked="">
+                            </label>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons  mdl-list__item-avatar">person</i>
+                            Bob Odenkirk
+                        </span>
+                        <span class="mdl-list__item-secondary-action">
+                            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="list-switch-1">
+                                <input type="checkbox" id="list-switch-1" class="mdl-switch__input" checked="">
+                            </label>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mdl-cell  mdl-cell--1-col"></div>
+                <div class="mdl-cell  mdl-cell--3-col">
+
+                    <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Two line</div></div>
+                    <ul class="demo-list-two mdl-list">
+                        <li class="mdl-list__item mdl-list__item--two-line">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-avatar">person</i>
+                                <span>Bryan Cranston</span>
+                                <span class="mdl-list__item-sub-title">62 Episodes</span>
+                            </span>
+                            <span class="mdl-list__item-secondary-content">
+                                <span class="mdl-list__item-secondary-info">Actor</span>
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </span>
+                        </li>
+                        <li class="mdl-list__item mdl-list__item--two-line">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-avatar">person</i>
+                                <span>Aaron Paul</span>
+                                <span class="mdl-list__item-sub-title">62 Episodes</span>
+                            </span>
+                            <span class="mdl-list__item-secondary-content">
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </span>
+                        </li>
+                        <li class="mdl-list__item mdl-list__item--two-line">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-avatar">person</i>
+                                <span>Bob Odenkirk</span>
+                                <span class="mdl-list__item-sub-title">62 Episodes</span>
+                            </span>
+                            <span class="mdl-list__item-secondary-content">
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </span>
+                        </li>
+                    </ul>
+
+                </div>
+            <div class="mdl-cell  mdl-cell--1-col"></div>
+                <div class="mdl-cell  mdl-cell--4-col">
+
+                    <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Three line</div></div>
+                    <ul class="demo-list-three mdl-list">
+                        <li class="mdl-list__item mdl-list__item--three-line">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons mdl-list__item-avatar">person</i>
+                                <span>Bryan Cranston</span>
+                                <span class="mdl-list__item-text-body">
+                                    Bryan Cranston played the role of Walter in Breaking Bad. He is also known
+                                    for playing Hal in Malcom in the Middle.
+                                </span>
+                            </span>
+                            <span class="mdl-list__item-secondary-content">
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </span>
+                        </li>
+                        <li class="mdl-list__item mdl-list__item--three-line">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons  mdl-list__item-avatar">person</i>
+                                <span>Aaron Paul</span>
+                                <span class="mdl-list__item-text-body">
+                                    Aaron Paul played the role of Jesse in Breaking Bad. He also featured in
+                                    the "Need For Speed" Movie.
+                                </span>
+                            </span>
+                            <span class="mdl-list__item-secondary-content">
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </span>
+                        </li>
+                        <li class="mdl-list__item mdl-list__item--three-line">
+                            <span class="mdl-list__item-primary-content">
+                                <i class="material-icons  mdl-list__item-avatar">person</i>
+                                <span>Bob Odenkirk</span>
+                                <span class="mdl-list__item-text-body">
+                                    Bob Odinkrik played the role of Saul in Breaking Bad. Due to public fondness for the
+                                    character, Bob stars in his own show now, called "Better Call Saul".
+                                </span>
+                            </span>
+                            <span class="mdl-list__item-secondary-content">
+                                <a class="mdl-list__item-secondary-action" href="#"><i class="material-icons">star</i></a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
 </div>
+    </div>
+<pre><code class="language-markup">
+
+    </code>
+</pre>
+</div>
+
             </div>
         </div>
     </div>

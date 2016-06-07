@@ -1,7 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
@@ -32,119 +31,25 @@
     <link rel="stylesheet" href="..\lib\simplebar\simplebar.css">
     <link rel="stylesheet" href="..\css\prism-default.css">
     
-    
-
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
-<meta name="x-stylesheet-fallback-test" class="mdl-layout"><script>!function(a,b,c){var d,e=document,f=e.getElementsByTagName("SCRIPT"),g=f[f.length-1].previousElementSibling,h=e.defaultView&&e.defaultView.getComputedStyle?e.defaultView.getComputedStyle(g):g.currentStyle;if(h&&h[a]!==b)for(d=0;d<c.length;d++)e.write('<link rel="stylesheet" href="'+c[d]+'"/>')}("display","flex",["\/lib\/mdl\/material.min.css"]);</script>
-
-        <link rel="stylesheet" href="..\css\site.css?v=Axuyfp01xOJn_uckNUbk2ETVz_trrVRnkPdrQB49k78">
+        <link rel="stylesheet" href="..\lib\mdl\material.min.css">
+        <link rel="stylesheet" href="..\css\site.css">
     
-
-    <style>
-         .ml-header {
-             min-height: 180px;
-         }
-
-        .mdl-layout__header {
-            transition: all .5s;
-        }
-
-        .list-inline, .list-unstyled {
-            padding-left: 0;
-            list-style: none;
-        }
-
-        .list-bordered {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .list-bordered li {
-            border-bottom: 1px rgba(0,0,0,.1) solid;
-            transition: all .1s;
-        }
-
-        .list-bordered li a {
-            display: block;
-            padding: 5px;
-        }
-
-        .list-bordered li a:hover {
-            padding-left: 10px;
-        }
-
-        .ml-card-holder {
-            position: relative;
-        }
-
-        .ml-card-holder.ml-card-holder-first {
-            margin-top: -81px;
-        }
-
-        .mdl-layout-title {
-            font-size: 16px;
-        }
-
-        /*general*/
-        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-            font-family: inherit;
-            font-weight: 400;
-            line-height: 1.1;
-            color: #444;
-        }
-
-        .h1, .h2, .h3, h1, h2, h3 {
-            margin-top: 23px;
-            margin-bottom: 11.5px;
-        }
-
-        .h1, h1 {
-            font-size: 33px;
-        }
-
-        .h2, h2 {
-            font-size: 27px;
-        }
-
-        .h3, h3 {
-            font-size: 23px;
-        }
-
-        .h4, h4 {
-            font-size: 17px;
-        }
-
-        .h5, h5 {
-            font-size: 13px;
-        }
-
-        .h6, h6 {
-            font-size: 12px;
-        }
-
-        a {
-            transition: all .2s;
-            text-decoration: none;
-            color: #058494;
-        }
-    </style>
+    
 
 </head>
 
-
 <body>
-
-    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout has-drawer ">
+    <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout">
         
 <header class="mdl-layout__header mdl-color--white mdl-color-text--grey-600 is-casting-shadow">
     <div class="mdl-layout__drawer-button mdl-color-text--grey-600"><i class="material-icons">menu</i></div>
     <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title "><a href="#/dashboard">About </a>  / About</span>
+        <span class="mdl-layout-title "><a href="#/dashboard">Components </a>  / Colors</span>
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable ">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -213,6 +118,12 @@
         padding: 0;
     }
 
+      .mdl-layout__drawer .mdl-navigation ul {
+            padding-right: 0;
+            list-style:none;
+            margin:0;
+        }
+
         .mdl-layout__drawer .mdl-navigation li {
             position: relative;
             line-height: 0;
@@ -221,12 +132,16 @@
             flex-shrink: 0;
         }
 
+            .mdl-layout__drawer .mdl-navigation li .mdl-navigation__link {
+                padding-left: 50px;
+            }
+
         .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
-            background-color: rgba(255,255,255,.2);
+            background-color: rgba(0,0,0,.2);
             color: #fff;
         }
 
-    .demo-navigation .mdl-navigation__link .material-icons {
+    .demo-navigation .mdl-navigation__link>.material-icons {
         margin-right: 10px;
         font-size: 18px;
         color: #bababa !important;
@@ -259,1454 +174,1407 @@
         margin: 0;
     }
 
-    .mdl-layout__drawer .mdl-navigation li li a.mdl-navigation__link {
-        padding: 8px 20px 8px 48px;
-    }
-
     .collapse {
         height: 0;
         display: none;
     }
 </style>
 
-<div style="border-right: 0" class="mdl-layout__drawer mdl-color-text--blue-grey-50 mdl-color--grey-900" data-simplebar-direction="vertical">
 
+    <div style="border-right: 0" data-simplebar-direction="vertical" class="mdl-layout__drawer mdl-color--grey-900 mdl-color-text--blue-grey-50">
+        
     <header class="mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
 
         <div class="brand-logo">
-            <div class="logo">
+            <div class="logo" style="background-image: url(../images/logo.png);">
                 ASPNET MDL
             </div>
         </div>
     </header>
 
- 
-        <ul style="margin-top: 0;" close-others="false" class="demo-navigation mdl-navigation">
-            <li class="active">
-                <a class="mdl-navigation__link " href="..\index.htm"><i class="mdl-color-text--blue-grey-400 material-icons">home</i>About</a>
-            </li>
-            <li>
-                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">power_settings_new</i>Getting Started</a>
-            </li>
+        <nav style="margin-top: 0;padding-bottom:50px;" class="demo-navigation mdl-navigation">
+            <a mdl-nav-item="" href="..\index.htm" class="mdl-navigation__link"><i class="material-icons">home</i>About</a>
+            <a mdl-nav-item="" href="/GettingStarted" class="mdl-navigation__link"><i class="material-icons">power_settings_new</i>Getting Started</a>
+
+            <a mdl-nav-item="" href="" class="mdl-navigation__link">
+               
+                <i class="material-icons">extension</i>Components
+                <div style="position: absolute; right: 7px;    margin-top: -3px;">
+                    <i class="material-icons mdl-color-text--green">arrow_drop_down</i>
+                </div>
+            </a>
+
+                    <ul class="mdl-navigation in">
+                        <li><a mdl-nav-item="" href="..\Components\Badges.htm" class="mdl-navigation__link"><i class="material-icons">info</i>Badges</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Buttons.htm" class="mdl-navigation__link"><i class="material-icons">touch_app</i>Buttons</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Cards.htm" class="mdl-navigation__link"><i class="material-icons">credit_card</i>Cards</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Dialog.htm" class="mdl-navigation__link"><i class="material-icons">message</i>Dialog</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Footer.htm" class="mdl-navigation__link"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Grid.htm" class="mdl-navigation__link"><i class="material-icons">view_module</i>Grid</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Layout.htm" class="mdl-navigation__link"><i class="material-icons">view_quilt</i>Layout</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\List.htm" class="mdl-navigation__link"><i class="material-icons">format_list_bulleted</i>List</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Loading.htm" class="mdl-navigation__link"><i class="material-icons">autorenew</i>Loading</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Menus.htm" class="mdl-navigation__link"><i class="material-icons">menu</i>Menus</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Sliders.htm" class="mdl-navigation__link"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Snackbar.htm" class="mdl-navigation__link"><i class="material-icons">picture_in_picture_alt</i>Snackbar</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Tables.htm" class="mdl-navigation__link"><i class="material-icons">view_column</i>Tables</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Tabs.htm" class="mdl-navigation__link"><i class="material-icons">tab</i>Tabs</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\TextFields.htm" class="mdl-navigation__link"><i class="material-icons">input</i>Text Fields</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Toggles.htm" class="mdl-navigation__link"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
+                        <li><a mdl-nav-item="" href="..\Components\Tooltips.htm" class="mdl-navigation__link"><i class="material-icons">mode_comment</i>Tooltips</a></li>
 
 
-            <li>
-                <a class="mdl-navigation__link" href="">
-                    <div style="position: absolute; right: 7px;">
-                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_down</span></i>
-                    </div>
+                    </ul>
+              
+            <a mdl-nav-item="" href="" class="mdl-navigation__link">
+                
+                <i class="material-icons">format_align_left</i>Style
+                <div style="position: absolute; right: 7px;    margin-top: -25px;">
+                    <i class="material-icons mdl-color-text--green">arrow_drop_down</i>
+                </div>
+            </a>
+            <ul class="mdl-navigation in">
+                <ml-menu-group-heading class=""></ml-menu-group-heading>
+                <li><a mdl-nav-item="" href="Typography.htm" class="mdl-navigation__link"><i class="material-icons">text_format</i>Typography</a></li>
+                <li><a mdl-nav-item="" href="Colors.htm" class="mdl-navigation__link"><i class="material-icons">invert_colors</i>Color</a></li>
+                <li><a mdl-nav-item="" href="Icons.htm" class="mdl-navigation__link"><i class="material-icons">insert_emoticon</i>Icons</a></li>
+                <li><a mdl-nav-item="" href="Shadows.htm" class="mdl-navigation__link"><i class="material-icons">layers</i>Shadow</a></li>
+            </ul>
+</nav>
 
-                    <i class="mdl-color-text--blue-grey-400 material-icons ">extension</i><span class="">
-                        Components
-                    </span>
-                </a>
-                <ul class="mdl-navigation in" style="height: auto;">
-                    <ml-menu-group-heading class=""></ml-menu-group-heading>
-
-                    <li><a class="mdl-navigation__link" href="..\Components\Badges.htm"><i class="material-icons">info</i>Badges</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Components\Buttons.htm"><i class="material-icons">touch_app</i>Buttons</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Components\Cards.htm"><i class="material-icons">credit_card</i>Cards</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Components\Grid.htm"><i class="material-icons">view_module</i>Grid</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Components\Tabs.htm"><i class="material-icons">tab</i>Tabs</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Footer"><i class="material-icons">vertical_align_bottom</i>Footer</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Loading"><i class="material-icons">autorenew</i>Loading</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Menus"><i class="material-icons">menu</i>Menus</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Sliders"><i class="material-icons">settings_ethernet</i>Sliders</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Toggles"><i class="material-icons">radio_button_checked</i>Toggles</a></li>
-                    <li><a class="mdl-navigation__link " href="/Components/Tables"><i class="material-icons">view_column</i>Tables</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Components\TextFields.htm"><i class="material-icons">input</i>Text Fields</a></li>
-                    <li><a class="mdl-navigation__link " href="..\Components\Tooltips.htm"><i class="material-icons">mode_comment</i>Tooltips</a></li>
-
-                </ul>
-            </li>
-
-            <li>
-                <a class="mdl-navigation__link" href="">
-                    <div class="absolute" style="position: absolute; right: 7px;">
-                        <i class="material-icons"><span class="mdl-color-text--green ">arrow_drop_up</span></i>
-                    </div>
-
-                    <i class="mdl-color-text--blue-grey-400 material-icons ">format_align_left</i><span class="">Style</span>
-                </a>
-                <ul class="mdl-navigation in">
-                    <ml-menu-group-heading class=""></ml-menu-group-heading>
-                    <li><a class="mdl-navigation__link " href="Typography.htm"><i class="material-icons">text_format</i>Typography</a></li>
-                    <li><a class="mdl-navigation__link " href="Colors.htm"><i class="material-icons">invert_colors</i>Color</a></li>
-                    <li><a class="mdl-navigation__link " href="Icons.htm"><i class="material-icons">insert_emoticon</i>Icons</a></li>
-                    <li><a class="mdl-navigation__link " href="Shadows.htm"><i class="material-icons">layers</i>Shadow</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a class="mdl-navigation__link " href="#"><i class="mdl-color-text--blue-grey-400 material-icons">link</i>GitHub</a>
-            </li>
-
-        </ul>
-   
 </div>
 
         <main class="mdl-layout__content mdl-color--grey-100" data-simplebar-direction="vertical">
             
 
-
-<style>
-    h3 i.material-icons {
-        float: left;
-        margin-right: 5px;
-    }
-
-    .mdl-badge.material-icons:after {
-        right: -10px;
-    }
-
-    .mdl-badge[data-badge].mdl-color-badge--green:after {
-        background-color: rgb(76, 175, 80);
-    }
-
-    .amdl-Section {
-    }
-
-    .amdl-Section-Header {
-        min-height: 140px;
-        padding: 20px;
-    }
-
-    .amdl-Section-Title {
-        margin-top: 20px;
-        margin-bottom: 5px; /*mdl-color-text--white*/
-    }
-
-    .amdl-Section-SubTitle {
-        margin-top: 0px;
-        margin-bottom: 5px;
-        font-weight: 100; /*mdl-color-text--indigo-100*/
-    }
-
-    .amdl-Section-FlatContent {
-        padding-right: 20px;
-        padding: 40px;
-    }
-
-</style>
-
-
-
-
 <section class="amdl-Section">
 
-    <div class="amdl-Section-Header mdl-color--blue">
-        <h3 class="amdl-Section-Title mdl-color-text--white">Colors</h3>
-        <h4 class="amdl-Section-SubTitle mdl-color-text--blue-100">Color in material design is inspired by bold hues juxtaposed with muted environments, deep shadows, and bright highlights.</h4>
+    <div class="amdl-Section-Header mdl-color--amber">
+        <h3 class="amdl-Section-Title mdl-color-text--white">Color palette</h3>
+        <h4 class="amdl-Section-SubTitle mdl-color-text--amber-100">This color palette comprises Primary and Accent colors that can be used for illustration or to develop your brand colors.</h4>
     </div>
 
     <div class="mdl-grid mdl-grid--no-spacing">
-        
-        <div class="mdl-color--grey-100 mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-            <div class="mdl-color-text--blue-grey-400 amdl-Section-FlatContent">
-                
-    <h3>Color palette</h3>
 
-
-    <p>
-        This color palette comprises Primary and Accent colors that can be used for illustration or to develop your brand colors. They’ve been designed to work harmoniously with each other.
-        The color palette starts with Primary colors and fills in the spectrum to create a complete and usable palette for Android, Web, and iOS. Google suggests using the 500 colors as the Primary colors in your app and the other colors as Accents colors.
-        <div style="margin-top: 30px">
-            <ul class="list-bordered">
-                <li>
-                    <a target="_blank" href="https://www.google.com/design/spec/style/color.html#">
-                        <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                        Material design colors spec
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-            </div>
-        </div>
-
-
-        <div style="margin-top:-81px;" class=" mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div style="margin-top:-81px" class="mdl-cell  mdl-cell--12-col">
             <div style="padding: 20px;">
-
                 
+<div class="mdl-card mdl-shadow--2dp">
 
-        <div style="width: auto; " class="mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title"><h2 class="mdl-card__title-text">Palette of colors</h2></div>
+    <div class="mdl-card__title"><div class="mdl-card__subtitle-text">Can be used for text and background</div></div>
 
 
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Background colors</h2>
-            </div>
-            <div style="padding: 30px;">
-                <div class="mdl-grid">
+    <div class="mdl-card__supporting-text">
+        <div class="mdl-grid">
 
-                    <div class="mdl-cell--1-col mdl-color--lime-A200">Lime - A200</div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--red">
+                                    <th class="mdl-data-table__cell--non-numeric">red</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--red-50">
+                                        <td class="mdl-data-table__cell">50</td>
 
+                                    </tr>
+                                    <tr class="mdl-color--red-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--red-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--pink">
+                                    <th class="mdl-data-table__cell--non-numeric">pink</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--pink-50">
+                                        <td class="mdl-data-table__cell">50</td>
 
-                <div class="mdl-card__title">
-                    <h4>All Colors</h4>
+                                    </tr>
+                                    <tr class="mdl-color--pink-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--pink-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-
-
-                <div class="mdl-grid">
-
-
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--red">
-                                        <th class="mdl-data-table__cell--non-numeric">red</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--red-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--red-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--pink">
-                                        <th class="mdl-data-table__cell--non-numeric">pink</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--pink-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--pink-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--purple">
-                                        <th class="mdl-data-table__cell--non-numeric">purple</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--purple-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--purple-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--deep-purple">
-                                        <th class="mdl-data-table__cell--non-numeric">deep-purple</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--deep-purple-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-purple-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--indigo">
-                                        <th class="mdl-data-table__cell--non-numeric">indigo</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--indigo-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--indigo-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--blue">
-                                        <th class="mdl-data-table__cell--non-numeric">blue</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--blue-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--light-blue">
-                                        <th class="mdl-data-table__cell--non-numeric">light-blue</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--light-blue-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-blue-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--cyan">
-                                        <th class="mdl-data-table__cell--non-numeric">cyan</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--cyan-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--cyan-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--teal">
-                                        <th class="mdl-data-table__cell--non-numeric">teal</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--teal-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--teal-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--green">
-                                        <th class="mdl-data-table__cell--non-numeric">green</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--green-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--green-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--light-green">
-                                        <th class="mdl-data-table__cell--non-numeric">light-green</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--light-green-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--light-green-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--lime">
-                                        <th class="mdl-data-table__cell--non-numeric">lime</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--lime-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--lime-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--yellow">
-                                        <th class="mdl-data-table__cell--non-numeric">yellow</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--yellow-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--yellow-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--amber">
-                                        <th class="mdl-data-table__cell--non-numeric">amber</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--amber-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--amber-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--orange">
-                                        <th class="mdl-data-table__cell--non-numeric">orange</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--orange-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--orange-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--deep-orange">
-                                        <th class="mdl-data-table__cell--non-numeric">deep-orange</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--deep-orange-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-A100">
-                                            <td class="mdl-data-table__cell">A100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-A200">
-                                            <td class="mdl-data-table__cell">A200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-A400">
-                                            <td class="mdl-data-table__cell">A400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--deep-orange-A700">
-                                            <td class="mdl-data-table__cell">A700</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--brown">
-                                        <th class="mdl-data-table__cell--non-numeric">brown</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--brown-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--brown-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--grey">
-                                        <th class="mdl-data-table__cell--non-numeric">grey</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--grey-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--grey-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--blue-grey">
-                                        <th class="mdl-data-table__cell--non-numeric">blue-grey</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                        <tr class=" mdl-color--blue-grey-50">
-                                            <td class="mdl-data-table__cell">50</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-100">
-                                            <td class="mdl-data-table__cell">100</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-200">
-                                            <td class="mdl-data-table__cell">200</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-300">
-                                            <td class="mdl-data-table__cell">300</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-400">
-                                            <td class="mdl-data-table__cell">400</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-500">
-                                            <td class="mdl-data-table__cell">500</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-600">
-                                            <td class="mdl-data-table__cell">600</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-700">
-                                            <td class="mdl-data-table__cell">700</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-800">
-                                            <td class="mdl-data-table__cell">800</td>
-
-                                        </tr>
-                                        <tr class=" mdl-color--blue-grey-900">
-                                            <td class="mdl-data-table__cell">900</td>
-
-                                        </tr>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--white">
-                                        <th class="mdl-data-table__cell--non-numeric">white</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--black">
-                                        <th class="mdl-data-table__cell--non-numeric mdl-color-text--white">black</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--Primary">
-                                        <th class="mdl-data-table__cell--non-numeric">Primary</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--Primary-contrast">
-                                        <th class="mdl-data-table__cell--non-numeric">Primary-contrast</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--Primary-dark">
-                                        <th class="mdl-data-table__cell--non-numeric">Primary-dark</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--Accent">
-                                        <th class="mdl-data-table__cell--non-numeric">Accent</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                        <table class="mdl-data-table mdl-js-data-table mdl-cell mdl-cell--4-col">
-                            <thead>
-                                <tr class=" mdl-color--Accent-contrast">
-                                        <th class="mdl-data-table__cell--non-numeric">Accent-contrast</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--purple">
+                                    <th class="mdl-data-table__cell--non-numeric">purple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--purple-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--purple-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
                 </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--deep-purple">
+                                    <th class="mdl-data-table__cell--non-numeric">deep-purple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--deep-purple-50">
+                                        <td class="mdl-data-table__cell">50</td>
 
-                <div class="snippet-code">
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-100">
+                                        <td class="mdl-data-table__cell">100</td>
 
-                    <pre class="language-markup codepen-button-enabled">
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-purple-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--indigo">
+                                    <th class="mdl-data-table__cell--non-numeric">indigo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--indigo-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--indigo-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--blue">
+                                    <th class="mdl-data-table__cell--non-numeric">blue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--blue-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--light-blue">
+                                    <th class="mdl-data-table__cell--non-numeric">light-blue</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--light-blue-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-blue-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--cyan">
+                                    <th class="mdl-data-table__cell--non-numeric">cyan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--cyan-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--cyan-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--teal">
+                                    <th class="mdl-data-table__cell--non-numeric">teal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--teal-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--teal-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--green">
+                                    <th class="mdl-data-table__cell--non-numeric">green</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--green-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--green-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--light-green">
+                                    <th class="mdl-data-table__cell--non-numeric">light-green</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--light-green-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--light-green-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--lime">
+                                    <th class="mdl-data-table__cell--non-numeric">lime</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--lime-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--lime-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--yellow">
+                                    <th class="mdl-data-table__cell--non-numeric">yellow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--yellow-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--yellow-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--amber">
+                                    <th class="mdl-data-table__cell--non-numeric">amber</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--amber-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--amber-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--orange">
+                                    <th class="mdl-data-table__cell--non-numeric">orange</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--orange-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--orange-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--deep-orange">
+                                    <th class="mdl-data-table__cell--non-numeric">deep-orange</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--deep-orange-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-A100">
+                                        <td class="mdl-data-table__cell">A100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-A200">
+                                        <td class="mdl-data-table__cell">A200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-A400">
+                                        <td class="mdl-data-table__cell">A400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--deep-orange-A700">
+                                        <td class="mdl-data-table__cell">A700</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--brown">
+                                    <th class="mdl-data-table__cell--non-numeric">brown</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--brown-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--brown-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--grey">
+                                    <th class="mdl-data-table__cell--non-numeric">grey</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--grey-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--grey-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--blue-grey">
+                                    <th class="mdl-data-table__cell--non-numeric">blue-grey</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                    <tr class="mdl-color--blue-grey-50">
+                                        <td class="mdl-data-table__cell">50</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-100">
+                                        <td class="mdl-data-table__cell">100</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-200">
+                                        <td class="mdl-data-table__cell">200</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-300">
+                                        <td class="mdl-data-table__cell">300</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-400">
+                                        <td class="mdl-data-table__cell">400</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-500">
+                                        <td class="mdl-data-table__cell">500</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-600">
+                                        <td class="mdl-data-table__cell">600</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-700">
+                                        <td class="mdl-data-table__cell">700</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-800">
+                                        <td class="mdl-data-table__cell">800</td>
+
+                                    </tr>
+                                    <tr class="mdl-color--blue-grey-900">
+                                        <td class="mdl-data-table__cell">900</td>
+
+                                    </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--white">
+                                    <th class="mdl-data-table__cell--non-numeric">white</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--black">
+                                    <th class="mdl-data-table__cell--non-numeric mdl-color-text--white">black</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--primary">
+                                    <th class="mdl-data-table__cell--non-numeric">primary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--primary-contrast">
+                                    <th class="mdl-data-table__cell--non-numeric">primary-contrast</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--primary-dark">
+                                    <th class="mdl-data-table__cell--non-numeric">primary-dark</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--accent">
+                                    <th class="mdl-data-table__cell--non-numeric">accent</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mdl-cell  mdl-cell--4-col">
+                    <table class="mdl-data-table mdl-js-data-table">
+                        <thead>
+                            <tr class="mdl-color--accent-contrast">
+                                    <th class="mdl-data-table__cell--non-numeric">accent-contrast</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+        </div>
+            <div class="snippet-code">
+
+                <pre class="language-markup codepen-button-enabled">
 <code id="badge/badge-on-icon-text.html"><!-- number badge on icon -->
 &lt;mdl-badge class=&quot;material-icons mdl-color-text--grey-600 mdl-color-badge--greens&quot; style=&quot;font-size: 32px;right: -10px;&quot; data=&quot;1&quot;&gt;account_box&lt;/mdl-badge&gt;               
 </code>
@@ -1714,10 +1582,9 @@
 &lt;mdl-badge class=&quot;material-icons&quot; data=&quot;♥&quot;&gt;account_box&lt;/mdl-badge&gt; 
 </code>
 </pre>
-                </div>
             </div>
-        </div>
 
+</div>
             </div>
         </div>
     </div>
@@ -1728,7 +1595,6 @@
 
         </main>
 
-        <div class="mdl-layout__obfuscator"></div>
     </div>
 
 
@@ -1755,45 +1621,10 @@
 
 
     
-    
         <script src="..\lib\mdl\material.min.js"></script>
     
+    
 
     
-    <script>
-
-       
-
-        $('.mdl-layout__content').scroll(function () {
-
-            var offset = $('.simplebar-scroll-content').scrollTop();
-
-            if (offset > 180) {
-                $('.mdl-layout__header').removeClass("mdl-color--white");
-                $('.mdl-layout__header').addClass("mdl-color--cyan");
-
-            }
-            else {
-                $('.mdl-layout__header').removeClass("mdl-color--cyan");
-                $('.mdl-layout__header').addClass("mdl-color--white");
-            }
-         
-            console.log($('.simplebar-scroll-content').scrollTop());
-          
-
-        });
-
-
-        //$('.mdl-layout__content').simplebar().on('scroll', function () {
-
-        
-
-        //    var offset = $('.mdl-layout__content').scrollTop()
-
-        //    console.log(offset);
-        //});
-
-</script>
-
 </body>
 </html>
