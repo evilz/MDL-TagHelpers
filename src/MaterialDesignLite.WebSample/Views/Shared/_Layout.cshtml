@@ -54,7 +54,7 @@
 
 </head>
 
-<body>
+<body id="app">
     <div class="mdl-layout mdl-layout--fixed-drawer mdl-layout--fixed-header mdl-js-layout">
         @Html.Partial("_Header")
 
@@ -85,9 +85,8 @@
 
     <!-- Built with love using Material Design Lite -->
 
-    <script src="~/lib/jquery/jquery-2.1.4.min.js"></script>
+    <script src="~/lib/jquery/jquery-3.0.0.min.js"></script>
     <script src="~/lib/simplebar/simplebar.min.js"></script>
-
 
     <environment names="Development">
         <script src="~/lib/mdl/material.min.js"></script>
@@ -96,6 +95,10 @@
         <script src="~/lib/mdl/material.min.js"></script>
     </environment>
 
+    <script src="~/lib/vue/vue.min.js"></script>
+    <script src="~/lib/vue/vue-resource.min.js"></script>
+    <script src="~/js/main-app.js"></script>
     @RenderSection("script", false)
+
 </body>
 </html>

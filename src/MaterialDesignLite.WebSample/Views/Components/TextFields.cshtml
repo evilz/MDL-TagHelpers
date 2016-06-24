@@ -1,7 +1,5 @@
 ﻿@{
-
     ViewBag.Page = new[] { "Components", "Text fields" };
-
     ViewBag.Header = new Header
     {
         BgColor = MDLColors.LightGreen,
@@ -9,10 +7,6 @@
         SubTitle = "blabla"
     };
 }
-
-
-
-
 <mdl-card mdl-shadow="@MdlShadows.Dp2">
 
     <mdl-card-title title="Simple Text fields"></mdl-card-title>
@@ -20,30 +14,15 @@
         <mdl-grid>
 
             <mdl-cell>
-
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="sample1">
-                        <label class="mdl-textfield__label" for="sample1">Text...</label>
-                    </div>
-                </form>
+                <mdl-textfield label="Text..." floating-label="false"/>
             </mdl-cell>
 
             <mdl-cell>
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
-                        <label class="mdl-textfield__label" for="sample2">Number...</label>
-                        <span class="mdl-textfield__error">Input is not a number!</span>
-                    </div>
-                </form>
+                <mdl-textfield label="Number..." error-message="Input is not a number!" pattern="-?[0-9]*(\.[0-9]+)?" floating-label="false"/>
             </mdl-cell>
 
             <mdl-cell>
-                <div class="mdl-textfield mdl-js-textfield">
-                    <input class="mdl-textfield__input" type="text" id="sample3" disabled="" value="Hello I'm a disabled field">
-                    <label class="mdl-textfield__label" for="sample3">I'm Disabled</label>
-                </div>
+                <mdl-textfield label="I'm Disabled" id="disabled1" disabled="" value="Hello I'm a disabled field" floating-label="false"/>
             </mdl-cell>
         </mdl-grid>
 
@@ -55,30 +34,17 @@
         <mdl-grid>
 
             <mdl-cell>
-
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" id="sample1">
-                        <label class="mdl-textfield__label" for="sample1">Text...</label>
-                    </div>
-                </form>
+                <mdl-textfield label="Text..."/>
+                
             </mdl-cell>
 
             <mdl-cell>
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
-                        <label class="mdl-textfield__label" for="sample2">Number...</label>
-                        <span class="mdl-textfield__error">Input is not a number!</span>
-                    </div>
-                </form>
+                <mdl-textfield label="Number..." error-message="Input is not a number!" pattern="-?[0-9]*(\.[0-9]+)?" floating-label="true"/>
+
             </mdl-cell>
 
             <mdl-cell>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="sample3" disabled="" value="Hello I'm a disabled field">
-                    <label class="mdl-textfield__label" for="sample3">I'm Disabled</label>
-                </div>
+                <mdl-textfield label="I'm Disabled" id="sample3" disabled value="Hello I'm a disabled field"/>
             </mdl-cell>
         </mdl-grid>
 
@@ -90,31 +56,18 @@
         <mdl-grid>
 
             <mdl-cell>
-
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
-                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
-                    </div>
-                </form>
+                <mdl-textarea rows="3" label="Text lines..." floating-label="false"/>
+               
             </mdl-cell>
 
             <mdl-cell>
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <textarea class="mdl-textfield__input" type="text" rows="1" id="sample5"></textarea>
-                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
-                    </div>
-                </form>
+                <mdl-textarea rows="3" label="Text lines..." row="1" floating-label="false"/>
+
             </mdl-cell>
 
             <mdl-cell>
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield">
-                        <textarea class="mdl-textfield__input" type="text" maxrows="3" rows="1" id="sample5"></textarea>
-                        <label class="mdl-textfield__label" for="sample5">Text lines...</label>
-                    </div>
-                </form>
+                <mdl-textarea rows="3" label="Text lines..." maxrows="3" row="1" value="3dsfasdfas" />
+
             </mdl-cell>
         </mdl-grid>
 
@@ -127,50 +80,17 @@
 
             <mdl-cell>
 
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-                            <i class="material-icons">search</i>
-                        </label>
-                        <div class="mdl-textfield__expandable-holder">
-                            <input class="mdl-textfield__input" type="text" id="sample6">
-                            <label class="mdl-textfield__label" for="sample-expandable">Expandable Input</label>
-                        </div>
-                    </div>
-                </form>
+                <mdl-textfield label="Expandable Input" expendable-icon="@MDLIcons.search" floating-label="false"></mdl-textfield>
+            </mdl-cell>
+            <mdl-cell>
+                <mdl-textfield label="Expandable Input" expendable-icon="@MDLIcons.search" floating-label="true"></mdl-textfield>
+            </mdl-cell>
+            <mdl-cell>
+
+                <mdl-textfield mdl-color="@MDLColors.Red.WithBritghness800"  label="Expandable Input" disabled expendable-icon="@MDLIcons.do_not_disturb" floating-label="true"></mdl-textfield>
             </mdl-cell>
 
-            <mdl-cell>
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label">
-                        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample-expandable-floating">
-                            <i class="material-icons">search</i>
-                        </label>
-                        <div class="mdl-textfield__expandable-holder">
-                            <input class="mdl-textfield__input" type="text" id="sample-expandable-floating">
-                            <label class="mdl-textfield__label" for="sample-expandable-floating">
-                                Expandable &amp; Floating
-                                Input
-                            </label>
-                        </div>
-                    </div>
-                </form>
-            </mdl-cell>
-
-            <mdl-cell>
-                <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-                        Right/No Label:
-                        <label class="mdl-button mdl-js-button mdl-button--icon" for="sample-expclean">
-                            <i class="material-icons">search</i>
-                        </label>
-                        <div class="mdl-textfield__expandable-holder">
-                            <input class="mdl-textfield__input" type="text" name="sample" id="sample-expclean">
-                        </div>
-                    </div>
-                </form>
-            </mdl-cell>
-        </mdl-grid>
+</mdl-grid>
 
     </mdl-card-supporting-text>
 

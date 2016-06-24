@@ -1,91 +1,95 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Tabs : TagHelper
+    [HtmlTargetElement(TagPrefix + "tabs")]
+    public class Tabs : MdlTagHelperBase
     {
-        private const string Name = "tabs";
-
         [HtmlAttributeName("ripple")]
         public bool HasRipple { get; set; } = true;
+        
+        public Tabs() : base(new []{"mdl-tabs", "mdl-js-tabs"}, "div") { }
 
-        [HtmlAttributeName("selected")]
-        public int SelectedIndex { get; set; }
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.TagName = "div";
+            {() => HasRipple, _ => "mdl-js-ripple-effect" }
+        };
 
-            output.AppendCssClass("mdl-tabs", "mdl-js-tabs");
+        protected override IList<ConditionnalContent> ConditionnalPreContents => new List<ConditionnalContent>
+        {
+            { ()=> true, CreateTabs }
+        };
 
-            if (HasRipple)
-            { output.AppendCssClass("mdl-js-ripple-effect"); }
+        public Func<TagHelperOutput, string> CreateTabs => output =>
+        {
 
             string content = output.GetChildContent();
-           
-            var xdoc = XDocument.Parse("<div>"+content+"</div>");
+
+            var xdoc = XDocument.Parse("<div>" + content + "</div>");
             var tabPanels = xdoc.Root.Elements("div").Where(element => element.Attribute("title") != null).ToArray();
 
             var tabsBar = new StringBuilder("<div class=\"mdl-tabs__tab-bar\">");
 
-            for (var i = 0; i < tabPanels.Length; i++)
+            foreach (var panel in tabPanels)
             {
-                var title = tabPanels[i].Attribute("title").Value;
-                tabPanels[i].Attribute("title").Remove();
-                var id = tabPanels[i].Attribute("id").Value;
+                var title = panel.Attribute("title").Value;
+                panel.Attribute("title").Remove();
 
-                if (i == SelectedIndex)
+                var id = String.Empty;
+                if (panel.Attributes("id").Any())
                 {
-                    tabsBar.Append($"<a href=\"#{id}\" class=\"mdl-tabs__tab is-active\">{title}</a>");
-                    tabPanels[i].Attribute("class").Value += " is-active";
+                    id = panel.Attribute("id").Value;
+                    
                 }
                 else
                 {
-                    tabsBar.Append( $"<a href=\"#{id}\" class=\"mdl-tabs__tab\">{title}</a>");
+                    panel.SetAttributeValue("id", id);
                 }
+
+                // UGLY !!
+                var isActiveClass = panel.Attribute("class").Value.Contains("is-active")
+                    ? "is-active"
+                    : string.Empty;
+
+                tabsBar.Append($"<a href=\"#{id}\" class=\"mdl-tabs__tab {isActiveClass}\">{title}</a>");
             }
             tabsBar.Append("</div>");
-            
-            output.PreContent.SetHtmlContent(tabsBar.ToString());
+            tabsBar.Append("<div>");
 
-            var reader = xdoc.Root.CreateReader();
-            reader.MoveToContent();
-            output.Content.SetHtmlContent(reader.ReadInnerXml());
+            return tabsBar.ToString();
+        };
 
-            await base.ProcessAsync(context, output);
-        }
-
+        protected override IList<ConditionnalContent> ConditionnalPostContents => new List<ConditionnalContent>
+        {
+            { ()=> true, _ => "</div>" }
+        };
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class TabPanel : TagHelper
+    [HtmlTargetElement(TagPrefix + "tab-panel")]
+    public class TabPanel : MdlTagHelperBase
     { 
-        private const string Name = "tab-panel";
-        
         [HtmlAttributeName("active")]
         public bool IsActive { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        public TabPanel() : base("mdl-tabs__panel", "div") { }
+
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.TagName = "div";
+            {()=> IsActive, _=> "is-active" }
+        };
 
-            output.AppendCssClass("mdl-tabs__panel");
-
-            if (IsActive)
-            { output.AppendCssClass("is-active"); }
-
-            output.GetOrCreateId();
-
-            await base.ProcessAsync(context, output);
-        }
-
+        protected override IDictionary<string, string> SpecialAttributs => new Dictionary<string, string>
+        {
+            { "id", CreateId()}
+        };
     }
 
 }

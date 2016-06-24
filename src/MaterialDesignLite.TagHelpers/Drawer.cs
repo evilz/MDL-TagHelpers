@@ -1,32 +1,24 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Drawer : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class Drawer : MdlTagHelperBase
     {
         private const string Name = "drawer";
+
+        public Drawer() : base("mdl-layout__drawer" , "div") { }
 
         [HtmlAttributeName("title")]
         public string Title { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalPreContents => new List<ConditionnalContent>
         {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-layout__drawer");
-
-            var content = (await output.GetChildContentAsync()).GetContent();
-
-            if (!string.IsNullOrEmpty(Title))
-            {
-                content = $"<span class=\"mdl-layout__title\">{Title}</span>" + content;
-            }
-            output.Content.SetHtmlContent(content);
-
-            await base.ProcessAsync(context, output);
-        }
-
+            { ()=> true, (_) =>$"<span class=\"mdl-layout__title\">{Title}</span>" }
+        };
     }
     
 }

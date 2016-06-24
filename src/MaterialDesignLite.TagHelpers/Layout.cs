@@ -1,99 +1,60 @@
-﻿using System.Threading.Tasks;
-using MaterialDesignLite.TagHelpers.StyleValues;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Layout : TagHelper
+    [HtmlTargetElement(TagPrefix + "layout")]
+    public class Layout : MdlTagHelperBase
     {
-        private const string Name = "layout";
-
         [HtmlAttributeName("fixed-drawer")]
         public bool HasFixedDrawer { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        public Layout() : base(new []{ "mdl-layout", "mdl-js-layout" }, "div"){}
+
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-layout", "mdl-js-layout");
-
-            if (HasFixedDrawer)
-            { output.AppendCssClass("mdl-layout--fixed-drawer"); }
-
-
-            await base.ProcessAsync(context, output);
-        }
-
+            {() => HasFixedDrawer, _ => "mdl-layout--fixed-drawer" }
+        };
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class LayoutHeader : TagHelper
+    [HtmlTargetElement(TagPrefix + "layout-header")]
+    public class LayoutHeader : MdlTagHelperBase
     {
-        private const string Name = "layout-header";
-        
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "header";
-            output.AppendCssClass("mdl-layout__header");
-            await base.ProcessAsync(context, output);
-        }
-
+        public LayoutHeader() : base("mdl-layout__header", "header") {}
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class LayoutIcon : TagHelper
+    [HtmlTargetElement(TagPrefix + "layout-icon")]
+    public class LayoutIcon : MdlTagHelperBase
     {
-        private const string Name = "layout-icon";
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-layout-icon");
-            await base.ProcessAsync(context, output);
-        }
-
+        public LayoutIcon() : base("mdl-layout-icon", "div") { }
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class LayoutHeaderRow : TagHelper
+    [HtmlTargetElement(TagPrefix + "header-row")]
+    public class LayoutHeaderRow : MdlTagHelperBase
     {
-        private const string Name = "header-row";
-
         [HtmlAttributeName("title")]
         public string Title { get; set; }
 
+        public LayoutHeaderRow() : base("mdl-layout__header-row", "div") { }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalPreContents => new List<ConditionnalContent>
         {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-layout__header-row");
-
-            var content = (await output.GetChildContentAsync()).GetContent();
-
-            if (!string.IsNullOrEmpty(Title))
-            {
-               content = $"<span class=\"mdl-layout__title\">{Title}</span>" + content;
-            }
-            output.Content.SetHtmlContent(content);
-            await base.ProcessAsync(context, output);
-        }
-
+            { () => !string.IsNullOrEmpty(Title), _ => $"<span class=\"mdl-layout__title\">{Title}</span>" }
+        };
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class LayoutSpacer : TagHelper
+    [HtmlTargetElement(TagPrefix + "spacer")]
+    public class LayoutSpacer : MdlTagHelperBase
     {
-        private const string Name = "spacer";
-        
+        public LayoutSpacer() : base("mdl-layout-spacer", "div") {}
+    }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-layout-spacer");
-            await base.ProcessAsync(context, output);
-        }
-
+    [HtmlTargetElement(TagPrefix + "content")]
+    public class LayoutContent : MdlTagHelperBase
+    {
+        public LayoutContent() : base("mdl-layout__content", "main") { }
     }
 
 }
+

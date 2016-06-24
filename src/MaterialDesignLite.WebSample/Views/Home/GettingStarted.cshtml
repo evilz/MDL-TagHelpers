@@ -1,22 +1,15 @@
-﻿
-@section LeftSide
-{
-    <h3>
-        <mdl-icon icon="@MDLIcons.live_help"></mdl-icon> Attributes
-    </h3>
+﻿@using MaterialDesignLite.WebSample.ViewModels
+@{
 
-    <p>The Material Design Lite (MDL) badge component is an onscreen notification element. A badge consists of a small circle, typically containing a number or other characters, that appears in proximity to another object. A badge can be both a notifier that there are additional items associated with an object and an indicator of how many items there are.</p>
+    ViewBag.Page = new[] { "Getting started", "" };
 
-    <div style="margin-top: 30px">
-        <ul class="list-bordered">
-            <li>
-                <a target="_blank" href="http://www.getmdl.io/components/index.html#badges-section">
-                    <i style="font-size: 11px;margin-right: 5px;" class="material-icons">link</i>
-                    Badges
-                </a>
-            </li>
-        </ul>
-    </div>
+    ViewBag.Header = new Header
+    {
+        BgClass = "header-bg-2",
+        BgColor = MDLColors.Indigo,
+        Title = "Getting started",
+        SubTitle = "For Meterial Lite Design"
+    };
 }
 
 <mdl-card mdl-shadow="@MdlShadows.Dp2">

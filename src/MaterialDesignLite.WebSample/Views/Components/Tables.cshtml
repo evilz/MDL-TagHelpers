@@ -10,38 +10,96 @@
     };
 }
 
+
+<!-- component template -->
+<script type="text/x-template" id="grid-template">
+    <table class="mdl-data-table mdl-js-data-table @MdlShadows.Dp2">
+        <thead>
+            <tr>
+                <th v-for="key in columns"
+                    v-on:click="sortBy(key)"
+                    :class="{'mdl-data-table__header--sorted-ascending': sortKey == key && sortOrders[key] > 0 , 
+                    'mdl-data-table__header--sorted-descending': sortKey == key && sortOrders[key] < 0 }"
+                    class="mdl-data-table__cell--non-numeric">
+                    {{key | capitalize}}
+                    <span class="arrow"
+                          :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+                    </span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="
+                entry in data
+                | filterBy filterKey
+                | orderBy sortKey sortOrders[sortKey]">
+                <td class="mdl-data-table__cell--non-numeric" v-for="key in columns">
+                    {{entry[key]}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</script>
+
+<!-- demo root element -->
 <mdl-card mdl-shadow="@MdlShadows.Dp2">
 
     <mdl-card-title title="Tables"></mdl-card-title>
-    
+   
+        <mdl-grid>
+            <mdl-cell size="4"></mdl-cell>
+            <mdl-cell size="4">
+                <div id="demo">
+                    <form id="search">
+                            <mdl-textfield label="Search" expendable-icon="@MDLIcons.search" v-model="searchQuery"/>
+                    </form>
+                    <demo-grid :data="gridData"
+                               :columns="gridColumns"
+                               :filter-key="searchQuery">
+                    </demo-grid>
+
+                </div>
+</mdl-cell>
+            <mdl-cell size="4"></mdl-cell>
+        </mdl-grid>
+      
+
+    </mdl-card>
+
+
+
+    <mdl-card mdl-shadow="@MdlShadows.Dp2">
+
+        <mdl-card-title title="Tables"></mdl-card-title>
+
         <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
             <thead mdl-bgcolor="@MDLColors.Grey.WithBritghness200">
-            <tr>
-                <th class="mdl-data-table__cell--non-numeric">Material</th>
-                <th>Quantity</th>
-                <th>Unit price</th>
-            </tr>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Material</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                </tr>
             </thead>
             <tbody>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                <td>25</td>
-                <td>$2.90</td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                <td>50</td>
-                <td>$1.25</td>
-            </tr>
-            <tr>
-                <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                <td>10</td>
-                <td>$2.35</td>
-            </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                    <td>25</td>
+                    <td>$2.90</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                    <td>50</td>
+                    <td>$1.25</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                    <td>10</td>
+                    <td>$2.35</td>
+                </tr>
             </tbody>
         </table>
-    
-    <pre><code class="language-markup">
+
+        <pre><code class="language-markup">
 &lt;mdl-tabs selected=&quot;0&quot; &gt;
     &lt;mdl-tab-panel title=&quot;Nunc tincidunt&quot;&gt;
         &lt;p&gt;Proin elit arcu, m nulla...&lt;/p&gt;
@@ -58,4 +116,5 @@
 
 
 
-</mdl-card>
+    </mdl-card>
+

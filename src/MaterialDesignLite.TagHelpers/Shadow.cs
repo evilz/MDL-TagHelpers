@@ -1,27 +1,23 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MaterialDesignLite.TagHelpers.StyleValues;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement("*", Attributes = MDLTagHelper.TagPrefix + Name)]
-    public class Shadow : TagHelper
+    [HtmlTargetElement("*", Attributes = TagPrefix + "shadow")]
+    public class Shadow : MdlTagHelperBase
     {
         public const string Name = "shadow";
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name)]
+        [HtmlAttributeName(TagPrefix + Name)]
         public MdlShadow DeepShadow { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.CleanAttributes(MDLTagHelper.TagPrefix + Name);
-           
-            // TODO : convert to class add class to tag 
-            output.Attributes.RemoveAll("color");
-            output.AppendCssClass(DeepShadow.ToString());
-            await base.ProcessAsync(context, output);
-        }
-
+            { ()=> true , (_) => DeepShadow.ToString()}
+        };
+        
     }
    
 }

@@ -1,13 +1,18 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
 using MaterialDesignLite.TagHelpers.StyleValues;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Button : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class Button : MdlTagHelperBase
     {
+        public Button()
+            : base(new[] { "mdl-button", "mdl-js-button" }, "button") { }
+
         private const string Name = "button";
 
         [HtmlAttributeName("ripple")]
@@ -27,34 +32,16 @@ namespace MaterialDesignLite.TagHelpers
 
         [HtmlAttributeName("color")]
         public ButtonColors Color { get; set; }
-        
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "button";
 
-            output.AppendCssClass("mdl-button","mdl-js-button");
-
-            if (HasRipple)
-            { output.AppendCssClass("mdl-js-ripple-effect");}
-
-            if(Color != ButtonColors.None)
-            { output.AppendCssClass($"mdl-button--{Color.ToString().ToLowerInvariant()}"); }
-
-            if (IsRaised)
-            { output.AppendCssClass("mdl-button--raised"); }
-
-            if (HasIcon)
-            { output.AppendCssClass("mdl-button--icon"); }
-
-            if (IsFab)
-            { output.AppendCssClass("mdl-button--fab"); }
-
-            if (IsFab && IsMiniFab)
-            { output.AppendCssClass("mdl-button--mini-fab"); }
-
-            await base.ProcessAsync(context, output);
-        }
-
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
+                {
+                    { ()=> HasRipple,(_)=> "mdl-js-ripple-effect" },
+                    { ()=> Color != ButtonColors.None,(_)=> $"mdl-button--{Color.ToString().ToLowerInvariant()}" },
+                    { ()=> IsRaised,(_)=> "mdl-button--raised" },
+                    { ()=> HasIcon,(_)=> "mdl-button--icon" },
+                    { ()=> IsFab,(_)=> "mdl-button--fab" },
+                    { ()=> IsFab && IsMiniFab,(_)=> "mdl-button--mini-fab" },
+                };
     }
-   
+
 }

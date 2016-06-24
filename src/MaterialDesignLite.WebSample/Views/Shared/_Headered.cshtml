@@ -7,6 +7,9 @@
     ViewBag.Header = ViewBag.Header ?? new Header();
 }
 
+@section script {
+    @RenderSection("script", false)
+}
 
 <section class="amdl-Section">
 

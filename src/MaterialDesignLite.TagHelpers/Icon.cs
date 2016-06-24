@@ -1,10 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Icon : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class Icon : MdlTagHelperBase
     {
         public const string Name = "icon";
 
@@ -14,28 +17,26 @@ namespace MaterialDesignLite.TagHelpers
         [HtmlAttributeName("icon-size")]
         public int IconSize { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.CleanAttributes(Name);
+        public Icon() : base("material-icons","i") {}
 
-            if (MdlIcon == null) { return; }
-              
-            output.TagName = "i";
-            output.AppendCssClass("material-icons");
-            output.Content.SetContent(MdlIcon.Ligature); // TODO : MANAGE IE using codepoint ...
-            output.TagMode = TagMode.StartTagAndEndTag;
+        protected override IList<ConditionnalContent> ConditionnalContents => new List<ConditionnalContent>
+        {
+            { () => MdlIcon != null, CreateIcon }
+        };
+
+        private Func<TagHelperOutput, string> CreateIcon => output =>
+        {
             if (IconSize > 0)
             {
                 var style = output.Attributes.ContainsName("style")
-                                ? output.Attributes["style"].Value
-                                : string.Empty;
+                    ? output.Attributes["style"].Value
+                    : string.Empty;
 
                 output.Attributes.SetAttribute("style", $" {style} font-size:{IconSize}px");
             }
-
-            await base.ProcessAsync(context, output);
-        }
-
+            return MdlIcon.Ligature;
+        };
+        
     }
 
 }

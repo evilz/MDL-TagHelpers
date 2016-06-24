@@ -63,10 +63,28 @@
             color: #fff;
         }
 
+
+        .mdl-navigation__link .material-icons.mdl-color-text--green{
+           transform: rotate(-90deg);
+           
+}
+
+        .mdl-navigation__link.expended .material-icons.mdl-color-text--green{
+           transform: rotate(0deg);
+}
+
+     .mdl-navigation__link.expended + .mdl-navigation {
+         display: block;
+     }
+
+     .mdl-navigation__link + .mdl-navigation {
+         display: none;
+     }
+        
+
     .demo-navigation .mdl-navigation__link>.material-icons {
         margin-right: 10px;
         font-size: 18px;
-        color: #bababa !important;
     }
 
     .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
@@ -119,12 +137,12 @@
             <a mdl-nav-item href="/"><mdl-icon icon="@MDLIcons.home" />About</a>
             <a mdl-nav-item href="/GettingStarted"><mdl-icon icon="@MDLIcons.power_settings_new" />Getting Started</a>
 
-            <a mdl-nav-item href="">
-               
+            <a mdl-nav-item v-on:click="toggle">
+
                 <mdl-icon icon="@MDLIcons.extension"/>Components
-                <div style="position: absolute; right: 7px;    margin-top: -3px;">
-                    <mdl-icon icon="@MDLIcons.arrow_drop_down" mdl-color="@MDLColors.Green" />
-                </div>
+                <mdl-spacer/>
+                <mdl-icon icon="@MDLIcons.arrow_drop_down" mdl-color="@MDLColors.Green" icon-size="24" />
+                
             </a>
 
                     <ul class="mdl-navigation in">
@@ -149,12 +167,12 @@
 
                     </ul>
               
-            <a mdl-nav-item href="">
+            <a mdl-nav-item v-on:click="toggle">
                 
                 <mdl-icon icon="@MDLIcons.format_align_left" />Style
-                <div style="position: absolute; right: 7px;    margin-top: -25px;">
-                    <mdl-icon icon="@MDLIcons.arrow_drop_down" mdl-color="@MDLColors.Green" />
-                </div>
+                <mdl-spacer/>
+                <mdl-icon icon="@MDLIcons.arrow_drop_down" mdl-color="@MDLColors.Green" icon-size="24"/>
+               
             </a>
             <ul class="mdl-navigation in">
                 <ml-menu-group-heading class=""></ml-menu-group-heading>

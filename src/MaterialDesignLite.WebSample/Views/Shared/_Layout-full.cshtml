@@ -1,0 +1,97 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Material Design Lite - Aspnet5 TagHelpers">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MDL Tag Helpers for asp.net 5</title>
+
+    <!-- Add to homescreen -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Fallback to homescreen for Chrome <39 on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Material Design Lite">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon" href="images/ios-desktop.png">
+
+    <!-- TODO: Tile icon for Win8 (144x144 + tile color) -->
+    <!-- <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"> -->
+    <!-- <meta name="msapplication-TileColor" content="#3372DF"> -->
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <link rel="stylesheet" href="~/lib/simplebar/simplebar.css" />
+    <link rel="stylesheet" href="~/css/prism-default.css"/>
+
+    <link rel="stylesheet" href="~/fonts/font-awesome-4.6.3/css/font-awesome.min.css">
+
+    <environment names="Development">
+
+        @*<link href="~/fonts/Roboto/roboto.css" rel="stylesheet">*@
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        @*<link rel="stylesheet" href="~/css/icon.css">*@
+
+        <link rel="stylesheet" href="~/lib/mdl/material.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css"
+              asp-fallback-href="~/lib/mdl/material.min.css"
+              asp-fallback-test-class="mdl-layout" asp-fallback-test-property="display" asp-fallback-test-value="flex" />
+
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    </environment>
+
+</head>
+
+<body>
+
+@RenderBody()
+
+
+<!-- IE Compatibility shims -->
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js""></script>
+<![endif]-->
+<!--[if IE]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.7/es5-shim.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/classlist/2014.01.31/classList.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/flexie/1.0.3/flexie.min.js"></script>
+<![endif]-->
+<!-- end shims -->
+<!-- Enable Prism syntax highlighting -->
+<script src="/lib/prism/prism.js"></script>
+<script src="/lib/prism/prism-markup.min.js"></script>
+
+<!-- Built with love using Material Design Lite -->
+
+    <script src="~/lib/jquery/jquery-3.0.0.min.js"></script>
+    <script src="~/lib/simplebar/simplebar.min.js"></script>
+
+    <script src="~/lib/vue/vue.min.js"></script>
+    <script src="~/lib/vue/vue-resource.min.js"></script>
+
+    <environment names="Development">
+        <script src="~/lib/mdl/material.min.js"></script>
+    </environment>
+<environment names="Staging,Production">
+    <script src="~/lib/mdl/material.min.js"></script>
+</environment>
+
+@RenderSection("script", false)
+</body>
+</html>

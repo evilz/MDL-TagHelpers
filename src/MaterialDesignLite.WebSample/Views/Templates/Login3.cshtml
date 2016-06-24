@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "_Layout-full";
+}
+
+<style>
+    .mdl-textfield {
+        width: 100%;
+    }
+
+    .mdl-layout {
+        background: url('/images/1.png') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    #content {
+        margin-top: 5%;
+    }
+
+</style>
+
+<mdl-layout mdl-bgcolor="@MDLColors.BlueGrey" id="app">
+    <mdl-content id="content">
+
+        <mdl-card mdl-shadow="@MdlShadows.Dp16" style="width: 400px; margin: auto;">
+            <mdl-card-title v-bind:class="{ 'mdl-color--red': isUsingGoogle, 'mdl-color--light-blue': isUsingWindows, 'mdl-color--primary': isUsingDefault }" title-size="@MdlCardTitleSize.H2" expand="true" title="Sign in like<br/> a ninja"
+                            style="color: #fff; height: 170px;">
+            </mdl-card-title>
+
+            @*<img src="~/images/avatar_square_blue_512dp.png" style="border: white 5px solid; border-radius:50%; height:128px" />*@
+
+            <mdl-card-supporting-text class="mdl-typography--text-center" style="margin-top: -88px">
+                <img :src="avatarurl" style="border: white 5px solid; border-radius: 50%; height: 128px" />
+
+            </mdl-card-supporting-text>
+
+
+            <mdl-card-supporting-text>
+
+                <mdl-textfield v-model="email" debounce="500" label="Email" type="email"></mdl-textfield>
+                <mdl-textfield v-model="password" label="Password" type="password"></mdl-textfield>
+
+            </mdl-card-supporting-text>
+            <mdl-card-actions>
+                <mdl-button v-on:click="useGoogle()" icon="true" mdl-color="@MDLColors.Red"><i class="fa fa-google-plus-official" aria-hidden="true"></i></mdl-button>
+                <mdl-button v-on:click="useWindows()" icon="true" mdl-color="@MDLColors.LightBlue"><i class="fa fa-windows" aria-hidden="true"></i></mdl-button>
+                <mdl-button icon="true" mdl-color="@MDLColors.Grey.WithBritghness800"><i class="fa fa-github" aria-hidden="true"></i></mdl-button>
+
+                <mdl-spacer></mdl-spacer>
+                <mdl-button>Forgot password ?</mdl-button>
+            </mdl-card-actions>
+            <mdl-card-actions>
+                <mdl-button v-on="click: login($index)" style="width: 100%" raised="true" color="Primary">SIGN IN</mdl-button>
+            </mdl-card-actions>
+        </mdl-card>
+
+    </mdl-content>
+
+</mdl-layout>
+
+@section Script{
+<script src="~/js/login-app.js"></script>
+<script src="~/lib/md5.min.js"></script>
+
+
+}

@@ -1,38 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MaterialDesignLite.TagHelpers.StyleValues;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Card : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class Card : MdlTagHelperBase
     {
         private const string Name = "card";
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "div";
-
-            output.AppendCssClass("mdl-card");
-            await base.ProcessAsync(context, output);
-        }
-
+        public Card() : base("mdl-card", "div") { }
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class CardTitle : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class CardTitle : MdlTagHelperBase
     {
         private const string Name = "card-title";
 
-        public CardTitle()
-        {
-            TitleSize = MdlCardTitleSize.H2;
-        }
+        public CardTitle() : base("mdl-card__title", "div") { }
 
         [HtmlAttributeName("title-size")]
-        public MdlCardTitleSize TitleSize { get; set; }
+        public MdlCardTitleSize TitleSize { get; set; } = MdlCardTitleSize.H2;
 
         [HtmlAttributeName("title")]
         public string Title { get; set; }
@@ -43,73 +34,50 @@ namespace MaterialDesignLite.TagHelpers
         [HtmlAttributeName("expand")]
         public bool Expand { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-card__title");
-            output.TagMode = TagMode.StartTagAndEndTag;
-            if (Expand)
-            { output.AppendCssClass("mdl-card--expand"); }
+                    { ()=> Expand, (_)=> "mdl-card--expand"}
+        };
 
+        private string TitleSizeTag => TitleSize.ToString().ToLowerInvariant();
 
-            var content = string.Empty;
+        protected override IList<ConditionnalContent> ConditionnalPreContents => new List<ConditionnalContent>
+        {
+            { ()=> !string.IsNullOrEmpty(Title),(_)=> $"<{TitleSizeTag} class=\"mdl-card__title-text\" >{Title}</{TitleSizeTag}>"},
+             { () => !string.IsNullOrEmpty(Subtitle),(_)=> $"<div class=\"mdl-card__subtitle-text\" >{Subtitle}</div>"},
 
-            if (!string.IsNullOrEmpty(Title))
-            {
-                content += $"<{TitleSize.ToString().ToLowerInvariant()} class=\"mdl-card__title-text\" >{Title}</{TitleSize.ToString().ToLowerInvariant()}>";
-            }
-
-            if (!string.IsNullOrEmpty(Subtitle))
-            {
-                content += $"<div class=\"mdl-card__subtitle-text\" >{Subtitle}</div>";
-            }
-
-            output.CleanAttributes("subtitle","title");
-            output.Content.SetHtmlContent(content);
-
-            await base.ProcessAsync(context, output);
-        }
+        };
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class CardMedia : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class CardMedia : MdlTagHelperBase
     {
         private const string Name = "card-media";
-        
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+
+        public CardMedia() : base("mdl-card__media", "div") { }
+
+        protected override IList<ConditionnalContent> ConditionnalPreContents => new List<ConditionnalContent>
         {
-            output.TagName = "div";
-            
+            { ()=> true, (o) => CreateImg(o) }
+        };
 
-            var content = $"<img ";
-            content = output.Attributes.Aggregate(content,
-                (accumulator, attribute) => accumulator + attribute.Name + "=\"" + attribute.Value + "\"");
-            content += " />";
-
-            output.Attributes.Clear();
-
-            output.AppendCssClass("mdl-card__media");
-
-            output.Content.SetHtmlContent(content);
-            await base.ProcessAsync(context, output);
+        public string CreateImg(TagHelperOutput output)
+        {
+            var attributes = output.Attributes.Select(x => x.Name + "=\"" + x.Value + "\"");
+            return $"<img {string.Join(" ", attributes)} />";
         }
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class CardSupportingText : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class CardSupportingText : MdlTagHelperBase
     {
         private const string Name = "card-supporting-text";
-        
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-card__supporting-text");
-            await base.ProcessAsync(context, output);
-        }
+
+        public CardSupportingText() : base("mdl-card__supporting-text", "div") { }
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class CardActions : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class CardActions : MdlTagHelperBase
     {
         private const string Name = "card-actions";
 
@@ -119,32 +87,20 @@ namespace MaterialDesignLite.TagHelpers
         [HtmlAttributeName("border")]
         public bool Border { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        public CardActions() : base("mdl-card__actions", "div") { }
+
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-card__actions");
-
-            if (Border)
-            { output.AppendCssClass("mdl-card--border"); }
-
-            await base.ProcessAsync(context, output);
-        }
+            { () => Border, (_) => "mdl-card--border"}
+        };
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class CardMenu : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class CardMenu : MdlTagHelperBase
     {
         private const string Name = "card-menu";
-        
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "div";
-            output.AppendCssClass("mdl-card__menu");
-            
-            await base.ProcessAsync(context, output);
-        }
+
+        public CardMenu() : base("mdl-card__menu", "div") { }
     }
-    
-    
 
 }

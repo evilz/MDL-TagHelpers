@@ -70,6 +70,7 @@ namespace MaterialDesignLite.WebSample
         public IEnumerable<string> ExpandViewLocations(ViewLocationExpanderContext context, IEnumerable<string> viewLocations)
         {
             yield return "/Views/{0}.cshtml";
+            yield return "/Views/Home/{0}.cshtml";
             foreach (var location in viewLocations)
             {
                 yield return location;

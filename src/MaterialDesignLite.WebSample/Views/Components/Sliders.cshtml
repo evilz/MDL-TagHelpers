@@ -18,13 +18,12 @@
 
         <h4>Default Slider</h4>
         <!-- Default Slider -->
-        <input class="mdl-slider mdl-js-slider" type="range"
-               min="0" max="100" value="0" tabindex="0">
-
+        <mdl-textfield label="value" v-model="sliderValue"></mdl-textfield>
+        <mdl-slider min="0" max="100"  v-slider="sliderValue" ></mdl-slider>
+        
         <h4>Slider with Starting Value</h4>
-        <!-- Slider with Starting Value -->
-        <input class="mdl-slider mdl-js-slider" type="range"
-               min="0" max="100" value="25" tabindex="0">
+       
+        <mdl-slider min="0" max="100"  value="25"></mdl-slider>
 
     </mdl-card-supporting-text>
             <pre><code class="language-markup">

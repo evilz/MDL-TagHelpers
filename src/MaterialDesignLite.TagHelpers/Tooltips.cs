@@ -1,71 +1,43 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement("*", Attributes = MDLTagHelper.TagPrefix + Name)]
-    public class TooltipsAttr : TagHelper
+    [HtmlTargetElement("*", Attributes = TagPrefix + Name)]
+    public class TooltipsAttr : MdlTagHelperBase
     {
         public const string Name = "tooltips";
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name)]
+        [HtmlAttributeName(TagPrefix + Name)]
         public string Text { get; set; }
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name + "-large")]
+        [HtmlAttributeName(TagPrefix + Name + "-large")]
         public bool IsLarge { get; set; }
 
         private string WeightClass => IsLarge ? "mdl-tooltip--large" : string.Empty;
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalPostContents => new List<ConditionnalContent>
         {
-            output.CleanAttributes(MDLTagHelper.TagPrefix + Name);
-
-            if (string.IsNullOrEmpty(Text))
-                return;
-
-            var id = output.GetOrCreateId();
-
-            var tooltips = $"<div class=\"mdl-tooltip {WeightClass}\" for={id}>{Text}</div>";
-            output.PostElement.AppendHtml(tooltips);
-            await base.ProcessAsync(context, output);
-        }
-
-
-
-
-
+            { ()=> !string.IsNullOrEmpty(Text), o => $"<div class=\"mdl-tooltip {WeightClass}\" for={o.GetOrCreateId()}>{Text}</div>" }
+        };
     }
 
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class TooltipsElm : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    public class TooltipsElm : MdlTagHelperBase
     {
         public const string Name = "tooltips";
-        private const string LargeAttrName = "large";
-        private const string ForAttrNAme = "for";
 
-        [HtmlAttributeName(LargeAttrName)]
+        [HtmlAttributeName("large")]
         public bool IsLarge { get; set; }
+        
+        public TooltipsElm() : base("mdl-tooltip", "div") { }
 
-        //[HtmlAttributeName(ForAttrNAme)]
-        //public string For { get; set; }
-
-        private string WeightClass => IsLarge ? "mdl-tooltip--large" : string.Empty;
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            //if (string.IsNullOrEmpty(For))
-            //{
-            //    output.SuppressOutput();
-            //    return;
-            //}
-
-            output.CleanAttributes(LargeAttrName);
-            output.TagName = "div";
-            output.AppendCssClass("mdl-tooltip", WeightClass);
-
-            await base.ProcessAsync(context, output);
-        }
-
+            {() => IsLarge, _=> "mdl-tooltip--large" }
+        };
     }
 }

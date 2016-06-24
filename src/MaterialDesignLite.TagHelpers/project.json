@@ -1,19 +1,26 @@
-﻿{
-  "version": "1.0.0-*",
+{
+  "version": "0.0.0-*",
   "authors": [ "Evilz" ],
   "description": "Material Design Lite Tag Helpers for ASP.NET Core.",
   "packOptions": {
-    "tags": [ "taghelper", "mdl", "Material design lite" ],
-    "projectUrl": "http://github.com/evilz/MDL-taghelpers",
-    "licenseUrl": "",
+    "title": "Material Design Lite Tag Helpers",
+    "summary": "Material Design Lite Tag Helpers for ASP.NET Core.",
+    "tags": [ "mdl", "Material Design Lite", "Tag Helpers", "taghelper" ],
+    "owners": [ "Vincent Bourdon" ],
+    "releaseNotes": "80% of all components",
+    "iconUrl": "http://www.evilznet.com/MDL-TagHelpers/images/logo.png",
+    "projectUrl": "http://www.evilznet.com/MDL-TagHelpers",
+    "licenseUrl": "https://raw.githubusercontent.com/evilz/MDL-TagHelpers/master/LICENSE.txt",
+    "requireLicenseAcceptance": false,
     "repository": {
       "type": "git",
-      "url": "git://github.com/evilz/MDL-taghelpers"
+      "url": "https://github.com/evilz/MDL-taghelpers"
     }
+
   },
   "dependencies": {
-    "Microsoft.AspNetCore.Razor":"1.0.0-rc2-final", 
-    "Microsoft.AspNetCore.Razor.Runtime":"1.0.0-rc2-final", 
+    "Microsoft.AspNetCore.Razor": "1.0.0-rc2-final",
+    "Microsoft.AspNetCore.Razor.Runtime": "1.0.0-rc2-final"
   },
 
   "frameworks": {
@@ -29,5 +36,5 @@
             "version": "1.0.0-preview1-final",
             "imports": "portable-net45+win8+dnxcore50"
         }
-    },
+    }
 }

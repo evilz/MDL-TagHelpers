@@ -1,50 +1,114 @@
 ﻿using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using System.Text;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    public static class MDLTagHelper
+    public abstract class MdlTagHelperBase : TagHelper
     {
-        public const string TagPrefix = "mdl-";
-
-        public static void CleanAttributes(this TagHelperOutput output, params string[] attributeNames)
+        private readonly string _outputTag;
+        private readonly TagMode _tagMode;
+        private readonly string[] _defaultCssClass;
+        
+        protected MdlTagHelperBase(string[] defaultCssClass, string outputTag = null, TagMode tagmode = TagMode.StartTagAndEndTag ) 
         {
-            foreach (var attribute in attributeNames)
+            _defaultCssClass = defaultCssClass;
+            _outputTag = outputTag;
+            _tagMode = tagmode;
+        }
+
+        protected MdlTagHelperBase(string defaultCssClass, string outputTag = null, TagMode tagmode = TagMode.StartTagAndEndTag) 
+            : this(new[] {defaultCssClass},outputTag,tagmode)
+        {}
+
+        protected MdlTagHelperBase(): this(string.Empty) {}
+
+        protected virtual IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>();
+        protected virtual IDictionary<string, string> SpecialAttributs => new Dictionary<string, string>();
+
+        protected virtual IList<ConditionnalContent> ConditionnalPreContents => new List<ConditionnalContent>();
+        protected virtual IList<ConditionnalContent> ConditionnalContents => new List<ConditionnalContent>();
+
+        protected virtual IList<ConditionnalContent> ConditionnalPostContents => new List<ConditionnalContent>();
+
+        public override void Process(TagHelperContext context, TagHelperOutput output)
+        {
+         
+            SetTagName(output);
+            SetTagMode(output);
+            SetDefaultCssClass(output);
+            SetConditionnalCssClass(output);
+            SetAttributs(output);
+            SetPreContent(output);
+            SetContent(output);
+            SetPostContent(output);
+            AfterPRocess(output);
+
+
+        }
+
+        private void SetTagMode(TagHelperOutput output)
+        {
+            output.TagMode = _tagMode;
+        }
+
+        protected virtual void AfterPRocess(TagHelperOutput output) { }
+
+        private void SetPreContent(TagHelperOutput output)
+        {
+            if (ConditionnalPreContents.AllOk().Any())
             {
-                output.Attributes.RemoveAll(attribute);
+                output.PreContent.SetHtmlContent(string.Join(" ", ConditionnalPreContents.AllOk().Select(x => x.Invoke(output))));
             }
         }
 
-        public static void AppendCssClass(this TagHelperOutput output, params string[] cssClass)
+        private void SetPostContent(TagHelperOutput output)
         {
-            var currentValue = output.Attributes.ContainsName("class") 
-                ? output.Attributes["class"].Value.ToString() 
-                : string.Empty;
-
-            var finalCssClass = cssClass.Where(s => !string.IsNullOrWhiteSpace(s)).ToList();
-            finalCssClass.Insert(0, currentValue);
-
-            output.Attributes.SetAttribute("class",string.Join(" ", finalCssClass).Trim(' '));
-        }
-
-        public static string GetOrCreateId(this TagHelperOutput output)
-        {
-            if (output.Attributes.ContainsName("id"))
+            if (ConditionnalPostContents.AllOk().Any())
             {
-                return output.Attributes["id"].Value.ToString();
+                output.PostContent.SetHtmlContent(string.Join(" ", ConditionnalPostContents.AllOk().Select(x => x.Invoke(output))));
             }
-            
-            var id = "gid_" + Guid.NewGuid().ToString();
-            output.Attributes.SetAttribute("id",id);
-            return id;
         }
 
-        public static string GetChildContent(this TagHelperOutput output)
+        private void  SetContent(TagHelperOutput output)
         {
-           return output.Content.IsModified
-                ? output.Content.GetContent() :
-                output.GetChildContentAsync().Result.GetContent();
-        } 
+            if (ConditionnalContents.AllOk().Any())
+            {
+                output.Content.SetHtmlContent(string.Join(" ", ConditionnalContents.AllOk().Select(x => x.Invoke(output))));
+            }
+        }
+
+        private void SetAttributs(TagHelperOutput output)
+        {
+            foreach (var specialAttribut in SpecialAttributs)
+            {
+                output.Attributes.Add(specialAttribut.Key, specialAttribut.Value);
+            }
+        }
+
+        private void SetConditionnalCssClass(TagHelperOutput output)
+        {
+            foreach (var conditionnalCss in ConditionnalCssClasses.AllOk())
+            {
+                output.AppendCssClass(conditionnalCss(output));
+            }
+        }
+
+        private void SetDefaultCssClass(TagHelperOutput output)
+        {
+            output.AppendCssClass(_defaultCssClass);
+        }
+
+        private void SetTagName(TagHelperOutput output)
+        {
+            if (!string.IsNullOrEmpty(_outputTag))
+            {
+                output.TagName = _outputTag;
+            }
+        }
     }
 }

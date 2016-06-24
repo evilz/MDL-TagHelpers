@@ -1,34 +1,21 @@
 ﻿using System.Threading.Tasks;
 using MaterialDesignLite.TagHelpers.StyleValues;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement(MDLTagHelper.TagPrefix + Name)]
-    public class Navigation : TagHelper
+    [HtmlTargetElement(TagPrefix + "nav")]
+    public class Navigation : MdlTagHelperBase
     {
-        private const string Name = "nav";
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.TagName = "nav";
-            output.AppendCssClass("mdl-navigation");
-            await base.ProcessAsync(context, output);
-        }
-
+        public Navigation() : base("mdl-navigation", "nav") { }
     }
 
-    [HtmlTargetElement("a", Attributes = MDLTagHelper.TagPrefix + Name)]
-    public class NavigationLink : TagHelper
+    [HtmlTargetElement("a", Attributes = TagPrefix + "nav-item")]
+    public class NavigationLink : MdlTagHelperBase
     {
-        private const string Name = "nav-item";
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            output.AppendCssClass("mdl-navigation__link");
-            await base.ProcessAsync(context, output);
-        }
-
+        public NavigationLink() :base("mdl-navigation__link") { }
+ 
     }
 
 }

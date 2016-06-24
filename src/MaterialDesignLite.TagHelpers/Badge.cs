@@ -1,84 +1,34 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MaterialDesignLite.TagHelpers.StyleValues;
-using Microsoft.AspNetCore.Razor.Runtime.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    //[HtmlTargetElement("mdl-badge")]
-    //public class Badge : TagHelper
-    //{
-    //    [HtmlAttributeName("data")]
-    //    public string Data { get; set; }
 
-    //    [HtmlAttributeName("class")]
-    //    public string CssClass { get; set; }
-
-    //    [HtmlAttributeName("color")]
-    //    public string Color { get; set; }
-
-    //    [HtmlAttributeName("href")]
-    //    public string HRef { get; set; }
-
-    //    public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-    //    {
-    //        output.Attributes.RemoveAll("data");
-    //        output.Attributes.RemoveAll("class");
-    //        output.Attributes.RemoveAll("href");
-
-
-    //        // TODO : convert to class add class to tag 
-    //        output.Attributes.RemoveAll("color");
-
-
-    //        if (string.IsNullOrEmpty(Data))
-    //            return;
-
-    //        output.TagName = "a";
-
-    //        if (string.IsNullOrEmpty(HRef))
-    //        {
-    //            output.TagName = "span";
-    //        }
-
-    //         CssClass += " mdl-badge";
-
-    //        output.Attributes["class"] = CssClass;
-
-    //        output.Attributes.Add("data-badge",Data);
-
-    //        await base.ProcessAsync(context, output);
-    //    }
-
-    //}
-
-    [HtmlTargetElement(Attributes = MDLTagHelper.TagPrefix + Name)]
-    public class Badge : TagHelper
+    [HtmlTargetElement(Attributes = TagPrefix + Name)]
+    public class Badge : MdlTagHelperBase
     {
         private const string Name = "badge";
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name)]
+        [HtmlAttributeName(TagPrefix + Name)]
         public string Data { get; set; }
 
-        [HtmlAttributeName(MDLTagHelper.TagPrefix + Name + "-color")]
+        [HtmlAttributeName(TagPrefix + Name + "-color")]
         public MDLColor Color { get; set; }
         
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
-        {
-            if (string.IsNullOrEmpty(Data))
-                return;
-            
-            output.AppendCssClass("mdl-badge");
-            output.Attributes.Add("data-badge", Data);
-
-            if (Color != null)
+        public Badge() : base(new[] { "mdl-badge" }) { }
+        
+        protected override IList<ConditionnalContent> ConditionnalCssClasses =>
+            new List<ConditionnalContent>
             {
-                output.AppendCssClass("mdl-color-badge--" + Color); // TODO  ADD ON
-            }
+                {() => Color != null, (_)=> "mdl-color-badge--" + Color}
+            };
 
-            await base.ProcessAsync(context, output);
-        }
-
+        protected override IDictionary<string, string> SpecialAttributs =>
+            new Dictionary<string, string>
+            {
+                {"data-badge", Data}
+            };
     }
-
 }

@@ -12,10 +12,6 @@ namespace MaterialDesignLite.WebSample.Controllers
                 path = "Index";
             }
             path = path.Trim('/');
-            if (!path.Contains("/"))
-            {
-                path = "Home/" + path;
-            }
             return View(path);
 
         }

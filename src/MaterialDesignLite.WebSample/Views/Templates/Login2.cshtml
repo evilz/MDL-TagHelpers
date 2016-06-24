@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "_Layout-full";
+};
+
+
+<style>
+    .mdl-textfield {
+        width: 100%;
+    }
+
+    .mdl-layout {
+        background: url('/images/1.png') no-repeat center center fixed;
+    }
+</style>
+
+<mdl-layout mdl-bgcolor="@MDLColors.BlueGrey">
+    <main class="mdl-layout__content">
+        <div class="page-content" >
+
+            <mdl-grid >
+                <mdl-cell size="4"></mdl-cell>
+
+                <mdl-cell size="4" valign="@MDLCellVAlign.Middle">
+
+                    <mdl-card mdl-shadow="@MdlShadows.Dp6">
+                        <mdl-card-title title-size="@MdlCardTitleSize.H2" expand="true" title="Login"></mdl-card-title>
+
+                        <mdl-card-supporting-text>
+                            <mdl-grid>
+                                <mdl-cell></mdl-cell>
+                                <mdl-cell>
+                                    <mdl-icon mdl-color="@MDLColors.Primary" icon="@MDLIcons.account_circle" icon-size="128"></mdl-icon>
+                                </mdl-cell>
+                                <mdl-cell></mdl-cell>
+                            </mdl-grid>
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="username">
+                                <label class="mdl-textfield__label" for="username">Username</label>
+                            </div>
+
+
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="password">
+                                <label class="mdl-textfield__label" for="password">Password</label>
+                            </div>
+
+                            <mdl-grid>
+                                <mdl-cell size="12"><mdl-button raised="true" color="Primary">SIGN IN</mdl-button></mdl-cell>
+
+                            </mdl-grid>
+
+                            <a href="#">Forgot your password?</a>
+                        </mdl-card-supporting-text>
+
+
+                        <mdl-card-actions>
+                            <mdl-button mdl-bgcolor="@MDLColors.Green" icon="true"><mdl-icon icon="@MDLIcons.plus_one"></mdl-icon></mdl-button>
+
+                            <div class="mdl-layout-spacer"></div>
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Register
+                            </a>
+
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                                Sign in
+                            </a>
+
+                        </mdl-card-actions>
+
+
+                    </mdl-card>
+
+                </mdl-cell>
+            </mdl-grid>
+            </div>
+    </main>
+</mdl-layout>
+

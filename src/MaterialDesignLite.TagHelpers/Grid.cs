@@ -1,59 +1,52 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using MaterialDesignLite.TagHelpers.StyleValues;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using static MaterialDesignLite.TagHelpers.MdlTagHelperExtension;
 
 namespace MaterialDesignLite.TagHelpers
 {
-    [HtmlTargetElement("mdl-grid")]
-    public class Grid : TagHelper
+    [HtmlTargetElement(TagPrefix + Name)]
+    //[RestrictChildren(TagPrefix+Cell.Name)]
+    public class Grid : MdlTagHelperBase
     {
-        private const string NoSpacingAttributeName = "no-spacing";
-
-        [HtmlAttributeName(NoSpacingAttributeName)]
+        public const string Name = "grid";
+        
+        [HtmlAttributeName("no-spacing")]
         public bool NoSpacing { get; set; }
+        
+        public Grid() : base("mdl-grid", "div") {}
 
-        private string NoSpacingClass { get { return NoSpacing ? " mdl-grid--no-spacing" : string.Empty; } }
-
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.Attributes.RemoveAll(NoSpacingAttributeName);
-
-            output.TagName = "div";
-            output.AppendCssClass("mdl-grid" + NoSpacingClass);
-
-            await base.ProcessAsync(context, output);
-        }
-
+            { ()=> NoSpacing , (_) => "mdl-grid--no-spacing" }
+        };
+        
     }
 
-    //<mdl-cell size="1" desktop="1" tablet="1" phone="1" stretch valign="top">UNE CELL</mdl-cell>
 
-    [HtmlTargetElement("mdl-cell")]
-    public class Cell : TagHelper
+    [HtmlTargetElement(TagPrefix + Name, ParentTag = TagPrefix + Grid.Name)]
+    public class Cell : MdlTagHelperBase
     {
-        private const string SizeAttributeName = "size";
-        private const string DesktopAttributeName = "desktop";
-        private const string TabletAttributeName = "tablet";
-        private const string PhoneAttributeName = "phone";
-        private const string VAlignAttributeName = "valign";
-
+        public const string Name = "cell";
+        
         private const int maxSizeDesktop = 12;
         private const int maxSizeTablet = 8;
         private const int maxSizePhone = 4;
 
-        [HtmlAttributeName(SizeAttributeName)]
+        [HtmlAttributeName("size")]
         public int? Size { get; set; }
 
-        [HtmlAttributeName(DesktopAttributeName)]
+        [HtmlAttributeName("desktop")]
         public int? Desktop { get; set; }
 
-        [HtmlAttributeName(TabletAttributeName)]
+        [HtmlAttributeName("tablet")]
         public int? Tablet { get; set; }
 
-        [HtmlAttributeName(PhoneAttributeName)]
+        [HtmlAttributeName("phone")]
         public int? Phone { get; set; }
 
-        [HtmlAttributeName(VAlignAttributeName)]
+        [HtmlAttributeName("valign")]
         public MDLCellVAlign VAlign { get; set; }
         
         private string SizeClass
@@ -66,8 +59,7 @@ namespace MaterialDesignLite.TagHelpers
                 return " mdl-cell--" + Size.Value + "-col";
             }
         }
-
-
+        
         private string DesktopClass
         {
             get
@@ -111,25 +103,16 @@ namespace MaterialDesignLite.TagHelpers
             }
         }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        public Cell() : base("mdl-cell", "div") { }
+
+        protected override IList<ConditionnalContent> ConditionnalCssClasses => new List<ConditionnalContent>
         {
-            output.Attributes.RemoveAll(SizeAttributeName);
-            output.Attributes.RemoveAll(DesktopAttributeName);
-            output.Attributes.RemoveAll(TabletAttributeName);
-            output.Attributes.RemoveAll(PhoneAttributeName);
-            output.Attributes.RemoveAll(VAlignAttributeName);
-
-            output.TagName = "div";
-            
-            output.AppendCssClass("mdl-cell" ,
-                SizeClass,
-                DesktopClass,
-                TabletClass,
-                PhoneClass,
-                VAlignClass);
-
-            await base.ProcessAsync(context, output);
-        }
-
+            { ()=> Size.HasValue, (_) => SizeClass },
+            { ()=> Desktop.HasValue, (_) => DesktopClass },
+            { ()=> Tablet.HasValue, (_) => TabletClass },
+            { ()=> Phone.HasValue, (_) => PhoneClass },
+            { ()=> VAlign != MDLCellVAlign.None, (_) => VAlignClass },
+        };
+        
     }
 }
